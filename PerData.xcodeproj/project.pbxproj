@@ -11,7 +11,6 @@
 		DB01A8402726C3D1007721E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB01A83E2726C3D1007721E1 /* Localizable.strings */; };
 		DB0708EF27293D66001B3BBA /* PersonNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0708EE27293D66001B3BBA /* PersonNewView.swift */; };
 		DB0708F127293F97001B3BBA /* PersonUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0708F027293F97001B3BBA /* PersonUpdateView.swift */; };
-		DB3AA39B2737EA17008B2FDF /* PersonBackup.old.json in Resources */ = {isa = PBXBuildFile; fileRef = DB3AA39A2737EA17008B2FDF /* PersonBackup.old.json */; };
 		DB3AA39D27392D65008B2FDF /* UpdatePersonsFromJsonBackupFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3AA39C27392D65008B2FDF /* UpdatePersonsFromJsonBackupFileView.swift */; };
 		DB3AA39F27392ED1008B2FDF /* UpdatePersonsFromJsonBackupFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3AA39E27392ED1008B2FDF /* UpdatePersonsFromJsonBackupFile.swift */; };
 		DB4BBA2427457D8E00771D7A /* UserRecordOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BBA2327457D8E00771D7A /* UserRecordOverView.swift */; };
@@ -75,7 +74,6 @@
 		DB01A83F2726C3D1007721E1 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DB0708EE27293D66001B3BBA /* PersonNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonNewView.swift; sourceTree = "<group>"; };
 		DB0708F027293F97001B3BBA /* PersonUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonUpdateView.swift; sourceTree = "<group>"; };
-		DB3AA39A2737EA17008B2FDF /* PersonBackup.old.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PersonBackup.old.json; sourceTree = "<group>"; };
 		DB3AA39C27392D65008B2FDF /* UpdatePersonsFromJsonBackupFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePersonsFromJsonBackupFileView.swift; sourceTree = "<group>"; };
 		DB3AA39E27392ED1008B2FDF /* UpdatePersonsFromJsonBackupFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePersonsFromJsonBackupFile.swift; sourceTree = "<group>"; };
 		DB4BBA2327457D8E00771D7A /* UserRecordOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRecordOverView.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 		DB3AA3992737E9B1008B2FDF /* Json */ = {
 			isa = PBXGroup;
 			children = (
-				DB3AA39A2737EA17008B2FDF /* PersonBackup.old.json */,
 				DBB366B0274F96BD001CB47A /* PersonBackup.json */,
 				DBB366AE274E6CB3001CB47A /* BackupPersonsToJsonBackupFile.swift */,
 				DBB366AC274E6C39001CB47A /* BackupPersonsToJsonBackupFileView.swift */,
@@ -426,7 +423,6 @@
 				DB4FD4D727328BFA0080E084 /* Postnummerregister-ansi.txt in Resources */,
 				DB01A83D2726C3D1007721E1 /* InfoPlist.strings in Resources */,
 				DBE25B64270C556400AE255B /* Preview Assets.xcassets in Resources */,
-				DB3AA39B2737EA17008B2FDF /* PersonBackup.old.json in Resources */,
 				DBE25B61270C556400AE255B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
