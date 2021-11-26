@@ -62,7 +62,7 @@ struct ToDoView: View {
             /// Slik hentes de enkelte feltene ut:
             ///
             let per  = try record.1.get()
-     20. 🛑 Legg in overskrift på oversikt hyttereservasjon
+     20. 🟢 Legg in overskrift på oversikt hyttereservasjon
      20. 🛑 Kryptere / dekryptere passordet til og fra CloudKit
      21. 🛑 Sjekk visning av fødselsdato når denne blir endret.
      22. 🛑 Sortere personene i person oversikt. (Å skal komme etter Æ)

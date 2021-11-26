@@ -36,7 +36,7 @@ struct CabinOverview: View {
                                 .font(Font.title.weight(.ultraLight))
                             Text(cabin.lastName)
                                 .font(Font.title.weight(.ultraLight))
-                            HStack {
+                            HStack (spacing: 30) {
                                 Spacer()
                                 Text("\(IntToDateString(int: cabin.fromDate))")
                                 Text("\(IntToDateString(int: cabin.toDate))")
