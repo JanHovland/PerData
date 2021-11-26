@@ -1,0 +1,20 @@
+[	{
+		"id": "4E6505D8-1D3C-4C54-8E80-BD4F56FFD8CB" ,
+		"userData" : {
+			"firstName" : "Jan",
+			"lastName" : "Hovland",
+			"email" : "jan.hovland@lyse.net",
+			"password" : "qwerty",
+			"image" : "<UIImage:0x2823aa880 anonymous {80, 80} renderingMode=automatic>"
+		}
+	},	{
+		"id": "5164D11F-A0BC-4912-9128-F766F7B6E74D" ,
+		"userData" : {
+			"firstName" : "Oleg",
+			"lastName" : "Pontentarenko",
+			"email" : "oleg.pntentarenko@lyse.no",
+			"password" : "qwerty",
+			"image" : "<UIImage:0x2823aa250 anonymous {384, 382} renderingMode=automatic>"
+		}
+	}
+]

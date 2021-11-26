@@ -5,6 +5,11 @@
 //  Created by Jan Hovland on 05/10/2021.
 //
 
+//
+//  Comment: Control + Command + * (number keyboard)
+//  Indent:  Control + Command + / (number keyboard)
+//
+
 /// https://peterfriese.dev/swiftui-concurrency-essentials-part1/
 /// https://peterfriese.dev/swiftui-listview-part3/
 /// https://stackoverflow.com/questions/57888032/swiftui-navigation-on-ipad-how-to-show-master-list
@@ -99,8 +104,8 @@ struct PerData: View {
     @State private var isAlertActive = false
     @State private var menuUpdatePersonsFromJsonBackupFileView = false
     @State private var menuBackupPersonsToJsonBackupFileView = false
-    @State private var menuUpdateUserRecordFromJsonBackupFileView = false
-    @State private var menuUpdateUserRecordToJsonBackupFileView = false
+    @State private var menuBackupUserRecordsFromJsonBackupFileView = false
+    @State private var menuBackupUserRecordsToJsonBackupFileView = false
     @State private var menuUpdateCabinsFromJsonBackupFileView = false
     @State private var menuUpdateCabinsToJsonBackupFileView = false
 
@@ -168,12 +173,12 @@ struct PerData: View {
 
                                 Menu {
                                     Button {
-                                        menuUpdateUserRecordFromJsonBackupFileView.toggle()
+                                        menuBackupUserRecordsFromJsonBackupFileView.toggle()
                                     } label: {
                                         Label("From Json", systemImage: "square.and.pencil")
                                     }
                                     Button {
-                                        menuUpdateUserRecordToJsonBackupFileView.toggle()
+                                        menuBackupUserRecordsToJsonBackupFileView.toggle()
                                     } label: {
                                         Label("To Json", systemImage: "square.and.pencil")
                                     }
@@ -237,6 +242,9 @@ struct PerData: View {
                     })
                     .sheet(isPresented: $menuUserRecordView, content: {
                         UserRecordOverView()
+                    })
+                    .sheet(isPresented: $menuBackupUserRecordsToJsonBackupFileView, content: {
+                        BackupUserRecordsToJsonBackupFileView()
                     })
                 List {
                     ForEach(searchFor == "" ? persons : persons.filter { $0.firstName.starts(with: searchFor)}) { person in

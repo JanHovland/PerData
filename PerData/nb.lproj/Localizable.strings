@@ -20,6 +20,9 @@
 "Backups the persons to Json" = "Person backup to Json";
 
 /* No comment provided by engineer. */
+"Backups the userRecords to Json" = "Bruker backup to Json";
+
+/* No comment provided by engineer. */
 "Birthdays" = "Fødselsdager";
 
 /* No comment provided by engineer. */
@@ -329,6 +332,9 @@
 "Update ZipCode" = "Oppdater postnummer";
 
 /* No comment provided by engineer. */
+"User backup til Json fil" = "Bruker backup to Json fil";
+
+/* No comment provided by engineer. */
 "User Details" = "Bruker detaljer";
 
 /* No comment provided by engineer. */
@@ -336,6 +342,9 @@
 
 /* No comment provided by engineer. */
 "UserRecord" = "Bruker";
+
+/* No comment provided by engineer. */
+"UserRecord backup to Json" = "Bruker backup til Json";
 
 /* No comment provided by engineer. */
 "UserRecords" = "Brukere";
