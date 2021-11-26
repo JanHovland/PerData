@@ -1,0 +1,159 @@
+//
+//  UserRecordDetailView.swift
+//  PerData
+//
+//  Created by Jan Hovland on 22/11/2021.
+//
+
+import SwiftUI
+import CloudKit
+
+struct UserRecordDetailView: View {
+    
+    @State  var userRecord: UserRecord
+    
+    @Environment(\.presentationMode) var presentationMode
+    
+    @State private var showSheetImagePicker = false
+    @State private var isAlertActive = false
+    @State private var indicatorShowing = false
+    @State private var modifyImage = false
+
+    @State private var title: LocalizedStringKey = ""
+    @State private var message: LocalizedStringKey = ""
+    
+    @State private var image = UIImage()
+    
+    var body: some View {
+        VStack {
+            ZStack {
+                if  userRecord.image != nil {
+                    Image(uiImage: userRecord.image!)
+                        .resizable()
+                        .frame(width: 80, height: 80, alignment: .center)
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(Color.white, lineWidth: 1))
+                        .onTapGesture {
+                            showSheetImagePicker.toggle()
+                        }
+                } else {
+                    ZStack {
+                        Text("Select\nimage")
+                            .font(Font.footnote.weight(.medium))
+                            .foregroundColor(.green)
+                        Image(uiImage: image)
+                            .resizable()
+                            .frame(width: 80, height: 80, alignment: .center)
+                            .clipShape(Circle())
+                            .overlay(Circle().stroke(Color.white, lineWidth: 1))
+                    }
+                }
+            }
+            .padding(.top, 70)
+            .padding(.bottom, 40)
+            .onTapGesture {
+                showSheetImagePicker.toggle()
+            }
+            .sheet(isPresented: $showSheetImagePicker, content: {
+                ImagePicker(sourceType: .photoLibrary, selectedImage: $image, image: $userRecord.image)
+            })
+            VStack {
+                HStack {
+                    Spacer()
+                    Text("Firstname")
+                        .foregroundColor(.accentColor)
+                        .padding(.trailing, 10)
+                    TextField("Enter firstName", text: $userRecord.firstName)
+                        .autocapitalization(.words)
+                    Spacer()
+                }
+                .padding(.top, 10)
+                .padding(.bottom, 10)
+                HStack {
+                    Spacer()
+                    Text("LastName")
+                        .foregroundColor(.accentColor)
+                        .padding(.trailing, 10)
+                    TextField("Enter lastName", text: $userRecord.lastName)
+                        .autocapitalization(.words)
+                    Spacer()
+                }
+                .padding(.top, 10)
+                .padding(.bottom, 10)
+                HStack {
+                    Spacer()
+                    Text("email")
+                        .foregroundColor(.accentColor)
+                        .padding(.trailing, 10)
+                    TextField("Enter email", text: $userRecord.email)
+                        .keyboardType(.emailAddress)
+                        .autocapitalization(.none)
+                    Spacer()
+                }
+                .padding(.top, 10)
+                .padding(.bottom, 10)
+                HStack {
+                    Spacer()
+                    Text("Password")
+                        .foregroundColor(.accentColor)
+                        .padding(.trailing, 10)
+                    SecureField("Enter passWord", text: $userRecord.passWord)
+                    Spacer()
+                }
+                .padding(.top, 10)
+                .padding(.bottom, 10)
+            }
+            .padding(.leading, 50)
+            Spacer()
+        }
+        .navigationBarTitle("User Details", displayMode: .inline)
+        .navigationBarItems(trailing:
+            Button(action: {
+            Task.init {
+                if userRecord.firstName.count > 0,
+                   userRecord.lastName.count > 0,
+                   userRecord.email.count > 0,
+                   userRecord.passWord.count > 0 {
+                    indicatorShowing = true
+                    var value: (LocalizedStringKey, CKRecord.ID?)
+                    await value = userRecordRecordID(userRecord)
+                    if value.0 != "" {
+                        message = value.0
+                        title = "Error message from the Server"
+                        isAlertActive.toggle()
+                    } else {
+                        if value.1 == nil {
+                            await message = saveUserRecord(userRecord)
+                            title = "Save"
+                            isAlertActive.toggle()
+                        } else {
+                            userRecord.recordID = value.1
+                            userRecord.image = image
+                            modifyImage = true
+                            await message = modifyUserRecord(userRecord, modifyImage)
+                            title = "Modify"
+                            isAlertActive.toggle()
+                        }
+                    }
+                    
+                    
+                } else {
+                    title = "Missing value(s)"
+                    message = "All the fields must have a value"
+                    isAlertActive.toggle()
+                }
+            }
+        }, label: {
+            Text("Update")
+                .font(Font.headline.weight(.light))
+        })
+        )
+        .alert(title, isPresented: $isAlertActive) {
+            Button("OK", action: {})
+        } message: {
+            Text(message)
+        }
+    }
+}
+
+
