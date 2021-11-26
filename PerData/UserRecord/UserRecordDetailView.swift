@@ -60,7 +60,7 @@ struct UserRecordDetailView: View {
             VStack {
                 HStack {
                     Spacer()
-                    Text("Firstname")
+                    Text("FirstName")
                         .foregroundColor(.accentColor)
                         .padding(.trailing, 10)
                     TextField("Enter firstName", text: $userRecord.firstName)

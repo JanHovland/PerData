@@ -25,7 +25,7 @@ struct CabinReservationView: View {
                                      fromDate: 0,
                                      toDate: 0)
     
-    @State private var cabinReservation: LocalizedStringKey = "Cabin Reservation"
+    @State private var cabinReservation: LocalizedStringKey = "Cabin reservation"
     
     @State private var isAlertActive = false
 
@@ -39,7 +39,7 @@ struct CabinReservationView: View {
                 /// Rutine for å returnere til personoversikten
                 presentationMode.wrappedValue.dismiss()
             }, label: {
-                ReturnFromMenuView(text: "Person overview")
+                ReturnFromMenuView(text: "PersonOverView")
             })
             Spacer()
             Text(cabinReservation)

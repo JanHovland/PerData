@@ -66,6 +66,7 @@ struct CabinOverview: View {
                     }
                 }
             }
+            .navigationBarTitle("Cabin OverView", displayMode: .inline)
             .task {
                 await refreshCabins()
             }

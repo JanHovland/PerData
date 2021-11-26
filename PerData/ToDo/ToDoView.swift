@@ -55,10 +55,18 @@ struct ToDoView: View {
      16. 🟢 Oppdatere åpningsbildet SignInView()
      17. 🟢 Oppdatere åpningsbildet SignUpView()
      18. 🟢 Nytt meny oppsett
-     19. 🛑 Kryptere / dekryptere passordet til og fra CloudKit
-     20. 🛑 Sjekk visning av fødselsdato når denne blir endret.
-     21. 🛑 Sortere personene i person oversikt. (Å skal komme etter Æ)
-     22. 🛑 Json:
+     19. 🟢 Gjøre oppfriskingen av personene raskere.
+            for record in result .matchResults {
+            var person = Person()
+            ///
+            /// Slik hentes de enkelte feltene ut:
+            ///
+            let per  = try record.1.get()
+     20. 🛑 Legg in overskrift på oversikt hyttereservasjon
+     20. 🛑 Kryptere / dekryptere passordet til og fra CloudKit
+     21. 🛑 Sjekk visning av fødselsdato når denne blir endret.
+     22. 🛑 Sortere personene i person oversikt. (Å skal komme etter Æ)
+     23. 🛑 Json:
             . 🛑 Lagre person i Json
                  . 🛑 Vente til persons er oppdatert
                  . 🛑 Finne json filen (du kan legge inn url i Safari og se innholdet)
@@ -67,15 +75,12 @@ struct ToDoView: View {
             . 🟢 Hente person fra Json
             . 🛑 Hente hyttereservasjoner fra Json
             . 🛑 Hente userRecord fra Json
-     23. 🟢 Ascii
+     24. 🟢 Ascii
             . 🟢 Hente postkoder fra ascii
-     24. 🛑 Indexed table view:
+     25. 🛑 Indexed table view:
             . 🛑 Person
             . 🛑 Brukere
-     25. 🛑 Se om sending av e-post kan gjøres på SwiftUI vis.
-     26. 🛑 Gjøre oppfriskingen av personene raskere.
-            let result = try await database.records(matching: query)
-            result inneholder alle persondata, det er bare å plukke dem ut.
+     26. 🛑 Se om sending av e-post kan gjøres på SwiftUI vis.
      27. 🛑 .
 
     """

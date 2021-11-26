@@ -61,7 +61,7 @@ struct SignInView: View {
                 VStack {
                     HStack {
                         Spacer()
-                        Text("Firstname")
+                        Text("FirstName")
                             .foregroundColor(.accentColor)
                         TextField("Enter firstName", text: $userRecord.firstName)
                             .padding(.leading, 30)

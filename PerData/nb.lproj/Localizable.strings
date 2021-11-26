@@ -17,10 +17,16 @@
 "All the fields must have a value" = "Alle feltene må ha verdi.";
 
 /* No comment provided by engineer. */
+"Backups the persons to Json" = "Person backup to Json";
+
+/* No comment provided by engineer. */
 "Birthdays" = "Fødselsdager";
 
 /* No comment provided by engineer. */
 "Cabin" = "Hytta";
+
+/* No comment provided by engineer. */
+"Cabin OverView" = "Hyttereservasjon";
 
 /* No comment provided by engineer. */
 "Cabin reservation" = "Hyttereservasjon";
@@ -83,6 +89,9 @@
 "Enter lastName" = "Legg inn etternavn";
 
 /* No comment provided by engineer. */
+"Enter passWord" = "Legg inn passord";
+
+/* No comment provided by engineer. */
 "Error Cabin reservation" = "Feil med hytteresevasjon";
 
 /* No comment provided by engineer. */
@@ -135,6 +144,9 @@
 
 /* No comment provided by engineer. */
 "iPhone" = "iPhone";
+
+/* No comment provided by engineer. */
+"Json backup person" = "Json person backup";
 
 /* No comment provided by engineer. */
 "Json update person" = "Oppdater Person fra Json ";
@@ -206,6 +218,9 @@
 "Person" = "Person";
 
 /* No comment provided by engineer. */
+"Person backup to Json" = "Person backup to Json";
+
+/* No comment provided by engineer. */
 "Person overview" = "Person oversikt";
 
 /* No comment provided by engineer. */
@@ -263,6 +278,9 @@
 "The cabin has been saved in CloudKit" = "Hyttereservasjonen er lagret.";
 
 /* No comment provided by engineer. */
+"The Person backup to Json is finished." = "Ferdig med person backup to Json.";
+
+/* No comment provided by engineer. */
 "The person has been deleted" = "Personen er slettet.";
 
 /* No comment provided by engineer. */
@@ -270,6 +288,9 @@
 
 /* No comment provided by engineer. */
 "The person has been saved in CloudKit" = "Personen er lagret.";
+
+/* No comment provided by engineer. */
+"The Person table in CloudKit is still empty.\nTry again in a litte while." = "Person tabellen i CloudKit er tom.\nPrøv igjen om en liten stund.";
 
 /* No comment provided by engineer. */
 "The user has been deleted" = "Brukeren er slettet.";
