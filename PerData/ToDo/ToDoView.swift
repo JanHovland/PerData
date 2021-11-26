@@ -55,7 +55,7 @@ struct ToDoView: View {
      16. 🟢 Oppdatere åpningsbildet SignInView()
      17. 🟢 Oppdatere åpningsbildet SignUpView()
      18. 🟢 Nytt meny oppsett
-     19. 🟢 Gjøre oppfriskingen av personene raskere.
+     19. 🟢 Gjøre oppfriskingen av Person / UserRecord / Cabin etc. raskere.
             for record in result .matchResults {
             var person = Person()
             ///

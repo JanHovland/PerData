@@ -32,9 +32,6 @@
 "Cabin reservation" = "Hyttereservasjon";
 
 /* No comment provided by engineer. */
-"Cabin Reservation" = "Hyttereservasjon";
-
-/* No comment provided by engineer. */
 "Cabin reservation saved" = "Hyttereservasjonen er lagret.";
 
 /* No comment provided by engineer. */
@@ -111,9 +108,6 @@
 
 /* No comment provided by engineer. */
 "Field 'createdBy' is not marked queryable" = "Feltet 'createdBy' er ikke markert som queryable.";
-
-/* No comment provided by engineer. */
-"Firstname" = "Fornavn";
 
 /* No comment provided by engineer. */
 "FirstName" = "Fornavn";
@@ -218,10 +212,7 @@
 "Person" = "Person";
 
 /* No comment provided by engineer. */
-"Person backup to Json" = "Person backup to Json";
-
-/* No comment provided by engineer. */
-"Person overview" = "Person oversikt";
+"Person backup to Json" = "Person backup til Json";
 
 /* No comment provided by engineer. */
 "PersonOverView" = "Person oversikt";
