@@ -63,25 +63,28 @@ struct ToDoView: View {
             ///
             let per  = try record.1.get()
      20. 🟢 Legg in overskrift på oversikt hyttereservasjon
-     20. 🛑 Kryptere / dekryptere passordet til og fra CloudKit
-     21. 🛑 Sjekk visning av fødselsdato når denne blir endret.
-     22. 🛑 Sortere personene i person oversikt. (Å skal komme etter Æ)
-     23. 🛑 Json:
-            . 🛑 Lagre person i Json
-                 . 🛑 Vente til persons er oppdatert
-                 . 🛑 Finne json filen (du kan legge inn url i Safari og se innholdet)
-            . 🛑 Lagre hyttereservasjoner i Json
-            . 🛑 Lagre userRecord i Json
+     21. 🟢 Ascii
+            . 🟢 Hente postkoder fra ascii
+     22. 🛑 Json:
+            . 🟢 Lagre person i Json
+                 . 🟢 Finne json filen (du kan legge inn url i Safari og se innholdet)
+                 . 🟢 For å få tak i filen som blir opprette og kunne se denne i "Filer" på iPhone:
+                      Legg til disse i Info.plist:
+                        Application supports iTunes file sharing     YES
+                        Supports opening documents in place          YES
             . 🟢 Hente person fra Json
+            . 🛑 Lagre hyttereservasjoner i Json
             . 🛑 Hente hyttereservasjoner fra Json
             . 🛑 Hente userRecord fra Json
-     24. 🟢 Ascii
-            . 🟢 Hente postkoder fra ascii
-     25. 🛑 Indexed table view:
+            . 🛑 Lagre userRecord i Json
+     23. 🛑 Kryptere / dekryptere passordet til og fra CloudKit
+     24. 🛑 Sjekk visning av fødselsdato når denne blir endret.
+     25. 🛑 Sortere personene i person oversikt. (Å skal komme etter Æ)
+     26. 🛑 Indexed table view:
             . 🛑 Person
             . 🛑 Brukere
-     26. 🛑 Se om sending av e-post kan gjøres på SwiftUI vis.
-     27. 🛑 .
+     27. 🛑 Se om sending av e-post kan gjøres på SwiftUI vis.
+     28. 🛑 .
 
     """
     
