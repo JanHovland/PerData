@@ -75,8 +75,8 @@ struct ToDoView: View {
             . 🟢 Hente person fra Json
             . 🛑 Lagre hyttereservasjoner i Json
             . 🛑 Hente hyttereservasjoner fra Json
-            . 🛑 Hente userRecord fra Json
             . 🛑 Lagre userRecord i Json
+            . 🛑 Hente userRecord fra Json
      23. 🛑 Kryptere / dekryptere passordet til og fra CloudKit
      24. 🛑 Sjekk visning av fødselsdato når denne blir endret.
      25. 🛑 Sortere personene i person oversikt. (Å skal komme etter Æ)
