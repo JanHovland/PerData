@@ -97,7 +97,6 @@ struct CloudKitUserRecord {
                 let lastName = user.value(forKey: "lastName") ?? ""
                 let email = user.value(forKey: "email") ?? ""
                 let passWord = user.value(forKey: "passWord") ?? ""
-                
                 if let image = user.value(forKey: "image"), let imageAsset = image as? CKAsset {
                     if let imageData = try? Data.init(contentsOf: imageAsset.fileURL!) {
                         let image = UIImage(data: imageData)
@@ -105,7 +104,7 @@ struct CloudKitUserRecord {
                         userRecord.firstName = firstName as! String
                         userRecord.lastName = lastName as! String
                         userRecord.email = email as! String
-                        userRecord.passWord = passWord as! String
+                        userRecord.passWord = passWord  as! String
                         userRecord.image = image
                     }
                 } else {
@@ -113,7 +112,7 @@ struct CloudKitUserRecord {
                     userRecord.firstName = firstName as! String
                     userRecord.lastName = lastName as! String
                     userRecord.email = email as! String
-                    userRecord.passWord = passWord as! String
+                    userRecord.passWord = passWord  as! String
                     userRecord.image = nil
                 }
                 

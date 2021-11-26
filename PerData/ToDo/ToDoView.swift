@@ -65,7 +65,13 @@ struct ToDoView: View {
      20. 🟢 Legg in overskrift på oversikt hyttereservasjon
      21. 🟢 Ascii
             . 🟢 Hente postkoder fra ascii
-     22. 🛑 Json:
+     22. 🟢 Encrypted fields in CloudKit
+            Kan ikke brukes på Public Database, kun på Private og Shared Database!
+     23. 🟢 Ved oppdatering av UserRecordDetailView():
+            . Bildet fra viewet og ved oppfrisking i UserRecordOverView
+              kommer bildet frem igjen.
+            . Dersom en velger nytt bilde, er alt OK.
+     23. 🛑 Json:
             . 🟢 Lagre person i Json
                  . 🟢 Finne json filen (du kan legge inn url i Safari og se innholdet)
                  . 🟢 For å få tak i filen som blir opprette og kunne se denne i "Filer" på iPhone:
@@ -77,7 +83,6 @@ struct ToDoView: View {
             . 🛑 Hente hyttereservasjoner fra Json
             . 🛑 Lagre userRecord i Json
             . 🛑 Hente userRecord fra Json
-     23. 🛑 Kryptere / dekryptere passordet til og fra CloudKit
      24. 🛑 Sjekk visning av fødselsdato når denne blir endret.
      25. 🛑 Sortere personene i person oversikt. (Å skal komme etter Æ)
      26. 🛑 Indexed table view:

@@ -128,15 +128,15 @@ struct UserRecordDetailView: View {
                             isAlertActive.toggle()
                         } else {
                             userRecord.recordID = value.1
-                            userRecord.image = image
-                            modifyImage = true
+                            if showSheetImagePicker {
+                                userRecord.image = image
+                            }
+                            modifyImage = showSheetImagePicker
                             await message = modifyUserRecord(userRecord, modifyImage)
                             title = "Modify"
                             isAlertActive.toggle()
                         }
                     }
-                    
-                    
                 } else {
                     title = "Missing value(s)"
                     message = "All the fields must have a value"
