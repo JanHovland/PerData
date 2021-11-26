@@ -52,12 +52,12 @@ func cabinExist(_ cabin: Cabin) async -> (err: LocalizedStringKey, exist: Bool) 
     return (err, exist)
 }
 
-func findCabins() async -> (err: LocalizedStringKey, cabin: [Cabin]) {
+func findCabins(_ predicate: NSPredicate) async -> (err: LocalizedStringKey, cabin: [Cabin]) {
     var err : LocalizedStringKey = ""
     var cabin = [Cabin]()
     do {
         err = ""
-        cabin = try await CloudKitCabin().getAllCabins()
+        cabin = try await CloudKitCabin().getAllCabins(predicate)
     } catch {
         err  = LocalizedStringKey(error.localizedDescription)
         cabin = [Cabin]()
@@ -92,10 +92,10 @@ func cabinRecordID(_ cabin: Cabin) async -> (err: LocalizedStringKey, id: CKReco
     return (err, id)
 }
     
-func deleteAllCabins(_ recID: CKRecord.ID) async -> LocalizedStringKey {
+func deleteAllCabins(_ predicate: NSPredicate,_ recID: CKRecord.ID) async -> LocalizedStringKey {
     var message: LocalizedStringKey = ""
     do {
-        try await CloudKitCabin().deleteAllCabins(recID)
+        try await CloudKitCabin().deleteAllCabins(predicate, recID)
         message = "All cabins have been deleted"
         return message
     } catch {

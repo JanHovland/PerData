@@ -74,23 +74,31 @@ struct CloudKitUserRecord {
         var userRecords = [UserRecord]()
         let query = CKQuery(recordType: RecordType.UserRecord, predicate: predicate)
         do {
+            ///
+            /// Slik finnes alle postene
+            ///
             let result = try await database.records(matching: query)
-            for res in result.0 {
+            
+            for record in result .matchResults {
                 var userRecord = UserRecord(firstName: "",
                                             lastName: "",
                                             email: "",
                                             passWord: "",
                                             image: nil)
-                let id = res.0.recordName
+                ///
+                /// Slik hentes de enkelte feltene ut:
+                ///
+                let user  = try record.1.get()
+                
+                let id = record.0.recordName
                 let recID = CKRecord.ID(recordName: id)
-                let per = try await database.record(for: recID)
                 
-                let firstName = per.value(forKey: "firstName") ?? ""
-                let lastName = per.value(forKey: "lastName") ?? ""
-                let email = per.value(forKey: "email") ?? ""
-                let passWord = per.value(forKey: "passWord") ?? ""
+                let firstName = user.value(forKey: "firstName") ?? ""
+                let lastName = user.value(forKey: "lastName") ?? ""
+                let email = user.value(forKey: "email") ?? ""
+                let passWord = user.value(forKey: "passWord") ?? ""
                 
-                if let image = per.value(forKey: "image"), let imageAsset = image as? CKAsset {
+                if let image = user.value(forKey: "image"), let imageAsset = image as? CKAsset {
                     if let imageData = try? Data.init(contentsOf: imageAsset.fileURL!) {
                         let image = UIImage(data: imageData)
                         userRecord.recordID = recID

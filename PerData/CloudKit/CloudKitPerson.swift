@@ -79,17 +79,25 @@ struct CloudKitPerson {
         return false
     }
     
-    func getAllPersons() async throws -> [Person] {
+    func getAllPersons(_ predicate: NSPredicate) async throws -> [Person] {
         var persons = [Person]()
-        let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: RecordType.Person, predicate: predicate)
         do {
+            ///
+            /// Slik finnes alle postene
+            ///
             let result  = try await database.records(matching: query)
+            
             for record in result .matchResults {
                 var person = Person()
+                ///
+                /// Slik hentes de enkelte feltene ut:
+                ///
                 let per  = try record.1.get()
+                
                 let id = record.0.recordName
                 let recID = CKRecord.ID(recordName: id)
+                
                 let firstName = per.value(forKey: "firstName") ?? ""
                 let lastName = per.value(forKey: "lastName") ?? ""
                 let email = per.value(forKey: "personEmail") ?? ""

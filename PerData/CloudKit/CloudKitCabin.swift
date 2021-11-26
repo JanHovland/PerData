@@ -43,9 +43,8 @@ struct CloudKitCabin {
         return false
     }
 
-    func getAllCabins() async throws -> [Cabin] {
+    func getAllCabins(_ predicate: NSPredicate) async throws -> [Cabin] {
         var cabins = [Cabin]()
-        let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: RecordType.Cabin, predicate: predicate)
         do {
             let result = try await database.records(matching: query)
@@ -119,8 +118,7 @@ struct CloudKitCabin {
         return nil
     }
     
-    func deleteAllCabins(_ recID: CKRecord.ID) async throws {
-        let predicate = NSPredicate(value: true)
+    func deleteAllCabins(_ predicate: NSPredicate, _ recID: CKRecord.ID) async throws {
         let query = CKQuery(recordType: RecordType.Cabin, predicate: predicate)
         do {
             let result = try await database.records(matching: query)

@@ -100,13 +100,14 @@ struct CabinOverview: View {
         /// Sletter alt tidligere innhold i hytte
         cabins.removeAll()
         indicatorShowing = true
-        await FindAllCabins()
+        let predicate = NSPredicate(value: true)
+        await FindAllCabins(predicate)
         indicatorShowing = false
     }
     
-    func FindAllCabins() async {
+    func FindAllCabins(_ predicate: NSPredicate) async {
         var value: (LocalizedStringKey, [Cabin])
-        await value = findCabins()
+        await value = findCabins(predicate)
         if value.0 != "" {
             message = value.0
             title = "Error message from the Server"
