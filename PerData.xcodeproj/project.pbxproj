@@ -159,13 +159,13 @@
 			isa = PBXGroup;
 			children = (
 				DBB366B0274F96BD001CB47A /* PersonBackup.json */,
-				DB0AD8A227519D2F00A3F8C3 /* UserRecordBackup.json */,
 				DBB366AE274E6CB3001CB47A /* BackupPersonsToJsonBackupFile.swift */,
 				DBB366AC274E6C39001CB47A /* BackupPersonsToJsonBackupFileView.swift */,
-				DB0AD8A02751870500A3F8C3 /* BackupUserRecordsToJsonBackupFile.swift */,
-				DB0AD89E275185D600A3F8C3 /* BackupUserRecordsToJsonBackupFileView.swift */,
 				DB3AA39E27392ED1008B2FDF /* UpdatePersonsFromJsonBackupFile.swift */,
 				DB3AA39C27392D65008B2FDF /* UpdatePersonsFromJsonBackupFileView.swift */,
+				DB0AD8A227519D2F00A3F8C3 /* UserRecordBackup.json */,
+				DB0AD8A02751870500A3F8C3 /* BackupUserRecordsToJsonBackupFile.swift */,
+				DB0AD89E275185D600A3F8C3 /* BackupUserRecordsToJsonBackupFileView.swift */,
 				DBB952AC2752216C009A0181 /* UpdateUserRecordsFromJsonBackupFileView.swift */,
 				DBB952AE275221AD009A0181 /* UpdateUserRecordsFromJsonBackupFile.swift */,
 			);
@@ -175,10 +175,10 @@
 		DB4BBA2227457D6D00771D7A /* UserRecord */ = {
 			isa = PBXGroup;
 			children = (
-				DB4BBA2B274BB4A200771D7A /* UserRecordDetailView.swift */,
-				DB4BBA2327457D8E00771D7A /* UserRecordOverView.swift */,
 				DB4BBA272748259500771D7A /* SignInView.swift */,
 				DB4BBA29274979AE00771D7A /* SignUpView.swift */,
+				DB4BBA2B274BB4A200771D7A /* UserRecordDetailView.swift */,
+				DB4BBA2327457D8E00771D7A /* UserRecordOverView.swift */,
 			);
 			path = UserRecord;
 			sourceTree = "<group>";

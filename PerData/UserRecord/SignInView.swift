@@ -5,6 +5,10 @@
 //  Created by Jan Hovland on 19/11/2021.
 //
 
+///
+/// https://www.swiftbysundell.com/articles/conditional-compilation-within-swift-expressions/
+///
+
 import SwiftUI
 import CloudKit
 import Network
@@ -38,7 +42,7 @@ struct SignInView: View {
     
     var body: some View {
         
-        VStack {
+        VStack (alignment: .center) {
             if hasInternet() == true {
                 HeadingView(heading: "Sign in CloudKit")
                 HStack {
@@ -55,56 +59,38 @@ struct SignInView: View {
                             .font(Font.title.weight(.ultraLight))
                     }
                 }
-                
-                .padding(.top, 40)
-                .padding(.bottom, 40)
                 VStack {
-                    HStack {
-                        Spacer()
-                        Text("FirstName")
-                            .foregroundColor(.accentColor)
-                        TextField("Enter firstName", text: $userRecord.firstName)
-                            .padding(.leading, 30)
-                            .autocapitalization(.words)
-                        Spacer()
-                    }
-                    .padding(.top, 10)
-                    .padding(.bottom, 10)
-                    HStack {
-                        Spacer()
-                        Text("LastName")
-                            .foregroundColor(.accentColor)
-                        TextField("Enter lastName", text: $userRecord.lastName)
-                            .padding(.leading, 20)
-                            .autocapitalization(.words)
-                        Spacer()
-                    }
-                    .padding(.top, 10)
-                    .padding(.bottom, 10)
-                    HStack {
-                        Spacer()
-                        Text("email")
-                            .foregroundColor(.accentColor)
-                        TextField("Enter email", text: $userRecord.email)
-                            .padding(.leading, 40)
-                            .keyboardType(.emailAddress)
-                            .autocapitalization(.none)
-                        Spacer()
-                    }
-                    .padding(.top, 10)
-                    .padding(.bottom, 10)
-                    HStack {
-                        Spacer()
-                        Text("Password")
-                            .foregroundColor(.accentColor)
-                        SecureField("Enter passWord", text: $userRecord.passWord)
-                            .padding(.leading, 30)
-                        Spacer()
-                    }
-                    .padding(.top, 10)
-                    .padding(.bottom, 10)
+                    Text("FirstName")
+                        .foregroundColor(.accentColor)
+                        .padding(.bottom, -5)
+                    TextField("Enter firstName", text: $userRecord.firstName)
+                        .autocapitalization(.words)
+                        .padding(.bottom, 10)
+                    
+                    Text("LastName")
+                        .foregroundColor(.accentColor)
+                        .padding(.bottom, -5)
+                    TextField("Enter lastName", text: $userRecord.lastName)
+                        .autocapitalization(.words)
+                        .padding(.bottom, 10)
+
+                    Text("email")
+                        .foregroundColor(.accentColor)
+                        .padding(.bottom, -5)
+                    TextField("Enter email", text: $userRecord.email)
+                        .keyboardType(.emailAddress)
+                        .autocapitalization(.none)
+                        .padding(.bottom, 10)
+
+                    Text("Password")
+                        .foregroundColor(.accentColor)
+                        .padding(.bottom, -5)
+                    SecureField("Enter passWord", text: $userRecord.passWord)
+                        .padding(.bottom, 10)
+
                 }
-                .padding(.leading, device == "iPhone" ? 50 : ((UIScreen.main.bounds.width / 3.0) + 50   ))
+                .multilineTextAlignment(.center)
+                .padding(.bottom, 30)
                 
                 Button (action: {
                     if userRecord.firstName.count > 0,

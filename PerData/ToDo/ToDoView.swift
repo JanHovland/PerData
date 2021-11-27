@@ -75,8 +75,10 @@ struct ToDoView: View {
             . 🟢 getAllCabins()
             . 🟢 getAllZipCodes
      25. 🟢 Kun store bokstaver i feltet "By" PersonUpdateView()
-            . Løsningen virker ikke å iMac.
-     25. 🛑 Json:
+            . 🛑 Løsningen virker ikke å iMac. (Slik PerData prosjektet er satt opp nå,
+                 er det enten iPhone eller iPad og ikke sammen med macOS).
+     26. 🟢 Sentrere fornavn,etternavn etc (i dag er bildet og de andre tekstene sentrert)
+     27. 🛑 Json:
             . 🟢 Lagre person i Json
                  . 🟢 Finne json filen (du kan legge inn url i Safari og se innholdet)
                  . 🟢 For å få tak i filen som blir opprette og kunne se denne i "Filer" på iPhone:
@@ -88,13 +90,13 @@ struct ToDoView: View {
             . 🛑 Hente userRecord fra Json
             . 🛑 Lagre hyttereservasjoner i Json
             . 🛑 Hente hyttereservasjoner fra Json
-     26. 🛑 Sjekk visning av fødselsdato når denne blir endret.
-     27. 🛑 Sortere personene i person oversikt. (Å skal komme etter Æ)
-     28. 🛑 Indexed table view:
+     28. 🛑 Sjekk visning av fødselsdato når denne blir endret.
+     29. 🛑 Sortere personene i person oversikt. (Å skal komme etter Æ)
+     30. 🛑 Indexed table view:
             . 🛑 Person
             . 🛑 Brukere
-     29. 🛑 Se om sending av e-post kan gjøres på SwiftUI vis.
-     30. 🛑 .
+     31. 🛑 Se om sending av e-post kan gjøres på SwiftUI vis.
+     32. 🛑 .
 
     """
     
