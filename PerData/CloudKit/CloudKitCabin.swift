@@ -47,19 +47,28 @@ struct CloudKitCabin {
         var cabins = [Cabin]()
         let query = CKQuery(recordType: RecordType.Cabin, predicate: predicate)
         do {
+            ///
+            /// Slik finnes alle postene
+            ///
             let result = try await database.records(matching: query)
-            for res in result.0 {
+            
+            for record in result .matchResults {
                 var cabin = Cabin(firstName: "",
                                   lastName: "",
                                   fromDate: 0,
                                   toDate: 0)
-                let id = res.0.recordName
+                ///
+                /// Slik hentes de enkelte feltene ut:
+                ///
+                let cab  = try record.1.get()
+                
+                let id = record.0.recordName
                 let recID = CKRecord.ID(recordName: id)
-                let per = try await database.record(for: recID)
-                let firstName = per.value(forKey: "firstName") ?? ""
-                let lastName = per.value(forKey: "lastName") ?? ""
-                let fromDate = per.value(forKey: "fromDate") ?? 0
-                let toDate = per.value(forKey: "toDate") ?? 0
+                
+                let firstName = cab.value(forKey: "firstName") ?? ""
+                let lastName = cab.value(forKey: "lastName") ?? ""
+                let fromDate = cab.value(forKey: "fromDate") ?? 0
+                let toDate = cab.value(forKey: "toDate") ?? 0
                 cabin.recordID = recID
                 cabin.firstName = firstName as! String
                 cabin.lastName = lastName as! String

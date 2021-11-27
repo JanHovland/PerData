@@ -41,25 +41,35 @@ struct CloudKitZipCode {
         }
     }
     
-    // MARK: - fetching from CloudKit
-    func fetchZipCodes(_ predicate:  NSPredicate) async throws -> [ZipCode] {
+     
+    func getAllZipCodes(_ predicate:  NSPredicate) async throws -> [ZipCode] {
         
         /// Legg merke til at City har bare store bokstaver
          
         var zipCode = [ZipCode]()
         let query = CKQuery(recordType: RecordType.ZipCode, predicate: predicate)
         do {
+            ///
+            /// Slik finnes alle postene
+            ///
             let result = try await database.records(matching: query)
-            for res in result.0 {
+
+            for record in result.matchResults {
                 var zipCode1 = ZipCode()
-                let id = res.0.recordName
+                ///
+                /// Slik hentes de enkelte feltene ut:
+                ///
+                let zip  = try record.1.get()
+                
+                let id = record.0.recordName
                 let recID = CKRecord.ID(recordName: id)
-                let pNr = try await database.record(for: recID)
-                let postNumber = pNr.value(forKey: "postalNumber") ?? ""
-                let postalName = pNr.value(forKey: "postalName") ?? ""
-                let municipalityNumber = pNr.value(forKey: "municipalityNumber") ?? ""
-                let municipalityName = pNr.value(forKey: "municipalityName") ?? ""
-                let category = pNr.value(forKey: "category") ?? ""
+                
+                let postNumber = zip.value(forKey: "postalNumber") ?? ""
+                let postalName = zip.value(forKey: "postalName") ?? ""
+                let municipalityNumber = zip.value(forKey: "municipalityNumber") ?? ""
+                let municipalityName = zip.value(forKey: "municipalityName") ?? ""
+                let category = zip.value(forKey: "category") ?? ""
+                zipCode1.recordID = recID
                 zipCode1.postalNumber = postNumber as! String
                 zipCode1.postalName = postalName as! String
                 zipCode1.municipalityNumber = municipalityNumber as! String

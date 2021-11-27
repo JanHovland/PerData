@@ -71,7 +71,10 @@ struct ToDoView: View {
             . Bildet fra viewet og ved oppfrisking i UserRecordOverView
               kommer bildet frem igjen.
             . Dersom en velger nytt bilde, er alt OK.
-     23. 🛑 Json:
+     24. 🟢 Endre tilsvarende getAllPersons()
+            . 🟢 getAllCabins()
+            . 🟢 getAllZipCodes
+     25. 🛑 Json:
             . 🟢 Lagre person i Json
                  . 🟢 Finne json filen (du kan legge inn url i Safari og se innholdet)
                  . 🟢 For å få tak i filen som blir opprette og kunne se denne i "Filer" på iPhone:
@@ -79,17 +82,17 @@ struct ToDoView: View {
                         Application supports iTunes file sharing     YES
                         Supports opening documents in place          YES
             . 🟢 Hente person fra Json
-            . 🛑 Lagre hyttereservasjoner i Json
-            . 🛑 Hente hyttereservasjoner fra Json
             . 🟢 Lagre userRecord i Json
             . 🛑 Hente userRecord fra Json
-     24. 🛑 Sjekk visning av fødselsdato når denne blir endret.
-     25. 🛑 Sortere personene i person oversikt. (Å skal komme etter Æ)
-     26. 🛑 Indexed table view:
+            . 🛑 Lagre hyttereservasjoner i Json
+            . 🛑 Hente hyttereservasjoner fra Json
+     26. 🛑 Sjekk visning av fødselsdato når denne blir endret.
+     27. 🛑 Sortere personene i person oversikt. (Å skal komme etter Æ)
+     28. 🛑 Indexed table view:
             . 🛑 Person
             . 🛑 Brukere
-     27. 🛑 Se om sending av e-post kan gjøres på SwiftUI vis.
-     28. 🛑 .
+     29. 🛑 Se om sending av e-post kan gjøres på SwiftUI vis.
+     30. 🛑 .
 
     """
     

@@ -23,7 +23,7 @@ func saveZipCode(_ zipCode: ZipCode) async -> LocalizedStringKey {
 func findZipCode(_ predicate: NSPredicate) async -> [ZipCode] {
     let zipCode = [ZipCode]()
     do {
-        return try await CloudKitZipCode().fetchZipCodes(predicate)
+        return try await CloudKitZipCode().getAllZipCodes(predicate)
     } catch {
         print(LocalizedStringKey(error.localizedDescription))
     }

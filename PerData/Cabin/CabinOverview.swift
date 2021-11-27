@@ -32,15 +32,17 @@ struct CabinOverview: View {
                     ForEach(cabins) {
                         cabin in
                         HStack {
-                            Text(cabin.firstName)
-                                .font(Font.title.weight(.ultraLight))
-                            Text(cabin.lastName)
-                                .font(Font.title.weight(.ultraLight))
-                            HStack (spacing: 30) {
+                            VStack {
+                                Text(cabin.firstName)
+                                Text(cabin.lastName)
+                            }
+                            .font(Font.title3.weight(.ultraLight))
+                            HStack {
                                 Spacer()
                                 Text("\(IntToDateString(int: cabin.fromDate))")
                                 Text("\(IntToDateString(int: cabin.toDate))")
                             }
+                            .font(Font.footnote.weight(.regular))
                             .background(Color("Background"))
                             .cornerRadius(5)
                             .padding(.horizontal, 5)

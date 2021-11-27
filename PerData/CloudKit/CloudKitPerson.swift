@@ -88,7 +88,7 @@ struct CloudKitPerson {
             ///
             let result  = try await database.records(matching: query)
             
-            for record in result .matchResults {
+            for record in result.matchResults {
                 var person = Person()
                 ///
                 /// Slik hentes de enkelte feltene ut:
