@@ -74,6 +74,8 @@ struct ToDoView: View {
      24. 🟢 Endre tilsvarende getAllPersons()
             . 🟢 getAllCabins()
             . 🟢 getAllZipCodes
+     25. 🟢 Kun store bokstaver i feltet "By" PersonUpdateView()
+            . Løsningen virker ikke å iMac.
      25. 🛑 Json:
             . 🟢 Lagre person i Json
                  . 🟢 Finne json filen (du kan legge inn url i Safari og se innholdet)

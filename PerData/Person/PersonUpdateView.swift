@@ -85,7 +85,7 @@ struct PersonUpdateView: View {
                     TextField("Citynumber", text: $person.cityNumber)
                         .keyboardType(.numberPad)
                     TextField("City", text: $person.city)
-                        .autocapitalization(.words)
+                        .autocapitalization(.allCharacters)
                     VStack {
                         Button {
                             showSheetFindZipCode.toggle()
