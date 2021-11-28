@@ -53,9 +53,6 @@
 "Citynumber" = "Postnummer";
 
 /* No comment provided by engineer. */
-"CloudKit update person" = "CloudKit  oppdater person";
-
-/* No comment provided by engineer. */
 "Create a new account?" = "Opprette ny bruker?";
 
 /* No comment provided by engineer. */
@@ -105,6 +102,9 @@
 
 /* No comment provided by engineer. */
 "Error trying parse json" = "Feil ved lesing av Json filen";
+
+/* No comment provided by engineer. */
+"Error trying parse Json file" = "Feil ved lesing av Json filen";
 
 /* No comment provided by engineer. */
 "Fetching asset failed" = "Henting av innholdselementet mislyktes.";
@@ -198,6 +198,9 @@
 
 /* No comment provided by engineer. */
 "Number of persons saved/modified from the Json backup file: %lld" = "Antall personer lagret: \n%lld";
+
+/* No comment provided by engineer. */
+"Number of userRecords saved/modified from the Json backup file: %lld" = "Antall brukere lagret / oppdatert fra Json backup: %lld";
 
 /* No comment provided by engineer. */
 "Number of ZipCode saved: %lld" = "Antall postnummer lagret: %lld";
@@ -320,10 +323,16 @@
 "Unknown json file" = "Ukjent Json fil";
 
 /* No comment provided by engineer. */
+"Unknown Json file" = "Ukjent Json fil";
+
+/* No comment provided by engineer. */
 "Unknown userRecord" = "Ukjent bruker";
 
 /* No comment provided by engineer. */
 "Update" = "Oppdater";
+
+/* No comment provided by engineer. */
+"Update from Json" = "Oppdater fra Json";
 
 /* No comment provided by engineer. */
 "Update Persons from a Json" = "Oppdater personer fra Json backup";
@@ -345,6 +354,9 @@
 
 /* No comment provided by engineer. */
 "UserRecord backup to Json" = "Bruker backup til Json";
+
+/* No comment provided by engineer. */
+"UserRecord update Json" = "Bruker oppdater Json";
 
 /* No comment provided by engineer. */
 "UserRecords" = "Brukere";

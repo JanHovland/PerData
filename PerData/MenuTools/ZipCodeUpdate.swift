@@ -11,7 +11,7 @@ import SwiftUI
 /// https://stackoverflow.com/questions/59150320/how-to-bold-text-in-swiftui-textfield
 
 
-struct ZipCodeUpdate: View {
+struct zipCodeUpdate: View {
     
     @Environment(\.presentationMode) var presentationMode
     @State private var showMainToolMenu: Bool = false

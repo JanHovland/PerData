@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct UpdatePersonsFromJsonBackupFileView: View {
+struct updatePersonsFromJsonBackupFileView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    
     @State private var message: LocalizedStringKey = ""
     @State private var title: LocalizedStringKey = ""
     @State private var isAlertActive: Bool = false
@@ -37,7 +38,7 @@ struct UpdatePersonsFromJsonBackupFileView: View {
                             .background(Color.yellow)
                             .imageScale(.medium)
                             .cornerRadius(5)
-                        Text("CloudKit update person")
+                        Text("Json update person")
                     }
                     .onTapGesture {
                         Task.init {
@@ -63,5 +64,5 @@ struct UpdatePersonsFromJsonBackupFileView: View {
             .backToCaller("Menu")
         } // NavgationView
     } // body
-} // Struct
+} // struct
 

@@ -16,7 +16,7 @@ import SwiftUI
 
 import SwiftUI
 
-struct ToDoView: View {
+struct toDoView: View {
     
     @Environment(\.presentationMode) var presentationMode
     

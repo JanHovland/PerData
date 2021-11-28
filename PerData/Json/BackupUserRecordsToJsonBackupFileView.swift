@@ -9,7 +9,7 @@ import SwiftUI
 
 /// Sjekke json: https://jsonformatter.curiousconcept.com/#
 
-struct BackupUserRecordsToJsonBackupFileView: View {
+struct backupUserRecordsToJsonBackupFileView: View {
     
     @Environment(\.presentationMode) var presentationMode
     

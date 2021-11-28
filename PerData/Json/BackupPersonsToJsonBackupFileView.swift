@@ -8,7 +8,7 @@
 import SwiftUI
 import CloudKit
 
-struct BackupPersonsToJsonBackupFileView: View {
+struct backupPersonsToJsonBackupFileView: View {
     
     @State private var message : LocalizedStringKey = ""
     @State private var title: LocalizedStringKey = ""

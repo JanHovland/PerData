@@ -24,7 +24,7 @@ func updatePersonsFromJsonBackupFile() async -> LocalizedStringKey {
     ///Leser inn fra Json til [PersonElem]
     ///
     if let url = Bundle.main.url(forResource: jsonPersonFile, withExtension: nil) {
-        if let data = try? Data(contentsOf: url){
+        if let data = try? Data(contentsOf: url) {
             let jsondecoder = JSONDecoder()
             do{
                 let result = try jsondecoder.decode([PersonElem].self, from: data)

@@ -104,11 +104,11 @@ struct PerData: View {
     @State private var isAlertActive = false
     @State private var menuUpdatePersonsFromJsonBackupFileView = false
     @State private var menuBackupPersonsToJsonBackupFileView = false
-    @State private var menuBackupUserRecordsFromJsonBackupFileView = false
+    @State private var menuUpdateUserRecordsFromJsonBackupFileView = false
     @State private var menuBackupUserRecordsToJsonBackupFileView = false
     @State private var menuUpdateCabinsFromJsonBackupFileView = false
     @State private var menuUpdateCabinsToJsonBackupFileView = false
-
+    
     @State private var searchFor = ""
     
     var body: some View {
@@ -173,7 +173,7 @@ struct PerData: View {
 
                                 Menu {
                                     Button {
-                                        menuBackupUserRecordsFromJsonBackupFileView.toggle()
+                                        menuUpdateUserRecordsFromJsonBackupFileView.toggle()
                                     } label: {
                                         Label("From Json", systemImage: "square.and.pencil")
                                     }
@@ -220,10 +220,10 @@ struct PerData: View {
                         
                     }
                     .sheet(isPresented: $menuZipCodeUpdate, content: {
-                        ZipCodeUpdate()
+                        zipCodeUpdate()
                     })
                     .sheet(isPresented: $menuToDo, content: {
-                        ToDoView()
+                        toDoView()
                     })
                     .sheet(isPresented: $menuBirthDay, content: {
                          
@@ -232,19 +232,22 @@ struct PerData: View {
                          
                     })
                     .sheet(isPresented: $menuCabin, content: {
-                        CabinOverview()
+                        cabinOverview()
                     })
                     .sheet(isPresented: $menuUpdatePersonsFromJsonBackupFileView, content: {
-                        UpdatePersonsFromJsonBackupFileView()
+                        updatePersonsFromJsonBackupFileView()
                     })
                     .sheet(isPresented: $menuBackupPersonsToJsonBackupFileView, content: {
-                        BackupPersonsToJsonBackupFileView()
+                        backupPersonsToJsonBackupFileView()
                     })
                     .sheet(isPresented: $menuUserRecordView, content: {
-                        UserRecordOverView()
+                        userRecordOverView()
                     })
                     .sheet(isPresented: $menuBackupUserRecordsToJsonBackupFileView, content: {
-                        BackupUserRecordsToJsonBackupFileView()
+                        backupUserRecordsToJsonBackupFileView()
+                    })
+                    .sheet(isPresented: $menuUpdateUserRecordsFromJsonBackupFileView, content: {
+                        updateUserRecordsFromJsonBackupFileView()
                     })
                 List {
                     ForEach(searchFor == "" ? persons : persons.filter { $0.firstName.starts(with: searchFor)}) { person in

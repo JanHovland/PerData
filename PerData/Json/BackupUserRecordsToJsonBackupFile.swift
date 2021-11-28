@@ -90,10 +90,10 @@ func saveUserRecordToJasonFile(url: URL, userRecords: [UserRecord]) -> Localized
         }
         
     } else {
-        message = "The Person table in CloudKit is still empty.\nTry again in a litte while."
+        message = "The userRecord table in CloudKit is still empty.\nTry again in a litte while."
         return message
     }
-    message = "The Person backup to Json is finished."
+    message = "The userRecord backup to Json is finished."
     return message
 }
 
@@ -109,8 +109,8 @@ func formatJsonUserRecord(userRecord: UserRecord) -> String {
     var string8 = ""
 
     /// "\"" + UUID().uuidString + "\"" ----> "79587E0B-A7C2-41AF-B42E-934C223AC456"
-    string1 = "\t{\n\t\t" + "\"" + "id" + "\"" + ": " + "\"" + UUID().uuidString + "\"" + " ,"
-    string2 = "\n\t\t" + "\"" + "userData" + "\"" + " : {\n\t\t\t"
+    string1 = "\n\t{\n\t\t" + "\"" + "id" + "\"" + ": " + "\"" + UUID().uuidString + "\"" + " ,"
+    string2 = "\n\t\t" + "\"" + "userRecordData" + "\"" + " : {\n\t\t\t"
     string3 = "\"firstName\" : " + "\"" + userRecord.firstName + "\",\n\t\t\t"
     string4 = "\"lastName\" : " + "\"" + userRecord.lastName + "\",\n\t\t\t"
     if userRecord.email.count == 0 {
@@ -119,9 +119,9 @@ func formatJsonUserRecord(userRecord: UserRecord) -> String {
         string5 = "\"email\" : " + "\"" + userRecord.email + "\"" + ",\n\t\t\t"
     }
     if userRecord.passWord.count == 0 {
-        string6 = "\"password\" : " + "\"" + " " + "\"" + ",\n\t\t\t"
+        string6 = "\"passWord\" : " + "\"" + " " + "\"" + ",\n\t\t\t"
     } else {
-        string6 = "\"password\" : " + "\"" + userRecord.passWord + "\"" + ",\n\t\t\t"
+        string6 = "\"passWord\" : " + "\"" + userRecord.passWord + "\"" + ",\n\t\t\t"
     }
     if userRecord.image == nil {
         string7 = "\"image\" : " + "\"" + " " + "\"" + "\n\t\t}"
