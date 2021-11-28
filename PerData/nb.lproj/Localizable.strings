@@ -17,6 +17,9 @@
 "All the fields must have a value" = "Alle feltene må ha verdi.";
 
 /* No comment provided by engineer. */
+"Backups the cabins to Json" = "Hyttereservasjon backup to Json";
+
+/* No comment provided by engineer. */
 "Backups the persons to Json" = "Person backup to Json";
 
 /* No comment provided by engineer. */
@@ -27,6 +30,12 @@
 
 /* No comment provided by engineer. */
 "Cabin" = "Hytta";
+
+/* No comment provided by engineer. */
+"Cabin backup til Json fil" = "Hyttereservasjon til Json";
+
+/* No comment provided by engineer. */
+"Cabin backup to Json" = "Hyttereservasjon til Json";
 
 /* No comment provided by engineer. */
 "Cabin OverView" = "Hyttereservasjon";
@@ -266,6 +275,9 @@
 "Store" = "Lagre";
 
 /* No comment provided by engineer. */
+"The Cabin backup to Json is finished." = "Hyttereservasjon backup til Json er ferdig.";
+
+/* No comment provided by engineer. */
 "The cabin has been deleted" = "Hyttereservasjonen er slettet.";
 
 /* No comment provided by engineer. */
@@ -273,6 +285,9 @@
 
 /* No comment provided by engineer. */
 "The cabin has been saved in CloudKit" = "Hyttereservasjonen er lagret.";
+
+/* No comment provided by engineer. */
+"The Cabin table in CloudKit is still empty.\nTry again in a litte while." = "Hyttereservasjon tabellen er stadig tom.\nPrøv igjen om em en liten stund.";
 
 /* No comment provided by engineer. */
 "The Person backup to Json is finished." = "Ferdig med person backup to Json.";
@@ -296,7 +311,13 @@
 "The user has been modified in CloudKit" = "Brukeren er oppdatert.";
 
 /* No comment provided by engineer. */
+"The userRecord backup to Json is finished." = "Bruker backup til Json er ferdig.";
+
+/* No comment provided by engineer. */
 "The userRecord has been saved in CloudKit" = "Brukeren er lagret.";
+
+/* No comment provided by engineer. */
+"The userRecord table in CloudKit is still empty.\nTry again in a litte while." = "Bruker tabellen i CloudKit er stadig tom.\nPrøv igjen om en liten stund.";
 
 /* No comment provided by engineer. */
 "The zipCode is deleted in CloudKit" = "Postnummeret er slettet i CloudKit.";

@@ -102,13 +102,16 @@ struct PerData: View {
     @State private var menuUserRecordView = false
     @State private var indicatorShowing = false
     @State private var isAlertActive = false
+
     @State private var menuUpdatePersonsFromJsonBackupFileView = false
     @State private var menuBackupPersonsToJsonBackupFileView = false
+    
     @State private var menuUpdateUserRecordsFromJsonBackupFileView = false
     @State private var menuBackupUserRecordsToJsonBackupFileView = false
-    @State private var menuUpdateCabinsFromJsonBackupFileView = false
-    @State private var menuUpdateCabinsToJsonBackupFileView = false
     
+    @State private var menuUpdateCabinsFromBackupFileView = false
+    @State private var menuBackupCabinsToJsonBackupFileView = false
+
     @State private var searchFor = ""
     
     var body: some View {
@@ -188,12 +191,12 @@ struct PerData: View {
                                
                                 Menu {
                                     Button {
-                                        menuUpdateCabinsFromJsonBackupFileView.toggle()
+                                        menuUpdateCabinsFromBackupFileView.toggle()
                                     } label: {
                                         Label("From Json", systemImage: "square.and.pencil")
                                     }
                                     Button {
-                                        menuUpdateCabinsToJsonBackupFileView.toggle()
+                                        menuBackupCabinsToJsonBackupFileView.toggle()
                                     } label: {
                                         Label("To Json", systemImage: "square.and.pencil")
                                     }
@@ -249,6 +252,14 @@ struct PerData: View {
                     .sheet(isPresented: $menuUpdateUserRecordsFromJsonBackupFileView, content: {
                         updateUserRecordsFromJsonBackupFileView()
                     })
+                
+                    .sheet(isPresented: $menuBackupCabinsToJsonBackupFileView, content: {
+                        backupCabinsToJsonBackupFileView()
+                    })
+
+                
+                
+                 
                 List {
                     ForEach(searchFor == "" ? persons : persons.filter { $0.firstName.starts(with: searchFor)}) { person in
                         NavigationLink(destination: PersonUpdateView(person: person)) {

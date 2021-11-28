@@ -43,7 +43,7 @@ struct backupCabinsToJsonBackupFileView: View {
                     .onTapGesture {
                         Task.init {
                             indicatorShowing = true
-//                            message = backupCabinsToJsonBackupFile(jsonFile: jsonFile, cabins: cabins)
+                            message = backupCabinsToJsonBackupFile(jsonFile: jsonFile, cabins: cabins)
                             indicatorShowing = false
                             title = "Cabin backup to Json"
                             isAlertActive.toggle()
