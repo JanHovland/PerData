@@ -48,7 +48,7 @@ func UpdateUserRecordsFromJsonBackupFile() async -> LocalizedStringKey {
         return message
     }
     ///
-    ///Lagre person i Person tabellen
+    ///Lagre userRecord i UserRecord  tabellen
     ///
     for index in 0..<userRecordElem.count {
         userRecord = UserRecord(
@@ -69,8 +69,8 @@ func UpdateUserRecordsFromJsonBackupFile() async -> LocalizedStringKey {
             message = value.0
             return message
         } else {
-            if value.1 == true { // Personen finnes fra før
-                /// Finn recordID for userRecord som finnes fra før
+            if value.1 == true { // userRecord finnes fra før
+                /// Finn recordID for userRecord som **finnes** fra før
                 var valueID: (LocalizedStringKey, CKRecord.ID?)
                 await valueID = userRecordRecordID(userRecord)
                 if valueID.0 != "" {
@@ -81,10 +81,9 @@ func UpdateUserRecordsFromJsonBackupFile() async -> LocalizedStringKey {
                     modifyImage = false
                     await message = modifyUserRecord(userRecord, modifyImage)
                 }
-            } else { // Personen finnes ikke
+            } else { /// userRecird finnes **ikke** fra før
                 await message = saveUserRecord(userRecord)
             }
-            
             counter += 1
          }
     }

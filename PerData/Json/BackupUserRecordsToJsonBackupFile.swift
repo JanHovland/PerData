@@ -29,7 +29,6 @@ func backupUserRecordsToJsonBackupFile(jsonFile: String, userRecords: [UserRecor
 func saveUserRecordToJasonFile(url: URL, userRecords: [UserRecord]) -> LocalizedStringKey {
     var str = ""
     var message: LocalizedStringKey = ""
-    
     /// Resetter innholdet Json filen
     do {
         let str = ""
@@ -37,7 +36,6 @@ func saveUserRecordToJasonFile(url: URL, userRecords: [UserRecord]) -> Localized
     } catch {
         let _ = error.localizedDescription
     }
-    
     if userRecords.count > 0 {
         
         let max = userRecords.count
@@ -57,7 +55,6 @@ func saveUserRecordToJasonFile(url: URL, userRecords: [UserRecord]) -> Localized
         } catch {
             return LocalizedStringKey(error.localizedDescription)
         }
-        
         for userRecord in userRecords {
             do {
                 teller += 1
