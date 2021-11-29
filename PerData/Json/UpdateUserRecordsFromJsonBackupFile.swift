@@ -31,9 +31,7 @@ func UpdateUserRecordsFromJsonBackupFile() async -> LocalizedStringKey {
     if let url = Bundle.main.url(forResource: jsonUserRecordFile, withExtension: nil) {
         print(url)
         if let data = try? Data(contentsOf: url) {
-            print(data)
             let jsondecoder = JSONDecoder()
-            print(jsondecoder)
             do{
                 let result = try jsondecoder.decode([UserRecordElem].self, from: data)
                 userRecordElem = result

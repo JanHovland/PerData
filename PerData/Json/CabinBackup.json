@@ -1,20 +1,11 @@
 [
-	{
-		"id": "E973A920-EBFF-4ABE-B126-CF475B0C0E0B" ,
-		"cabinData" : {
-			"firstName" : "Amalie",
-			"lastName" : "Hovland Ree",
-			"fromDate" : "20211116",
-			"toDate" : "20211116"
-		}
-	},
-	{
-		"id": "47C55548-F9BB-4836-990A-8EC0C8251A77" ,
-		"cabinData" : {
-			"firstName" : "Amalie",
-			"lastName" : "Hovland Ree",
-			"fromDate" : "20211116",
-			"toDate" : "20211119"
-		}
-	}
+    {
+        "id": "7381471C-4913-4C8E-ABAE-E9FD96CE0CC7" ,
+        "cabinData" : {
+            "firstName" : "Amalie",
+            "lastName" : "Hovland Ree",
+            "fromDate" : 20211129,
+            "toDate" : 20211129
+        }
+    }
 ]

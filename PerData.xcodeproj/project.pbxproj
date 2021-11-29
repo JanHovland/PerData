@@ -63,6 +63,8 @@
 		DBB952AD2752216C009A0181 /* UpdateUserRecordsFromJsonBackupFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB952AC2752216C009A0181 /* UpdateUserRecordsFromJsonBackupFileView.swift */; };
 		DBB952AF275221AD009A0181 /* UpdateUserRecordsFromJsonBackupFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB952AE275221AD009A0181 /* UpdateUserRecordsFromJsonBackupFile.swift */; };
 		DBC9041F273FFF740043DAC3 /* MakeAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC9041E273FFF740043DAC3 /* MakeAttributedString.swift */; };
+		DBCE88902754126C006E6E35 /* UpdateCabinsFromJsonBackupFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCE888F2754126C006E6E35 /* UpdateCabinsFromJsonBackupFileView.swift */; };
+		DBCE889227541290006E6E35 /* UpdateCabinsFromJsonBackupFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCE889127541290006E6E35 /* UpdateCabinsFromJsonBackupFile.swift */; };
 		DBDEACAE273663B7003CA322 /* SwiftActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDEACAD273663B7003CA322 /* SwiftActivityIndicator.swift */; };
 		DBDF4D662743D00B0019D879 /* CloudKitUserRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF4D652743D00B0019D879 /* CloudKitUserRecord.swift */; };
 		DBDF4D682743D0480019D879 /* CloudUserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF4D672743D0480019D879 /* CloudUserHelper.swift */; };
@@ -134,6 +136,8 @@
 		DBB952AC2752216C009A0181 /* UpdateUserRecordsFromJsonBackupFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserRecordsFromJsonBackupFileView.swift; sourceTree = "<group>"; };
 		DBB952AE275221AD009A0181 /* UpdateUserRecordsFromJsonBackupFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserRecordsFromJsonBackupFile.swift; sourceTree = "<group>"; };
 		DBC9041E273FFF740043DAC3 /* MakeAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAttributedString.swift; sourceTree = "<group>"; };
+		DBCE888F2754126C006E6E35 /* UpdateCabinsFromJsonBackupFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCabinsFromJsonBackupFileView.swift; sourceTree = "<group>"; };
+		DBCE889127541290006E6E35 /* UpdateCabinsFromJsonBackupFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCabinsFromJsonBackupFile.swift; sourceTree = "<group>"; };
 		DBDEACAD273663B7003CA322 /* SwiftActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftActivityIndicator.swift; sourceTree = "<group>"; };
 		DBDF4D652743D00B0019D879 /* CloudKitUserRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitUserRecord.swift; sourceTree = "<group>"; };
 		DBDF4D672743D0480019D879 /* CloudUserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudUserHelper.swift; sourceTree = "<group>"; };
@@ -177,6 +181,8 @@
 				DB975F2527540DC700A6BC4B /* CabinBackup.json */,
 				DB975F212753E0F700A6BC4B /* BackupCabinsToJsonBackupFile.swift */,
 				DB975F1F2753E0C000A6BC4B /* BackupCabinsToJsonBackupFileView.swift */,
+				DBCE889127541290006E6E35 /* UpdateCabinsFromJsonBackupFile.swift */,
+				DBCE888F2754126C006E6E35 /* UpdateCabinsFromJsonBackupFileView.swift */,
 			);
 			path = Json;
 			sourceTree = "<group>";
@@ -472,6 +478,7 @@
 				DB0AD8A12751870500A3F8C3 /* BackupUserRecordsToJsonBackupFile.swift in Sources */,
 				DB4FD4D927328E730080E084 /* UpdateZipCodesFromCSV.swift in Sources */,
 				DB4BBA2427457D8E00771D7A /* UserRecordOverView.swift in Sources */,
+				DBCE88902754126C006E6E35 /* UpdateCabinsFromJsonBackupFileView.swift in Sources */,
 				DB90614C273A826300BF9779 /* CloudKitErrorString.swift in Sources */,
 				DBA02DC9272FD1DF0090D36C /* InputGender.swift in Sources */,
 				DB975F222753E0F700A6BC4B /* BackupCabinsToJsonBackupFile.swift in Sources */,
@@ -495,6 +502,7 @@
 				DBDF4D682743D0480019D879 /* CloudUserHelper.swift in Sources */,
 				DB9B09B32742F6B500160195 /* CloudCabinHelper.swift in Sources */,
 				DB81CA6C2742732000E69D57 /* PersonSendSMS.swift in Sources */,
+				DBCE889227541290006E6E35 /* UpdateCabinsFromJsonBackupFile.swift in Sources */,
 				DBA02DC0272BEFF90090D36C /* CloudKitZipCode.swift in Sources */,
 				DB81CA81274276FE00E69D57 /* CloudKitCabin.swift in Sources */,
 				DBA02DBC272BEDEC0090D36C /* FindZipCode.swift in Sources */,

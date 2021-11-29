@@ -97,7 +97,6 @@ struct PerData: View {
     @State private var menuZipCodeUpdate = false
     @State private var menuToDo = false
     @State private var menuBirthDay = false
-    @State private var menuUser = false
     @State private var menuCabin = false
     @State private var menuUserRecordView = false
     @State private var indicatorShowing = false
@@ -231,9 +230,6 @@ struct PerData: View {
                     .sheet(isPresented: $menuBirthDay, content: {
                          
                     })
-                    .sheet(isPresented: $menuUser, content: {
-                         
-                    })
                     .sheet(isPresented: $menuCabin, content: {
                         cabinOverview()
                     })
@@ -257,9 +253,11 @@ struct PerData: View {
                         backupCabinsToJsonBackupFileView()
                     })
 
+                    .sheet(isPresented: $menuUpdateCabinsFromBackupFileView, content: {
+                        updateCabinsFromJsonBackupFileView()
+                    })
+
                 
-                
-                 
                 List {
                     ForEach(searchFor == "" ? persons : persons.filter { $0.firstName.starts(with: searchFor)}) { person in
                         NavigationLink(destination: PersonUpdateView(person: person)) {

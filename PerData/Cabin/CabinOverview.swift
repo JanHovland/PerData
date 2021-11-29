@@ -39,8 +39,8 @@ struct cabinOverview: View {
                             .font(Font.title3.weight(.ultraLight))
                             HStack {
                                 Spacer()
-                                Text("\(IntToDateString(int: cabin.fromDate))")
-                                Text("\(IntToDateString(int: cabin.toDate))")
+                                Text(String(IntToDateString(int: cabin.fromDate)))
+                                Text(String(IntToDateString(int: cabin.toDate)))
                             }
                             .font(Font.footnote.weight(.regular))
                             .background(Color("Background"))
@@ -122,7 +122,7 @@ struct cabinOverview: View {
     
 }
 
-func IntToDateString (int: Int64) -> String {
+func IntToDateString (int: Int) -> String {
     let str = String(int)
     let index3 = str.index(str.startIndex, offsetBy: 3)
     let index4 = str.index(str.startIndex, offsetBy: 4)

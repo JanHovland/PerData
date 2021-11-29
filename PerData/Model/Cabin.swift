@@ -13,7 +13,20 @@ struct Cabin: Identifiable {
     var recordID: CKRecord.ID?
     var firstName: String
     var lastName: String
-    var fromDate: Int64
-    var toDate: Int64
+    var fromDate: Int
+    var toDate: Int
 }
 
+// MARK: - CabinElem
+struct CabinElem : Codable, Identifiable {
+    var id: String
+    var cabinData: CabinData
+}
+
+// MARK: - CabinData
+struct CabinData: Codable {
+    var firstName: String
+    var lastName: String
+    var fromDate: Int
+    var toDate: Int
+}

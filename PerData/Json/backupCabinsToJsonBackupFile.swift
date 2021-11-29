@@ -109,8 +109,10 @@ func formatJsonCabin(cabin: Cabin) -> String {
     string2 = "\n\t\t" + "\"" + "cabinData" + "\"" + " : {\n\t\t\t"
     string3 = "\"firstName\" : " + "\"" + cabin.firstName + "\",\n\t\t\t"
     string4 = "\"lastName\" : " + "\"" + cabin.lastName + "\",\n\t\t\t"
-    string5 = "\"fromDate\" : " + "\"" + "\(cabin.fromDate)" + "\"" + ",\n\t\t\t"
-    string6 = "\"toDate\" : " + "\"" + "\(cabin.toDate)" + "\"" + "\n\t\t}"
+//    string5 = "\"fromDate\" : " + "\"" + "\(cabin.fromDate)" + "\"" + ",\n\t\t\t"
+//    string6 = "\"toDate\" : " + "\"" + "\(cabin.toDate)" + "\"" + "\n\t\t}"
+    string5 = "\"fromDate\" : " + "\(cabin.fromDate)" + ",\n\t\t\t"
+    string6 = "\"toDate\" : " + "\(cabin.toDate)" + "\n\t\t}"
     string7 = "\n\t}"
     string = string1 + string2 + string3 + string4 + string5 + string6 + string7
     return string

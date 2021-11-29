@@ -46,8 +46,8 @@ struct CabinReservationView: View {
             Spacer()
             Button(action: {
                 /// Rutine for å lagre reservasjonen
-                cabin.fromDate =  DateToInt(date: fromDatePicker)
-                cabin.toDate =  DateToInt(date: toDatePicker)
+                cabin.fromDate =  Int(DateToInt(date: fromDatePicker))
+                cabin.toDate =  Int(DateToInt(date: toDatePicker))
                 Task.init {
                   await SaveCabinReservation(cabin: cabin)
                 }
@@ -110,7 +110,7 @@ struct CabinReservationView: View {
                         title = "Cabin reservation"
                         isAlertActive.toggle()
                     } else {
-                        await message = save(cabin)
+                        await message = saveCabin(cabin)
                         title = "Cabin reservation saved"
                         isAlertActive.toggle()
                     }

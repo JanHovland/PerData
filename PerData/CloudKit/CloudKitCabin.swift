@@ -72,8 +72,8 @@ struct CloudKitCabin {
                 cabin.recordID = recID
                 cabin.firstName = firstName as! String
                 cabin.lastName = lastName as! String
-                cabin.fromDate = fromDate as! Int64
-                cabin.toDate = toDate as! Int64
+                cabin.fromDate = fromDate as! Int
+                cabin.toDate = toDate as! Int
                 
                 cabins.append(cabin)
                 cabins.sort(by: {$0.firstName < $1.firstName})

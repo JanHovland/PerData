@@ -14,7 +14,7 @@ import CloudKit
 ///     save(person) i stedet for save(person: person)
 ///
 
-func save(_ cabin: Cabin) async -> LocalizedStringKey {
+func saveCabin(_ cabin: Cabin) async -> LocalizedStringKey {
     var message: LocalizedStringKey = ""
     do {
         try await CloudKitCabin().saveCabin(cabin)
@@ -26,7 +26,7 @@ func save(_ cabin: Cabin) async -> LocalizedStringKey {
     }
 }
 
-func modify(_ cabin: Cabin) async -> LocalizedStringKey {
+func modifyCabin(_ cabin: Cabin) async -> LocalizedStringKey {
     var message: LocalizedStringKey = ""
     do {
         try await CloudKitCabin().modifyCabin(cabin)
