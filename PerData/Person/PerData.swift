@@ -231,7 +231,7 @@ struct PerData: View {
                          
                     })
                     .sheet(isPresented: $menuCabin, content: {
-                        cabinOverview()
+                        cabinOverView()
                     })
                     .sheet(isPresented: $menuUpdatePersonsFromJsonBackupFileView, content: {
                         updatePersonsFromJsonBackupFileView()

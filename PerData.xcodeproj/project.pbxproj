@@ -43,7 +43,7 @@
 		DB970A48273DF670008F6828 /* cloudkit-development.ckdb in Resources */ = {isa = PBXBuildFile; fileRef = DB970A47273DF670008F6828 /* cloudkit-development.ckdb */; };
 		DB975F202753E0C000A6BC4B /* BackupCabinsToJsonBackupFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB975F1F2753E0C000A6BC4B /* BackupCabinsToJsonBackupFileView.swift */; };
 		DB975F222753E0F700A6BC4B /* BackupCabinsToJsonBackupFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB975F212753E0F700A6BC4B /* BackupCabinsToJsonBackupFile.swift */; };
-		DB9B09B127428AA000160195 /* CabinOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B09B027428AA000160195 /* CabinOverview.swift */; };
+		DB9B09B127428AA000160195 /* CabinOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B09B027428AA000160195 /* CabinOverView.swift */; };
 		DB9B09B32742F6B500160195 /* CloudCabinHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B09B22742F6B500160195 /* CloudCabinHelper.swift */; };
 		DBA02DBC272BEDEC0090D36C /* FindZipCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA02DBB272BEDEC0090D36C /* FindZipCode.swift */; };
 		DBA02DBE272BEE510090D36C /* ZipCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA02DBD272BEE510090D36C /* ZipCode.swift */; };
@@ -116,7 +116,7 @@
 		DB970A47273DF670008F6828 /* cloudkit-development.ckdb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "cloudkit-development.ckdb"; sourceTree = "<group>"; };
 		DB975F1F2753E0C000A6BC4B /* BackupCabinsToJsonBackupFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupCabinsToJsonBackupFileView.swift; sourceTree = "<group>"; };
 		DB975F212753E0F700A6BC4B /* BackupCabinsToJsonBackupFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupCabinsToJsonBackupFile.swift; sourceTree = "<group>"; };
-		DB9B09B027428AA000160195 /* CabinOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinOverview.swift; sourceTree = "<group>"; };
+		DB9B09B027428AA000160195 /* CabinOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinOverView.swift; sourceTree = "<group>"; };
 		DB9B09B22742F6B500160195 /* CloudCabinHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudCabinHelper.swift; sourceTree = "<group>"; };
 		DBA02DBB272BEDEC0090D36C /* FindZipCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindZipCode.swift; sourceTree = "<group>"; };
 		DBA02DBD272BEE510090D36C /* ZipCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCode.swift; sourceTree = "<group>"; };
@@ -237,7 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				DB81CA772742759E00E69D57 /* CabinReservationView.swift */,
-				DB9B09B027428AA000160195 /* CabinOverview.swift */,
+				DB9B09B027428AA000160195 /* CabinOverView.swift */,
 			);
 			path = Cabin;
 			sourceTree = "<group>";
@@ -473,7 +473,7 @@
 				DBB366AD274E6C39001CB47A /* BackupPersonsToJsonBackupFileView.swift in Sources */,
 				DBE25B5F270C556200AE255B /* PerData.swift in Sources */,
 				DB0AD89F275185D600A3F8C3 /* BackupUserRecordsToJsonBackupFileView.swift in Sources */,
-				DB9B09B127428AA000160195 /* CabinOverview.swift in Sources */,
+				DB9B09B127428AA000160195 /* CabinOverView.swift in Sources */,
 				DBDF4D662743D00B0019D879 /* CloudKitUserRecord.swift in Sources */,
 				DB0AD8A12751870500A3F8C3 /* BackupUserRecordsToJsonBackupFile.swift in Sources */,
 				DB4FD4D927328E730080E084 /* UpdateZipCodesFromCSV.swift in Sources */,
@@ -601,7 +601,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -657,7 +657,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -688,7 +688,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -725,7 +725,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

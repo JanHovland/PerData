@@ -10,7 +10,7 @@ import CloudKit
 
 var selectedRecordId: CKRecord.ID?
 
-struct cabinOverview: View {
+struct cabinOverView: View {
    
     @Environment(\.presentationMode) var presentationMode
     
