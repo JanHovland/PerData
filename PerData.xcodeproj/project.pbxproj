@@ -24,6 +24,7 @@
 		DB4FD4DB27328EC80080E084 /* ParseCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4FD4DA27328EC80080E084 /* ParseCSV.swift */; };
 		DB4FD4DE2733E72F0080E084 /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4FD4DD2733E72F0080E084 /* ToDoView.swift */; };
 		DB55163D2727E84600153A9A /* PersonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55163C2727E84600153A9A /* PersonDetailView.swift */; };
+		DB64C0312755324F004709C4 /* UserRecordOverViewIndexed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64C0302755324F004709C4 /* UserRecordOverViewIndexed.swift */; };
 		DB81CA66274263F700E69D57 /* PersonDetailMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB81CA65274263F700E69D57 /* PersonDetailMapView.swift */; };
 		DB81CA682742665700E69D57 /* PersonDetailPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB81CA672742665700E69D57 /* PersonDetailPhoneView.swift */; };
 		DB81CA6A274272BD00E69D57 /* PersonDetailMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB81CA69274272BD00E69D57 /* PersonDetailMessageView.swift */; };
@@ -97,6 +98,7 @@
 		DB4FD4DA27328EC80080E084 /* ParseCSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseCSV.swift; sourceTree = "<group>"; };
 		DB4FD4DD2733E72F0080E084 /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
 		DB55163C2727E84600153A9A /* PersonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailView.swift; sourceTree = "<group>"; };
+		DB64C0302755324F004709C4 /* UserRecordOverViewIndexed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRecordOverViewIndexed.swift; sourceTree = "<group>"; };
 		DB81CA65274263F700E69D57 /* PersonDetailMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailMapView.swift; sourceTree = "<group>"; };
 		DB81CA672742665700E69D57 /* PersonDetailPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailPhoneView.swift; sourceTree = "<group>"; };
 		DB81CA69274272BD00E69D57 /* PersonDetailMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailMessageView.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				DB4BBA29274979AE00771D7A /* SignUpView.swift */,
 				DB4BBA2B274BB4A200771D7A /* UserRecordDetailView.swift */,
 				DB4BBA2327457D8E00771D7A /* UserRecordOverView.swift */,
+				DB64C0302755324F004709C4 /* UserRecordOverViewIndexed.swift */,
 			);
 			path = UserRecord;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				DBA02DBC272BEDEC0090D36C /* FindZipCode.swift in Sources */,
 				DB81CA702742742900E69D57 /* PersonSendEmailView.swift in Sources */,
 				DB4FD4DB27328EC80080E084 /* ParseCSV.swift in Sources */,
+				DB64C0312755324F004709C4 /* UserRecordOverViewIndexed.swift in Sources */,
 				DBA02DCF273122D30090D36C /* ZipCodeUpdate.swift in Sources */,
 				DBE25B5D270C556200AE255B /* PerDataApp.swift in Sources */,
 				DBB4B38527141B9D00618F17 /* CloudPersonHelper.swift in Sources */,
