@@ -1,7 +1,4 @@
 /* No comment provided by engineer. */
-"%@" = "%@";
-
-/* No comment provided by engineer. */
 "Add a new User" = "Ny bruker";
 
 /* No comment provided by engineer. */
@@ -45,6 +42,9 @@
 
 /* No comment provided by engineer. */
 "Cabin reservation saved" = "Hyttereservasjonen er lagret.";
+
+/* No comment provided by engineer. */
+"Cabin update Json" = "Hyttereservasjon  fra Json";
 
 /* No comment provided by engineer. */
 "Can not find %@" = "Kan ikke finne %@";
@@ -353,6 +353,9 @@
 "Update" = "Oppdater";
 
 /* No comment provided by engineer. */
+"Update Cabin from Json" = "Hyttereservasjon fra Json";
+
+/* No comment provided by engineer. */
 "Update from Json" = "Oppdater fra Json";
 
 /* No comment provided by engineer. */
@@ -362,7 +365,7 @@
 "Update ZipCode" = "Oppdater postnummer";
 
 /* No comment provided by engineer. */
-"User backup til Json fil" = "Bruker backup to Json fil";
+"User backup til Json fil" = "Bruker backup til Json fil";
 
 /* No comment provided by engineer. */
 "User Details" = "Bruker detaljer";
