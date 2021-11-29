@@ -90,7 +90,7 @@ struct toDoView: View {
             . 🟢 Hente userRecord fra Json
             . 🟢 Lagre hyttereservasjoner i Json
             . 🟢 Hente hyttereservasjoner fra Json
-     28. 🛑 Sjekk visning av fødselsdato når denne blir endret.
+     28. 🟢 Sjekk visning av fødselsdato når denne blir endret.
      29. 🛑 Sortere personene i person oversikt. (Å skal komme etter Æ)
      30. 🛑 Indexed table view:
             . 🛑 Person
