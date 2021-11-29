@@ -52,7 +52,7 @@ func updateCabinsFromJsonBackupFile() async -> LocalizedStringKey {
             fromDate: cabinElem[index].cabinData.fromDate,
             toDate: cabinElem[index].cabinData.toDate)
         ///
-        /// Sjekk om brukeren finnes
+        /// Sjekk om hyttereservasjonen finnes
         ///
         var value : (LocalizedStringKey, Bool)
         value = await cabinExist(cabin)

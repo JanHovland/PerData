@@ -123,23 +123,27 @@ struct cabinOverview: View {
 }
 
 func IntToDateString (int: Int) -> String {
-    let str = String(int)
-    let index3 = str.index(str.startIndex, offsetBy: 3)
-    let index4 = str.index(str.startIndex, offsetBy: 4)
-    let index5 = str.index(str.startIndex, offsetBy: 5)
-    let index6 = str.index(str.startIndex, offsetBy: 6)
-    let month = Int(str[index4...index5]) ?? 0
-    let monthName : [String] = ["jan",
-                                "feb",
-                                "mar",
-                                "apr",
-                                "may",
-                                "jun",
-                                "jul",
-                                "aug",
-                                "sep",
-                                "oct",
-                                "nov",
-                                "dec"]
-    return str[index6...]  + ". " + monthName[month - 1] + " " + str[...index3]
+    if int > 0 {
+        let str = String(int)
+        let index3 = str.index(str.startIndex, offsetBy: 3)
+        let index4 = str.index(str.startIndex, offsetBy: 4)
+        let index5 = str.index(str.startIndex, offsetBy: 5)
+        let index6 = str.index(str.startIndex, offsetBy: 6)
+        let month = Int(str[index4...index5]) ?? 0
+        let monthName : [String] = ["jan",
+                                    "feb",
+                                    "mar",
+                                    "apr",
+                                    "may",
+                                    "jun",
+                                    "jul",
+                                    "aug",
+                                    "sep",
+                                    "oct",
+                                    "nov",
+                                    "dec"]
+        return str[index6...]  + ". " + monthName[month - 1] + " " + str[...index3]
+    } else {
+        return "0"
+    }
 }

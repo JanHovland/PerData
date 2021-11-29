@@ -125,7 +125,7 @@ func formatJsonPerson(person: Person) -> String {
     var string16 = ""
     
     /// "\"" + UUID().uuidString + "\"" ----> "79587E0B-A7C2-41AF-B42E-934C223AC456"
-    string1 = "\n\t{\n\t\t" + "\"" + "id" + "\"" + ": " + "\"" + UUID().uuidString + "\"" + " ,"
+    string1 = "\n\t{\n\t\t" + "\"" + "id" + "\"" + ": " + "\"" + UUID().uuidString + "\"" + ","
     string2 = "\n\t\t" + "\"" + "personData" + "\"" + " : {\n\t\t\t"
     string3 = "\"firstName\" : " + "\"" + person.firstName + "\",\n\t\t\t"
     string4 = "\"lastName\" : "  + "\"" + person.lastName  + "\"" + ",\n\t\t\t"

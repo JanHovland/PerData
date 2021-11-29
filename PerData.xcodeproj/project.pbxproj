@@ -44,7 +44,6 @@
 		DB970A48273DF670008F6828 /* cloudkit-development.ckdb in Resources */ = {isa = PBXBuildFile; fileRef = DB970A47273DF670008F6828 /* cloudkit-development.ckdb */; };
 		DB975F202753E0C000A6BC4B /* BackupCabinsToJsonBackupFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB975F1F2753E0C000A6BC4B /* BackupCabinsToJsonBackupFileView.swift */; };
 		DB975F222753E0F700A6BC4B /* BackupCabinsToJsonBackupFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB975F212753E0F700A6BC4B /* BackupCabinsToJsonBackupFile.swift */; };
-		DB975F2627540DC700A6BC4B /* CabinBackup.json in Resources */ = {isa = PBXBuildFile; fileRef = DB975F2527540DC700A6BC4B /* CabinBackup.json */; };
 		DB9B09B127428AA000160195 /* CabinOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B09B027428AA000160195 /* CabinOverview.swift */; };
 		DB9B09B32742F6B500160195 /* CloudCabinHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B09B22742F6B500160195 /* CloudCabinHelper.swift */; };
 		DBA02DBC272BEDEC0090D36C /* FindZipCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA02DBB272BEDEC0090D36C /* FindZipCode.swift */; };
@@ -65,6 +64,7 @@
 		DBC9041F273FFF740043DAC3 /* MakeAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC9041E273FFF740043DAC3 /* MakeAttributedString.swift */; };
 		DBCE88902754126C006E6E35 /* UpdateCabinsFromJsonBackupFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCE888F2754126C006E6E35 /* UpdateCabinsFromJsonBackupFileView.swift */; };
 		DBCE889227541290006E6E35 /* UpdateCabinsFromJsonBackupFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCE889127541290006E6E35 /* UpdateCabinsFromJsonBackupFile.swift */; };
+		DBCE88942754C2FB006E6E35 /* CabinBackup.json in Resources */ = {isa = PBXBuildFile; fileRef = DBCE88932754C2FB006E6E35 /* CabinBackup.json */; };
 		DBDEACAE273663B7003CA322 /* SwiftActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDEACAD273663B7003CA322 /* SwiftActivityIndicator.swift */; };
 		DBDF4D662743D00B0019D879 /* CloudKitUserRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF4D652743D00B0019D879 /* CloudKitUserRecord.swift */; };
 		DBDF4D682743D0480019D879 /* CloudUserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF4D672743D0480019D879 /* CloudUserHelper.swift */; };
@@ -117,7 +117,6 @@
 		DB970A47273DF670008F6828 /* cloudkit-development.ckdb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "cloudkit-development.ckdb"; sourceTree = "<group>"; };
 		DB975F1F2753E0C000A6BC4B /* BackupCabinsToJsonBackupFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupCabinsToJsonBackupFileView.swift; sourceTree = "<group>"; };
 		DB975F212753E0F700A6BC4B /* BackupCabinsToJsonBackupFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupCabinsToJsonBackupFile.swift; sourceTree = "<group>"; };
-		DB975F2527540DC700A6BC4B /* CabinBackup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CabinBackup.json; sourceTree = "<group>"; };
 		DB9B09B027428AA000160195 /* CabinOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinOverview.swift; sourceTree = "<group>"; };
 		DB9B09B22742F6B500160195 /* CloudCabinHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudCabinHelper.swift; sourceTree = "<group>"; };
 		DBA02DBB272BEDEC0090D36C /* FindZipCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindZipCode.swift; sourceTree = "<group>"; };
@@ -138,6 +137,7 @@
 		DBC9041E273FFF740043DAC3 /* MakeAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAttributedString.swift; sourceTree = "<group>"; };
 		DBCE888F2754126C006E6E35 /* UpdateCabinsFromJsonBackupFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCabinsFromJsonBackupFileView.swift; sourceTree = "<group>"; };
 		DBCE889127541290006E6E35 /* UpdateCabinsFromJsonBackupFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCabinsFromJsonBackupFile.swift; sourceTree = "<group>"; };
+		DBCE88932754C2FB006E6E35 /* CabinBackup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CabinBackup.json; sourceTree = "<group>"; };
 		DBDEACAD273663B7003CA322 /* SwiftActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftActivityIndicator.swift; sourceTree = "<group>"; };
 		DBDF4D652743D00B0019D879 /* CloudKitUserRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitUserRecord.swift; sourceTree = "<group>"; };
 		DBDF4D672743D0480019D879 /* CloudUserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudUserHelper.swift; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 				DB0AD89E275185D600A3F8C3 /* BackupUserRecordsToJsonBackupFileView.swift */,
 				DBB952AE275221AD009A0181 /* UpdateUserRecordsFromJsonBackupFile.swift */,
 				DBB952AC2752216C009A0181 /* UpdateUserRecordsFromJsonBackupFileView.swift */,
-				DB975F2527540DC700A6BC4B /* CabinBackup.json */,
+				DBCE88932754C2FB006E6E35 /* CabinBackup.json */,
 				DB975F212753E0F700A6BC4B /* BackupCabinsToJsonBackupFile.swift */,
 				DB975F1F2753E0C000A6BC4B /* BackupCabinsToJsonBackupFileView.swift */,
 				DBCE889127541290006E6E35 /* UpdateCabinsFromJsonBackupFile.swift */,
@@ -447,7 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBB366B1274F96BD001CB47A /* PersonBackup.json in Resources */,
-				DB975F2627540DC700A6BC4B /* CabinBackup.json in Resources */,
+				DBCE88942754C2FB006E6E35 /* CabinBackup.json in Resources */,
 				DB01A8402726C3D1007721E1 /* Localizable.strings in Resources */,
 				DBB872DE2716C70F00A3516B /* Launch Screen.storyboard in Resources */,
 				DB0AD8A327519D2F00A3F8C3 /* UserRecordBackup.json in Resources */,

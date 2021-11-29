@@ -106,7 +106,7 @@ func formatJsonUserRecord(userRecord: UserRecord) -> String {
     var string8 = ""
 
     /// "\"" + UUID().uuidString + "\"" ----> "79587E0B-A7C2-41AF-B42E-934C223AC456"
-    string1 = "\n\t{\n\t\t" + "\"" + "id" + "\"" + ": " + "\"" + UUID().uuidString + "\"" + " ,"
+    string1 = "\n\t{\n\t\t" + "\"" + "id" + "\"" + ": " + "\"" + UUID().uuidString + "\"" + ","
     string2 = "\n\t\t" + "\"" + "userRecordData" + "\"" + " : {\n\t\t\t"
     string3 = "\"firstName\" : " + "\"" + userRecord.firstName + "\",\n\t\t\t"
     string4 = "\"lastName\" : " + "\"" + userRecord.lastName + "\",\n\t\t\t"

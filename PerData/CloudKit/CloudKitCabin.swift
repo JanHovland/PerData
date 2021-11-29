@@ -101,7 +101,7 @@ struct CloudKitCabin {
             cabinRecord["firstName"] = cabin.firstName
             cabinRecord["lastName"] = cabin.lastName
             cabinRecord["fromDate"] = cabin.fromDate
-            cabinRecord["address"] = cabin.toDate
+            cabinRecord["toDate"] = cabin.toDate
             do {
                 let _ = try await database.modifyRecords(saving: [cabinRecord], deleting: [recID])
             } catch {
