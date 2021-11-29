@@ -1,22 +1,22 @@
 [
-    {
-        "id": "1377FFAD-8F8B-4871-8C05-74011F7CAA9B" ,
-        "userRecordData" : {
-            "firstName" : "Jan",
-            "lastName" : "Hovland",
-            "email" : "jan.hovland@lyse.net",
-            "passWord" : "qwerty",
-            "image" : "<UIImage:0x6000025dc000 anonymous {80, 80} renderingMode=automatic>"
-        }
-    },
-    {
-        "id": "D0712B42-FE3C-4CBF-97C9-C096DF617B7D" ,
-        "userRecordData" : {
-            "firstName" : "Oleg",
-            "lastName" : "Pontentarenko",
-            "email" : "oleg.pntentarenko@lyse.no",
-            "passWord" : "qwerty",
-            "image" : "<UIImage:0x6000025dc120 anonymous {384, 382} renderingMode=automatic>"
-        }
-    }
+	{
+		"id": "4B0E3171-6CC9-4AC7-BD41-97479824B8CA",
+		"userRecordData" : {
+			"firstName" : "Jan",
+			"lastName" : "Hovland",
+			"email" : "jan.hovland@lyse.net",
+			"passWord" : "qwerty",
+			"image" : "<UIImage:0x2809870f0 anonymous {80, 80} renderingMode=automatic>"
+		}
+	},
+	{
+		"id": "B3CB32FF-C607-4B0D-A98E-7CC7875477E7",
+		"userRecordData" : {
+			"firstName" : "Oleg",
+			"lastName" : "Pontentarenko",
+			"email" : "oleg.pntentarenko@lyse.no",
+			"passWord" : "qwerty",
+			"image" : "<UIImage:0x280987060 anonymous {384, 382} renderingMode=automatic>"
+		}
+	}
 ]
