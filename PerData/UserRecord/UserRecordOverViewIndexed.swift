@@ -66,10 +66,8 @@ struct userRecordOverViewIndexed: View {
                                 }
                             }
                             .listRowSeparator(.hidden)
-                            // Spacer()
                         }
                     }
-                    
                     /// Fjerner ekstra tomt felt med tilhørede linje
                     .listStyle(InsetListStyle())
                     .listRowSeparator(.hidden)
@@ -86,7 +84,6 @@ struct userRecordOverViewIndexed: View {
                             indicatorShowing = false
                         }
                     }
-                    
                     
                     .refreshable {
                         await refreshUsersIndexed(predicate: predicate)
