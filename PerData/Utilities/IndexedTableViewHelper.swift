@@ -64,7 +64,7 @@ func sectionIndexTitles(proxy: ScrollViewProxy,
     /// SectionIndexTitles(proxy: proxy, titles: sectionHeader.sorted())
     SectionIndexTitles(proxy: proxy, titles: titles)
         .frame(maxWidth: .infinity, alignment: .trailing)
-        .padding()
+        .padding(.trailing, 10)
 }
 
 struct SectionHeader: View {
@@ -73,5 +73,6 @@ struct SectionHeader: View {
         Text(letter).id(letter)
             .foregroundColor(.accentColor)
             .font(Font.title.weight(.light))
+            .padding(.leading, 10)
     }
 }

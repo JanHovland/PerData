@@ -66,7 +66,7 @@ struct userRecordOverViewIndexed: View {
                                 }
                             }
                             .listRowSeparator(.hidden)
-                            Spacer()
+                            // Spacer()
                         }
                     }
                     
@@ -172,8 +172,11 @@ struct userRecordOverViewIndexed: View {
                     Text(userRecord.email)
                 }
                 .font(Font.body.weight(.regular))
+                Spacer()
             }
-           
+            .padding(.bottom, 5)
+            .padding(.leading, 10)
+
         }
     }
     
