@@ -104,7 +104,7 @@ struct userRecordOverView: View {
         /// Sletter alt tidligere innhold i person
         userRecords.removeAll()
         /// Fetch all persons from CloudKit
-        var value: (LocalizedStringKey, [UserRecord])
+        var value: (LocalizedStringKey, [UserRecord], [String])
         await value = findUserRecords(NSPredicate(value: true))
         if value.0 != "" {
             message = value.0

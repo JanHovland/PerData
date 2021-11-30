@@ -70,8 +70,10 @@ struct CloudKitUserRecord {
         return (false, nil)
     }
     
-    func getAllUserRecords(_ predicate: NSPredicate) async throws -> [UserRecord] {
+    func getAllUserRecords(_ predicate: NSPredicate) async throws -> ([UserRecord], [String]) {
+        var char = ""
         var userRecords = [UserRecord]()
+        var sectionHeader = [String]()
         let query = CKQuery(recordType: RecordType.UserRecord, predicate: predicate)
         do {
             ///
@@ -116,10 +118,24 @@ struct CloudKitUserRecord {
                     userRecord.image = nil
                 }
                 
+                char = String(userRecord.firstName.prefix(1))
+                /// Oppdatere sectionHeader[]
+                if sectionHeader.contains(char) == false {
+                    sectionHeader.append(char)
+                    /// Dette må gjøre for å få sectionHeader riktig sortert
+                    /// Standard sortering gir ikke norsk sortering
+                    let region = NSLocale.current.regionCode?.lowercased() // Returns the local region
+                    let language = Locale(identifier: region!)
+                    let sectionHeader1 = sectionHeader.sorted {
+                        $0.compare($1, locale: language) == .orderedAscending
+                    }
+                    sectionHeader = sectionHeader1
+                }
+ 
                 userRecords.append(userRecord)
                 userRecords.sort(by: {$0.firstName < $1.firstName})
             }
-            return userRecords
+            return (userRecords, sectionHeader)
         } catch {
             throw error
         }

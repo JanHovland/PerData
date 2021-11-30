@@ -47,17 +47,20 @@ func userRecordExist(_ userRecord: UserRecord) async -> (err: LocalizedStringKey
     return (err, exist)
 }
 
-func findUserRecords(_ predicate:  NSPredicate) async -> (err: LocalizedStringKey, userRecords: [UserRecord]) {
+func findUserRecords(_ predicate:  NSPredicate) async -> (err: LocalizedStringKey,
+                                                          userRecords: [UserRecord],
+                                                          sectionHeader: [String]) {
     var err : LocalizedStringKey = ""
     var userRecords = [UserRecord]()
+    var sectionHeader = [String]()
     do {
         err = ""
-        userRecords = try await CloudKitUserRecord().getAllUserRecords(predicate)
+        (userRecords, sectionHeader) = try await CloudKitUserRecord().getAllUserRecords(predicate)
     } catch {
         err  = LocalizedStringKey(error.localizedDescription)
         userRecords = [UserRecord]()
     }
-    return (err , userRecords)
+    return (err , userRecords, sectionHeader)
 }
 
 func deleteUserRecord(_ recID: CKRecord.ID) async -> LocalizedStringKey {

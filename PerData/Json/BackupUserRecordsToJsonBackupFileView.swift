@@ -63,7 +63,7 @@ struct backupUserRecordsToJsonBackupFileView: View {
             .navigationBarTitle(Text(backupJsonUser), displayMode: .inline)
             .backToCaller("Menu")
             .task {
-                var value: (LocalizedStringKey, [UserRecord])
+                var value: (LocalizedStringKey, [UserRecord], [String])
                 let predicate = NSPredicate(value: true)
                 await value = findUserRecords(predicate)
                 if value.0 != "" {
