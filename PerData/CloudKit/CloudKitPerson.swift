@@ -79,8 +79,10 @@ struct CloudKitPerson {
         return false
     }
     
-    func getAllPersons(_ predicate: NSPredicate) async throws -> [Person] {
+    func getAllPersons(_ predicate: NSPredicate) async throws -> ([Person], [String]) {
+        var char = ""
         var persons = [Person]()
+        var sectionHeader = [String]()
         let query = CKQuery(recordType: RecordType.Person, predicate: predicate)
         do {
             ///
@@ -145,10 +147,24 @@ struct CloudKitPerson {
                     person.image = nil
                 }
                 
+                char = String(person.firstName.prefix(1))
+                /// Oppdatere sectionHeader[]
+                if sectionHeader.contains(char) == false {
+                    sectionHeader.append(char)
+                    /// Dette må gjøre for å få sectionHeader riktig sortert
+                    /// Standard sortering gir ikke norsk sortering
+                    let region = NSLocale.current.regionCode?.lowercased() // Returns the local region
+                    let language = Locale(identifier: region!)
+                    let sectionHeader1 = sectionHeader.sorted {
+                        $0.compare($1, locale: language) == .orderedAscending
+                    }
+                    sectionHeader = sectionHeader1
+                }
+ 
                 persons.append(person)
                 persons.sort(by: {$0.firstName < $1.firstName})
             }
-            return persons
+            return (persons, sectionHeader)
         } catch {
             throw error
         }

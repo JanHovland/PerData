@@ -82,19 +82,19 @@ struct toDoView: View {
             . 🟢 Lagre person i Json
                  . 🟢 Finne json filen (du kan legge inn url i Safari og se innholdet)
                  . 🟢 For å få tak i filen som blir opprette og kunne se denne i "Filer" på iPhone:
-                      Legg til disse i Info.plist:
-                        Application supports iTunes file sharing     YES
-                        Supports opening documents in place          YES
+                        Legg til disse i Info.plist:
+                            Application supports iTunes file sharing     YES
+                            Supports opening documents in place          YES
             . 🟢 Hente person fra Json
             . 🟢 Lagre userRecord i Json
             . 🟢 Hente userRecord fra Json
             . 🟢 Lagre hyttereservasjoner i Json
             . 🟢 Hente hyttereservasjoner fra Json
      28. 🟢 Sjekk visning av fødselsdato når denne blir endret.
-     29. 🛑 Sortere personene i person oversikt. (Å skal komme etter Æ)
-     30. 🛑 Indexed table view:
-            . 🛑 Person
-            . 🛑 Brukere
+     29. 🟢 Indexed table view:
+            . 🟢 Person
+            . 🟢 Brukere
+     30. 🛑 Oversikt fødselsdager.
      31. 🛑 Se om sending av e-post kan gjøres på SwiftUI vis.
      32. 🛑 .
 

@@ -1,8 +1,8 @@
 //
-//  ContentView.swift
-//  PerData    
+//  PerDataIndexed.swift
+//  PerData
 //
-//  Created by Jan Hovland on 05/10/2021.
+//  Created by Jan Hovland on 30/11/2021.
 //
 
 //
@@ -71,12 +71,14 @@ import Network
 
 @MainActor
 
-struct PerData: View {
+struct PerDataIndexed: View {
     
     @Environment(\.presentationMode) var presentationMode
     
     @State private var message: LocalizedStringKey = ""
     @State private var title: LocalizedStringKey = ""
+    
+    @State private var searchText = ""
     
     @State         var person = Person()
     @State private var persons = [Person]()
@@ -99,9 +101,6 @@ struct PerData: View {
     @State private var menuBirthDay = false
     @State private var menuCabin = false
     @State private var menuUserRecordView = false
-    @State private var indicatorShowing = false
-    @State private var isAlertActive = false
-
     @State private var menuUpdatePersonsFromJsonBackupFileView = false
     @State private var menuBackupPersonsToJsonBackupFileView = false
     
@@ -110,8 +109,12 @@ struct PerData: View {
     
     @State private var menuUpdateCabinsFromBackupFileView = false
     @State private var menuBackupCabinsToJsonBackupFileView = false
+    
+    @State private var indicatorShowing = false
+    @State private var isAlertActive = false
 
-    @State private var searchFor = ""
+    @State private var sectionHeader = [String]()
+    @State private var predicate = NSPredicate(value: true)
     
     var body: some View {
         NavigationView {
@@ -257,43 +260,64 @@ struct PerData: View {
                     .sheet(isPresented: $menuUpdateCabinsFromBackupFileView, content: {
                         updateCabinsFromJsonBackupFileView()
                     })
-
                 
-                List {
-                    ForEach(searchFor == "" ? persons : persons.filter { $0.firstName.starts(with: searchFor)}) { person in
-                        NavigationLink(destination: PersonUpdateView(person: person)) {
-                            VStack (alignment: .leading) {
-                                PersonDetailView(person: person)
-                                HStack {
-                                    PersonDetailMapView(person: person)
-                                    PersonDetailPhoneView(person: person)
-                                    PersonDetailMessageView(person: person)
-                                    PersonDetailMailView(person: person)
-                                    PersonDetailCabinView(person: person)
-                                }
-                            }
-                        }
-                    }
-                    
-                    .onDelete { (indexSet) in
-                        indexSetDelete = indexSet
-                        recordID = persons[indexSet.first!].recordID
-                        persons.removeAll()
-                        Task.init {
-                            await message = deletePerson(recordID!)
-                            title = "Delete a person"
-                            isAlertActive.toggle()
-                            ///
-                            /// Viser resten av personene
-                            ///
-                            await FindAllPersons()
-                        }
-                    }
-                }
-                .searchable(text: $searchFor, placement: .navigationBarDrawer, prompt: "Search firstName")
-                .refreshable {
-                    await FindAllPersons()
-                }
+                ScrollViewReader { proxy in
+                    ScrollView {
+                        VStack (alignment: .leading) {
+                            ForEach(sectionHeader, id: \.self) { letter in
+                                
+                                Section(header: SectionHeader(letter: letter)) {
+                                    
+                                    ForEach(persons.filter( {
+                                        (person) -> Bool in
+                                        person.firstName.prefix(1) == letter
+                                    })) {
+                                        person in
+                                        
+                                        if searchText == "" || person.firstName.uppercased().contains(searchText.uppercased()) {
+                                            NavigationLink(destination: PersonUpdateView(person: person)) {
+                                                VStack (alignment: .leading) {
+                                                    PersonDetailView(person: person)
+                                                    HStack {
+                                                        PersonDetailMapView(person: person)
+                                                        PersonDetailPhoneView(person: person)
+                                                        PersonDetailMessageView(person: person)
+                                                        PersonDetailMailView(person: person)
+                                                        PersonDetailCabinView(person: person)
+                                                    }
+                                                }
+                                                .padding(.leading, 10)
+                                                .padding(.bottom, 10)
+                                            }
+                                        } else {
+                                            EmptyView()
+                                        }
+                                    }
+                                    .onDelete { (indexSet) in
+                                        indexSetDelete = indexSet
+                                        recordID = persons[indexSet.first!].recordID
+                                        persons.removeAll()
+                                        Task.init {
+                                            await message = deletePerson(recordID!)
+                                            title = "Delete a person"
+                                            isAlertActive.toggle()
+                                            ///
+                                            /// Viser resten av personene
+                                            ///
+                                            await refreshPersonsIndexed(predicate: predicate)
+                                        }
+                                    }
+
+                                    
+                                } // Section(header:
+                            } // ForEach(sectionHeader
+                            
+                        } // VStack
+                    } // ScrollView
+                    .overlay(sectionIndexTitles(proxy: proxy,
+                                                titles: sectionHeader))
+
+                } // ScrollViewReader
             }
             .alert(title, isPresented: $isAlertActive) {
                 Button("OK", action: {})
@@ -323,7 +347,7 @@ struct PerData: View {
                 } else {
                     if persons.count == 0 {
                         indicatorShowing = true
-                        await FindAllPersons()
+                        await refreshPersonsIndexed(predicate: predicate)
                         indicatorShowing = false
                     }
                 }
@@ -367,11 +391,27 @@ struct PerData: View {
         /// .navigationViewStyle(DoubleColumnNavigationViewStyle())
         ///
         
+        .searchable(text: $searchText, placement: .navigationBarDrawer, prompt: "Search firstName")
+        .onChange(of: searchText) { searchText in
+            predicate = searchText.isEmpty ? NSPredicate(value: true) : NSPredicate(format: "firstName BEGINSWITH %@", searchText)
+            Task.init {
+                indicatorShowing = true
+                await refreshPersonsIndexed(predicate: predicate)
+                indicatorShowing = false
+            }
+        }
+        .refreshable {
+            await refreshPersonsIndexed(predicate: predicate)
+        }
+
     }
     
-    func FindAllPersons() async {
+    func refreshPersonsIndexed(predicate: NSPredicate) async {
+        /// Sletter alt tidligere innhold i persons
+        persons.removeAll()
+        sectionHeader.removeAll()
+        /// Fetch all userRecords  from CloudKit
         var value: (LocalizedStringKey, [Person], [String])
-        let predicate = NSPredicate(value: true)
         await value = findPersons(predicate)
         if value.0 != "" {
             message = value.0
@@ -379,9 +419,11 @@ struct PerData: View {
             isAlertActive.toggle()
         } else {
             persons = value.1
+            sectionHeader = value.2
         }
     }
-    
+ 
+
     func startInternetTracking() {
         // Only fires once
         guard internetMonitor.pathUpdateHandler == nil else {

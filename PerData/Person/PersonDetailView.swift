@@ -36,13 +36,15 @@ struct PersonDetailView: View {
                     Text(person.lastName)
                 }
                 .dynamicTypeSize(.xSmall ... .small)  
- //               .font(Font.body.weight(.regular))
                 .foregroundColor(.purple)
+                Spacer()
             }
             Text(person.dateOfBirth.formatDate())
             Text(person.address)
             Text(person.cityNumber)
             Text(person.city)
+            .padding(.bottom, 5)
+            .padding(.leading, 10)
         }
     }
 }

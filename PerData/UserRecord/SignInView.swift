@@ -18,7 +18,7 @@ struct SignInView: View {
     @State private var showOptionMenu = false
     @State private var showSignUpView = false
     @State private var isAlertActive = false
-    @State private var runPerData = false
+    @State private var runPerDataIndexed = false
     @State private var runSignUpView = false
     
     @State private var title: LocalizedStringKey = ""
@@ -133,7 +133,7 @@ struct SignInView: View {
                                             userRecord = value.1
                                         }
                                         /// Starter PerDate()
-                                        runPerData.toggle()
+                                        runPerDataIndexed.toggle()
                                     } else {
                                         message = value.0
                                         title = "Unknown userRecord"
@@ -175,8 +175,8 @@ struct SignInView: View {
                 .padding(.top, 30)
                 .padding(.bottom, 50)
                 
-                .sheet(isPresented: $runPerData, content: {
-                    PerData()
+                .sheet(isPresented: $runPerDataIndexed, content: {
+                    PerDataIndexed()
                 })
                 .sheet(isPresented: $runSignUpView, content: {
                     SignUpView()

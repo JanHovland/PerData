@@ -46,6 +46,7 @@ struct userRecordOverViewIndexed: View {
                                     userRecord.firstName.prefix(1) == letter
                                 })) {
                                     userRecord in
+                                    
                                     if searchText == "" || userRecord.firstName.uppercased().contains(searchText.uppercased()) {
                                         NavigationLink(destination: UserRecordDetailView(userRecord: userRecord)) {
                                             showUsers(userRecord: userRecord)
@@ -134,7 +135,7 @@ struct userRecordOverViewIndexed: View {
         /// Sletter alt tidligere innhold i userRecord
         userRecords.removeAll()
         sectionHeader.removeAll()
-        /// Fetch all persons from CloudKit
+        /// Fetch all userRecords  from CloudKit
         var value: (LocalizedStringKey, [UserRecord], [String])
         await value = findUserRecords(predicate)
         if value.0 != "" {

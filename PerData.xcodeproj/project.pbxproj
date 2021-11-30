@@ -26,6 +26,7 @@
 		DB55163D2727E84600153A9A /* PersonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55163C2727E84600153A9A /* PersonDetailView.swift */; };
 		DB64C0312755324F004709C4 /* UserRecordOverViewIndexed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64C0302755324F004709C4 /* UserRecordOverViewIndexed.swift */; };
 		DB64C033275536A2004709C4 /* IndexedTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64C032275536A2004709C4 /* IndexedTableViewHelper.swift */; };
+		DB64C03727569172004709C4 /* PerDataIndexed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64C03627569172004709C4 /* PerDataIndexed.swift */; };
 		DB81CA66274263F700E69D57 /* PersonDetailMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB81CA65274263F700E69D57 /* PersonDetailMapView.swift */; };
 		DB81CA682742665700E69D57 /* PersonDetailPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB81CA672742665700E69D57 /* PersonDetailPhoneView.swift */; };
 		DB81CA6A274272BD00E69D57 /* PersonDetailMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB81CA69274272BD00E69D57 /* PersonDetailMessageView.swift */; };
@@ -101,6 +102,7 @@
 		DB55163C2727E84600153A9A /* PersonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailView.swift; sourceTree = "<group>"; };
 		DB64C0302755324F004709C4 /* UserRecordOverViewIndexed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRecordOverViewIndexed.swift; sourceTree = "<group>"; };
 		DB64C032275536A2004709C4 /* IndexedTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedTableViewHelper.swift; sourceTree = "<group>"; };
+		DB64C03627569172004709C4 /* PerDataIndexed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerDataIndexed.swift; sourceTree = "<group>"; };
 		DB81CA65274263F700E69D57 /* PersonDetailMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailMapView.swift; sourceTree = "<group>"; };
 		DB81CA672742665700E69D57 /* PersonDetailPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailPhoneView.swift; sourceTree = "<group>"; };
 		DB81CA69274272BD00E69D57 /* PersonDetailMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailMessageView.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				DBE25B5E270C556200AE255B /* PerData.swift */,
+				DB64C03627569172004709C4 /* PerDataIndexed.swift */,
 				DBE25B5C270C556200AE255B /* PerDataApp.swift */,
 				DB55163C2727E84600153A9A /* PersonDetailView.swift */,
 				DB81CA65274263F700E69D57 /* PersonDetailMapView.swift */,
@@ -503,6 +506,7 @@
 				DBC9041F273FFF740043DAC3 /* MakeAttributedString.swift in Sources */,
 				DB81CA66274263F700E69D57 /* PersonDetailMapView.swift in Sources */,
 				DB81CA682742665700E69D57 /* PersonDetailPhoneView.swift in Sources */,
+				DB64C03727569172004709C4 /* PerDataIndexed.swift in Sources */,
 				DB81CA7D2742765A00E69D57 /* Hud.swift in Sources */,
 				DB8476DD270EE534007D3E18 /* CloudKitPerson.swift in Sources */,
 				DBDEACAE273663B7003CA322 /* SwiftActivityIndicator.swift in Sources */,

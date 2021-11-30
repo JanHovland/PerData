@@ -52,18 +52,19 @@ func personExist(_ person: Person) async -> (err: LocalizedStringKey, exist: Boo
     return (err, exist)
 }
 
-func findPersons(_ predicate: NSPredicate) async -> (err: LocalizedStringKey, person: [Person]) {
+func findPersons(_ predicate: NSPredicate) async -> (err: LocalizedStringKey, person: [Person], sectionHeader: [String]) {
     var err : LocalizedStringKey = ""
     var person = [Person]()
+    var sectionHeader = [String]()
     do {
         err = ""
-        person = try await CloudKitPerson().getAllPersons(predicate)
+        (person, sectionHeader) = try await CloudKitPerson().getAllPersons(predicate)
     } catch {
         err  = LocalizedStringKey(error.localizedDescription)
         person = [Person]()
     }
     
-    return (err , person)
+    return (err , person, sectionHeader)
 }
 
 
