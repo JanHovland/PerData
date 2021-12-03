@@ -75,7 +75,7 @@ struct toDoView: View {
             . 🟢 getAllCabins()
             . 🟢 getAllZipCodes
      25. 🟢 Kun store bokstaver i feltet "By" PersonUpdateView()
-            . 🛑 Løsningen virker ikke å iMac. (Slik PerData prosjektet er satt opp nå,
+            . 🔴 Løsningen virker ikke å iMac. (Slik PerData prosjektet er satt opp nå,
                  er det enten iPhone eller iPad og ikke sammen med macOS).
      26. 🟢 Sentrere fornavn,etternavn etc (i dag er bildet og de andre tekstene sentrert)
      27. 🟢 Json:
@@ -94,9 +94,18 @@ struct toDoView: View {
      29. 🟢 Indexed table view:
             . 🟢 Person
             . 🟢 Brukere
-     30. 🛑 Oversikt fødselsdager.
-     31. 🛑 Se om sending av e-post kan gjøres på SwiftUI vis.
-     32. 🛑 .
+     30. 🔴 Bruker detaljer:
+            . 🟢 Lagt inn meny med oppdatering og sletting.
+            . 🟢 Passord lagres ikke CloudKit for "Ny bruker". (SignUpView()
+            . 🟢 Kan ikke oppdatere image for brukern.
+            . 🟢 Må *ikke* kunne oppdatere for- og etternavn (Text field).
+            . 🟢 Ta bort "Velg app"
+     31. 🔴 PerDataIndexed():
+            . 🔴 Legge menyen på navigation baren.
+            . 🔴 Legg inn + (ny person) i menyen på navigation baren.
+     32. 🔴 Oversikt fødselsdager.
+     33. 🔴 Se om sending av e-post kan gjøres på SwiftUI vis.
+     34. 🔴 .
 
     """
     

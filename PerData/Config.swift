@@ -129,7 +129,7 @@ enum Config {
          email           STRING QUERYABLE SEARCHABLE SORTABLE,
          image           ASSET,
          name            STRING QUERYABLE SEARCHABLE SORTABLE,
-         password        STRING QUERYABLE SEARCHABLE SORTABLE,
+         passWord        STRING QUERYABLE SEARCHABLE SORTABLE,
          GRANT WRITE TO "_creator",
          GRANT CREATE TO "_icloud",
          GRANT READ TO "_world"

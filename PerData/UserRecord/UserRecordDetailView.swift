@@ -18,11 +18,13 @@ struct UserRecordDetailView: View {
     @State private var isAlertActive = false
     @State private var indicatorShowing = false
     @State private var modifyImage = false
-
+    
     @State private var title: LocalizedStringKey = ""
     @State private var message: LocalizedStringKey = ""
     
     @State private var image = UIImage()
+    
+    @State private var recordID: CKRecord.ID?
     
     var body: some View {
         VStack {
@@ -46,6 +48,9 @@ struct UserRecordDetailView: View {
                             .frame(width: 80, height: 80, alignment: .center)
                             .clipShape(Circle())
                             .overlay(Circle().stroke(Color.white, lineWidth: 1))
+                            .onTapGesture {
+                                showSheetImagePicker.toggle()
+                            }
                     }
                 }
             }
@@ -59,26 +64,25 @@ struct UserRecordDetailView: View {
             })
             VStack {
                 HStack {
-                    Spacer()
                     Text("FirstName")
                         .foregroundColor(.accentColor)
                         .padding(.trailing, 10)
-                    TextField("Enter firstName", text: $userRecord.firstName)
-                        .autocapitalization(.words)
+                    Text(userRecord.firstName)
+                        .padding(.leading, 10)
                     Spacer()
                 }
                 .padding(.top, 10)
+                .padding(.leading, 8)
                 .padding(.bottom, 10)
                 HStack {
-                    Spacer()
                     Text("LastName")
                         .foregroundColor(.accentColor)
                         .padding(.trailing, 10)
-                    TextField("Enter lastName", text: $userRecord.lastName)
-                        .autocapitalization(.words)
+                    Text(userRecord.lastName)
                     Spacer()
                 }
                 .padding(.top, 10)
+                .padding(.leading, 8)
                 .padding(.bottom, 10)
                 HStack {
                     Spacer()
@@ -88,6 +92,7 @@ struct UserRecordDetailView: View {
                     TextField("Enter email", text: $userRecord.email)
                         .keyboardType(.emailAddress)
                         .autocapitalization(.none)
+                        .padding(.leading, 24)
                     Spacer()
                 }
                 .padding(.top, 10)
@@ -98,6 +103,7 @@ struct UserRecordDetailView: View {
                         .foregroundColor(.accentColor)
                         .padding(.trailing, 10)
                     SecureField("Enter passWord", text: $userRecord.passWord)
+                        .padding(.leading, 13)
                     Spacer()
                 }
                 .padding(.top, 10)
@@ -107,47 +113,72 @@ struct UserRecordDetailView: View {
             Spacer()
         }
         .navigationBarTitle("User Details", displayMode: .inline)
-        .navigationBarItems(trailing:
-            Button(action: {
-            Task.init {
-                if userRecord.firstName.count > 0,
-                   userRecord.lastName.count > 0,
-                   userRecord.email.count > 0,
-                   userRecord.passWord.count > 0 {
-                    indicatorShowing = true
-                    var value: (LocalizedStringKey, CKRecord.ID?)
-                    await value = userRecordRecordID(userRecord)
-                    if value.0 != "" {
-                        message = value.0
-                        title = "Error message from the Server"
-                        isAlertActive.toggle()
-                    } else {
-                        if value.1 == nil {
-                            await message = saveUserRecord(userRecord)
-                            title = "Save"
-                            isAlertActive.toggle()
-                        } else {
-                            userRecord.recordID = value.1
-                            if showSheetImagePicker {
-                                userRecord.image = image
+        .toolbar(content: {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Text("Menu")
+                    .foregroundColor(.accentColor)
+                    .contextMenu {
+                        Menu {
+                            Button {
+                                Task.init {
+                                    if userRecord.firstName.count > 0,
+                                       userRecord.lastName.count > 0,
+                                       userRecord.email.count > 0,
+                                       userRecord.passWord.count > 0 {
+                                        indicatorShowing = true
+                                        var value: (LocalizedStringKey, CKRecord.ID?)
+                                        await value = userRecordRecordID(userRecord)
+                                        if value.0 != "" {
+                                            message = value.0
+                                            title = "Error message from the Server"
+                                            isAlertActive.toggle()
+                                        } else {
+                                            if value.1 == nil {
+                                                await message = saveUserRecord(userRecord)
+                                                title = "Save"
+                                                isAlertActive.toggle()
+                                            } else {
+                                                userRecord.recordID = value.1
+                                                modifyImage = true // showSheetImagePicker
+                                                await message = modifyUserRecord(userRecord, modifyImage)
+                                                title = "Modify"
+                                                isAlertActive.toggle()
+                                            }
+                                        }
+                                    } else {
+                                        title = "Missing value(s)"
+                                        message = "All the fields must have a value"
+                                        isAlertActive.toggle()
+                                    }
+                                }
+                            } label: {
+                                Label("Update", systemImage: "square.and.pencil")
+                                
                             }
-                            modifyImage = showSheetImagePicker
-                            await message = modifyUserRecord(userRecord, modifyImage)
-                            title = "Modify"
-                            isAlertActive.toggle()
+                            
+                            Button {
+                                print("Delete userRecord")
+                                Task.init {
+                                    recordID = userRecord.recordID
+                                    await message = deleteUserRecord(recordID!)
+                                    userRecord = UserRecord(firstName: "",
+                                                            lastName: "",
+                                                            email: "",
+                                                            passWord: "",
+                                                            image: nil)
+                                    title = "Delete an UserRecord"
+                                    isAlertActive.toggle()
+                                }
+                            } label: {
+                                Label("Delete", systemImage: "square.and.pencil")
+                            }
+                            
+                        } label: {
+                            Label("Choose app", systemImage: "questionmark.app")
                         }
                     }
-                } else {
-                    title = "Missing value(s)"
-                    message = "All the fields must have a value"
-                    isAlertActive.toggle()
-                }
             }
-        }, label: {
-            Text("Update")
-                .font(Font.headline.weight(.light))
         })
-        )
         .alert(title, isPresented: $isAlertActive) {
             Button("OK", action: {})
         } message: {

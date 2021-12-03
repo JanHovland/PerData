@@ -31,7 +31,7 @@ class PersonEnvironment: ObservableObject {
     @Published var recordID: CKRecord.ID?
     @Published var name = ""
     @Published var email = "jan.hovland@lyse.net"
-    @Published var password = "qwerty"
+    @Published var passWord = "qwerty"
     @Published var image: UIImage?
 }
  

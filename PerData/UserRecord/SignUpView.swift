@@ -14,7 +14,7 @@ struct SignUpView : View {
     
     @State private var name: String = ""
     @State private var email: String = ""
-    @State private var password: String = ""
+    @State private var passWord: String = ""
     @State private var image = UIImage()
     @State private var userRecord = UserRecord(firstName: "",
                                                lastName: "",

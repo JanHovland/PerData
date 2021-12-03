@@ -13,6 +13,6 @@ class User: ObservableObject {
     @Published var firstName = ""
     @Published var lastName = ""
     @Published var email = "jan.hovland@lyse.net"
-    @Published var password = "qwerty"
+    @Published var passWord = "qwerty"
     @Published var image: UIImage?
 }

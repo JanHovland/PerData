@@ -30,7 +30,7 @@ struct CloudKitUserRecord {
         userRec["firstName"] = userRecord.firstName
         userRec["lastName"] = userRecord.lastName
         userRec["email"] = userRecord.email
-        userRec["password"] = userRecord.passWord
+        userRec["passWord"] = userRecord.passWord
         
         if userRecord.image != nil {
             let fileManager = FileManager.default
