@@ -174,7 +174,7 @@ struct UserRecordDetailView: View {
                         
                     }
             }
-        })
+        })   
         .alert(title, isPresented: $isAlertActive) {
             Button("OK", action: {})
         } message: {
