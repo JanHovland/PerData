@@ -115,67 +115,63 @@ struct UserRecordDetailView: View {
         .navigationBarTitle("User Details", displayMode: .inline)
         .toolbar(content: {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Text("Menu")
+                Text("Choose")
                     .foregroundColor(.accentColor)
                     .contextMenu {
-                        Menu {
-                            Button {
-                                Task.init {
-                                    if userRecord.firstName.count > 0,
-                                       userRecord.lastName.count > 0,
-                                       userRecord.email.count > 0,
-                                       userRecord.passWord.count > 0 {
-                                        indicatorShowing = true
-                                        var value: (LocalizedStringKey, CKRecord.ID?)
-                                        await value = userRecordRecordID(userRecord)
-                                        if value.0 != "" {
-                                            message = value.0
-                                            title = "Error message from the Server"
+                        Button {
+                            Task.init {
+                                if userRecord.firstName.count > 0,
+                                   userRecord.lastName.count > 0,
+                                   userRecord.email.count > 0,
+                                   userRecord.passWord.count > 0 {
+                                    indicatorShowing = true
+                                    var value: (LocalizedStringKey, CKRecord.ID?)
+                                    await value = userRecordRecordID(userRecord)
+                                    if value.0 != "" {
+                                        message = value.0
+                                        title = "Error message from the Server"
+                                        isAlertActive.toggle()
+                                    } else {
+                                        if value.1 == nil {
+                                            await message = saveUserRecord(userRecord)
+                                            title = "Save"
                                             isAlertActive.toggle()
                                         } else {
-                                            if value.1 == nil {
-                                                await message = saveUserRecord(userRecord)
-                                                title = "Save"
-                                                isAlertActive.toggle()
-                                            } else {
-                                                userRecord.recordID = value.1
-                                                modifyImage = true // showSheetImagePicker
-                                                await message = modifyUserRecord(userRecord, modifyImage)
-                                                title = "Modify"
-                                                isAlertActive.toggle()
-                                            }
+                                            userRecord.recordID = value.1
+                                            modifyImage = true // showSheetImagePicker
+                                            await message = modifyUserRecord(userRecord, modifyImage)
+                                            title = "Modify"
+                                            isAlertActive.toggle()
                                         }
-                                    } else {
-                                        title = "Missing value(s)"
-                                        message = "All the fields must have a value"
-                                        isAlertActive.toggle()
                                     }
-                                }
-                            } label: {
-                                Label("Update", systemImage: "square.and.pencil")
-                                
-                            }
-                            
-                            Button {
-                                print("Delete userRecord")
-                                Task.init {
-                                    recordID = userRecord.recordID
-                                    await message = deleteUserRecord(recordID!)
-                                    userRecord = UserRecord(firstName: "",
-                                                            lastName: "",
-                                                            email: "",
-                                                            passWord: "",
-                                                            image: nil)
-                                    title = "Delete an UserRecord"
+                                } else {
+                                    title = "Missing value(s)"
+                                    message = "All the fields must have a value"
                                     isAlertActive.toggle()
                                 }
-                            } label: {
-                                Label("Delete", systemImage: "square.and.pencil")
                             }
-                            
                         } label: {
-                            Label("Choose app", systemImage: "questionmark.app")
+                            Label("Update", systemImage: "square.and.pencil")
+                            
                         }
+                        
+                        Button {
+                            print("Delete userRecord")
+                            Task.init {
+                                recordID = userRecord.recordID
+                                await message = deleteUserRecord(recordID!)
+                                userRecord = UserRecord(firstName: "",
+                                                        lastName: "",
+                                                        email: "",
+                                                        passWord: "",
+                                                        image: nil)
+                                title = "Delete an UserRecord"
+                                isAlertActive.toggle()
+                            }
+                        } label: {
+                            Label("Delete", systemImage: "square.and.pencil")
+                        }
+                        
                     }
             }
         })

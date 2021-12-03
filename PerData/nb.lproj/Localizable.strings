@@ -53,6 +53,9 @@
 "Can't send emails from this device" = "Kan ikke sende e-Post fra denne enheten.";
 
 /* No comment provided by engineer. */
+"Choose" = "Valg";
+
+/* No comment provided by engineer. */
 "Choose app" = "Velg app ";
 
 /* No comment provided by engineer. */
@@ -66,6 +69,9 @@
 
 /* No comment provided by engineer. */
 "Date of birth" = "Fødselsdato";
+
+/* No comment provided by engineer. */
+"Delete" = "Slett";
 
 /* No comment provided by engineer. */
 "Delete a cabin" = "Slette en hyttereservasjon";
