@@ -61,7 +61,7 @@ struct updatePersonsFromJsonBackupFileView: View {
             } // Form
             .navigationViewStyle(StackNavigationViewStyle())
             .navigationBarTitle("Json update person", displayMode: .inline)
-            .backToCaller("Menu")
+            .backToCaller("PersonOverView")
         } // NavgationView
     } // body
 } // struct

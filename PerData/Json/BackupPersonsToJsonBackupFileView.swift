@@ -68,7 +68,7 @@ struct backupPersonsToJsonBackupFileView: View {
             } //  Form
             .navigationViewStyle(StackNavigationViewStyle())
             .navigationBarTitle("Json backup person", displayMode: .inline)
-            .backToCaller("Menu")
+            .backToCaller("PersonOverView")
         }
         .task {
             var value: (LocalizedStringKey, [Person], [String])

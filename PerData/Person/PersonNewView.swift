@@ -136,19 +136,26 @@ struct PersonNewView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     ControlGroup {
                         Button(action: {
-                            Task.init {
-                                
-                                ///
-                                /// Sjekk om posten finnes i CloudKit
-                                ///
-                                
-                                if modifyImage == true {
-                                    person.image = image
-                                } else {
-                                    person.image = nil
+                            if person.firstName.count > 0,
+                               person.lastName.count > 0 {
+                                Task.init {
+                                    
+                                    ///
+                                    /// Sjekk om posten finnes i CloudKit
+                                    ///
+                                    
+                                    if modifyImage == true {
+                                        person.image = image
+                                    } else {
+                                        person.image = nil
+                                    }
+                                    
+                                    await FindPersonRecordId()
                                 }
-                                
-                                await FindPersonRecordId()
+                            } else {
+                                title = "Missing values."
+                                message = "First- and LastName must both have values."
+                                isAlertActive.toggle()
                             }
                             
                         }, label: {

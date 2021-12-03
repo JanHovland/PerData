@@ -94,18 +94,24 @@ struct toDoView: View {
      29. 🟢 Indexed table view:
             . 🟢 Person
             . 🟢 Brukere
-     30. 🔴 Bruker detaljer:
+     30. 🟢 Bruker detaljer:
             . 🟢 Lagt inn meny med oppdatering og sletting.
             . 🟢 Passord lagres ikke CloudKit for "Ny bruker". (SignUpView()
             . 🟢 Kan ikke oppdatere image for brukern.
             . 🟢 Må *ikke* kunne oppdatere for- og etternavn (Text field).
             . 🟢 Ta bort "Velg app"
-     31. 🔴 PerDataIndexed():
-            . 🔴 Legge menyen på navigation baren.
-            . 🔴 Legg inn + (ny person) i menyen på navigation baren.
-     32. 🔴 Oversikt fødselsdager.
-     33. 🔴 Se om sending av e-post kan gjøres på SwiftUI vis.
-     34. 🔴 .
+     31. 🟢 PerDataIndexed():
+            . 🟢 Legge menyen på navigation baren.
+            . 🟢 Legg inn + (ny person) i menyen på navigation baren.
+            . 🟢 Legg inn "frisk opp" i menyen.
+     32. 🔴 PersonNewView():
+            . 🟢 Melding: Det må være verdier i for- og etternavn
+            . 🔴 Sjekk save og modify CloudKit
+     33. 🔴 Person oppdatering:
+            . 🔴 Ikke oppdatere for- og etternavn
+     34. 🔴 Oversikt fødselsdager.
+     35. 🔴 Se om sending av e-post kan gjøres på SwiftUI vis.
+     36. 🔴 .
 
     """
     
@@ -126,7 +132,7 @@ struct toDoView: View {
                             Button {
                                 presentationMode.wrappedValue.dismiss()
                             } label: {
-                                ReturnFromMenuView(text: "Menu")
+                                ReturnFromMenuView(text: "PersonOverView")
                             }
                         }
                         .controlGroupStyle(.navigation)

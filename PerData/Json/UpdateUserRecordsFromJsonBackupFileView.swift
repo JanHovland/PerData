@@ -57,7 +57,7 @@ struct updateUserRecordsFromJsonBackupFileView: View {
             } // Form
             .navigationViewStyle(StackNavigationViewStyle())
             .navigationBarTitle("UserRecord update Json", displayMode: .inline)
-            .backToCaller("Menu")
+            .backToCaller("PersonOverView")
         } // NavgationView
     } // body
 } // struct

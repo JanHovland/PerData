@@ -22,7 +22,7 @@ struct BackToCaller: ViewModifier {
                         Button {
                             presentationMode.wrappedValue.dismiss()
                         } label: {
-                            ReturnFromMenuView(text: "Menu")
+                            ReturnFromMenuView(text: "PersonOverView")
                         }
                     }
                     .controlGroupStyle(.navigation)

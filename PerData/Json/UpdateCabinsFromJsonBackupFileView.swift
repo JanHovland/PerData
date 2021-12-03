@@ -64,7 +64,7 @@ struct updateCabinsFromJsonBackupFileView: View {
             } // Form
             .navigationViewStyle(StackNavigationViewStyle())
             .navigationBarTitle("Cabin update Json", displayMode: .inline)
-            .backToCaller("Menu")
+            .backToCaller("PersonOverView")
         } // NavgationView
     } // body
 } // struct

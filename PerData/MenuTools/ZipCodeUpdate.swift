@@ -77,7 +77,7 @@ struct zipCodeUpdate: View {
             } // VStack
             .navigationViewStyle(StackNavigationViewStyle())
             .navigationBarTitle("ZipCode", displayMode: .inline)
-            .backToCaller("Menu")
+            .backToCaller("PersonOverView")
         } // NavgationView
     } // body
 } // struct

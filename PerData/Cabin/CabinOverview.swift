@@ -78,7 +78,7 @@ struct cabinOverView: View {
                         Button {
                             presentationMode.wrappedValue.dismiss()
                         } label: {
-                            ReturnFromMenuView(text: "Menu")
+                            ReturnFromMenuView(text: "PersonOverView")
                         }
                     }
                     .controlGroupStyle(.navigation)

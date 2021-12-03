@@ -85,7 +85,7 @@ struct PerDataIndexed: View {
     @State private var indexSetDelete = IndexSet()
     @State private var recordID: CKRecord.ID?
     
-    @State private var showNewPersonSheet = false
+    @State private var menuShowNewPersonSheet = false
     
     let internetMonitor = NWPathMonitor()
     let internetQueue = DispatchQueue(label: "InternetMonitor")
@@ -120,148 +120,11 @@ struct PerDataIndexed: View {
         NavigationView {
             VStack {
                 ActivityIndicator(isAnimating: $indicatorShowing, style: .medium, color: .gray)
-                Text("Menu")
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 40)
-                    .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.262745098, green: 0.0862745098, blue: 0.8588235294, alpha: 1)), Color(#colorLiteral(red: 0.5647058824, green: 0.462745098, blue: 0.9058823529, alpha: 1))]), startPoint: .top, endPoint: .bottom))
-                    .cornerRadius(16)
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 80)
-                    .contextMenu {
-                        Menu {
-                            
-                            Button {
-                                menuUserRecordView.toggle()
-                            } label: {
-                                Label("UserRecords", systemImage: "square.and.pencil")
-                            }
-                            
-                            Button {
-                                menuBirthDay.toggle()
-                            } label: {
-                                Label("Birthdays", systemImage: "gift")
-                            }
-                            
-                            Button {
-                                menuCabin.toggle()
-                            } label: {
-                                Label("Cabin reservation", systemImage: "house")
-                            }
-                            
-                            Button {
-                                menuToDo.toggle()
-                            } label: {
-                                Label("ToDo", systemImage: "list.dash.header.rectangle")
-                            }
-                            
-                        } label: {
-                            Label("Overview", systemImage: "questionmark.app")
-                        }
-                        
-                        Menu {
-                            Menu {
-                                Button {
-                                    menuUpdatePersonsFromJsonBackupFileView.toggle()
-                                } label: {
-                                    Label("From Json", systemImage: "square.and.pencil")
-                                }
-                                Button {
-                                    menuBackupPersonsToJsonBackupFileView.toggle()
-                                } label: {
-                                    Label("To Json", systemImage: "square.and.pencil")
-                                }
-                            } label: {
-                                Label("Person", systemImage: "questionmark.app")
-                            }
-                            
-                            Menu {
-                                Button {
-                                    menuUpdateUserRecordsFromJsonBackupFileView.toggle()
-                                } label: {
-                                    Label("From Json", systemImage: "square.and.pencil")
-                                }
-                                Button {
-                                    menuBackupUserRecordsToJsonBackupFileView.toggle()
-                                } label: {
-                                    Label("To Json", systemImage: "square.and.pencil")
-                                }
-                            } label: {
-                                Label("UserRecord", systemImage: "questionmark.app")
-                            }
-                            
-                            Menu {
-                                Button {
-                                    menuUpdateCabinsFromBackupFileView.toggle()
-                                } label: {
-                                    Label("From Json", systemImage: "square.and.pencil")
-                                }
-                                Button {
-                                    menuBackupCabinsToJsonBackupFileView.toggle()
-                                } label: {
-                                    Label("To Json", systemImage: "square.and.pencil")
-                                }
-                            } label: {
-                                Label("Cabin reservation", systemImage: "questionmark.app")
-                            }
-                            
-                            Menu {
-                                Button {
-                                    menuZipCodeUpdate.toggle()
-                                } label: {
-                                    Label("From Ascii", systemImage: "square.and.pencil")
-                                }
-                            } label: {
-                                Label("ZipCode", systemImage: "questionmark.app")
-                            }
-                            
-                        } label: {
-                            Label("Update", systemImage: "questionmark.app")
-                        }
-                        
-                    }
-                    .sheet(isPresented: $menuZipCodeUpdate, content: {
-                        zipCodeUpdate()
-                    })
-                    .sheet(isPresented: $menuToDo, content: {
-                        toDoView()
-                    })
-                    .sheet(isPresented: $menuBirthDay, content: {
-                        
-                    })
-                    .sheet(isPresented: $menuCabin, content: {
-                        cabinOverView()
-                    })
-                    .sheet(isPresented: $menuUpdatePersonsFromJsonBackupFileView, content: {
-                        updatePersonsFromJsonBackupFileView()
-                    })
-                    .sheet(isPresented: $menuBackupPersonsToJsonBackupFileView, content: {
-                        backupPersonsToJsonBackupFileView()
-                    })
-                    .sheet(isPresented: $menuUserRecordView, content: {
-                        //                        userRecordOverView()
-                        userRecordOverViewIndexed()
-                    })
-                    .sheet(isPresented: $menuBackupUserRecordsToJsonBackupFileView, content: {
-                        backupUserRecordsToJsonBackupFileView()
-                    })
-                    .sheet(isPresented: $menuUpdateUserRecordsFromJsonBackupFileView, content: {
-                        updateUserRecordsFromJsonBackupFileView()
-                    })
-                
-                    .sheet(isPresented: $menuBackupCabinsToJsonBackupFileView, content: {
-                        backupCabinsToJsonBackupFileView()
-                    })
-                
-                    .sheet(isPresented: $menuUpdateCabinsFromBackupFileView, content: {
-                        updateCabinsFromJsonBackupFileView()
-                    })
-                
                 ScrollViewReader { proxy in
                     ScrollView {
                         VStack (alignment: .leading) {
                             ForEach(sectionHeader, id: \.self) { letter in
-                                
+                               
                                 Section(header: SectionHeader(letter: letter)) {
                                     
                                     ForEach(persons.filter( {
@@ -360,19 +223,162 @@ struct PerDataIndexed: View {
                     }
                     .controlGroupStyle(.navigation)
                 }
+                
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        showNewPersonSheet.toggle()
-                    } label: {
-                        Image(systemName: "plus")
-                    }
-                    .sheet(isPresented: $showNewPersonSheet, content: {
-                        PersonNewView(person: person)
-                    })
+                    Text("Choose")
+                       .foregroundColor(.accentColor)
+                       .contextMenu {
+                           
+                           Button {
+                              Task.init {
+                                  await refreshPersonsIndexed(predicate: predicate)
+                              }
+                           } label: {
+                               Label("Refresh", systemImage: "square.and.pencil")
+                           }
+                           
+                           Button {
+                               menuShowNewPersonSheet.toggle()
+                           } label: {
+                               Label("New person", systemImage: "square.and.pencil")
+                           }
+
+                           Menu {
+                               
+                               Button {
+                                   menuUserRecordView.toggle()
+                               } label: {
+                                   Label("UserRecords", systemImage: "square.and.pencil")
+                               }
+                               
+                               Button {
+                                   menuBirthDay.toggle()
+                               } label: {
+                                   Label("Birthdays", systemImage: "gift")
+                               }
+                               
+                               Button {
+                                   menuCabin.toggle()
+                               } label: {
+                                   Label("Cabin reservation", systemImage: "house")
+                               }
+                               
+                               Button {
+                                   menuToDo.toggle()
+                               } label: {
+                                   Label("ToDo", systemImage: "list.dash.header.rectangle")
+                               }
+                               
+                           } label: {
+                               Label("Overview", systemImage: "questionmark.app")
+                           }
+                           
+                           Menu {
+                               Menu {
+                                   Button {
+                                       menuUpdatePersonsFromJsonBackupFileView.toggle()
+                                   } label: {
+                                       Label("From Json", systemImage: "square.and.pencil")
+                                   }
+                                   Button {
+                                       menuBackupPersonsToJsonBackupFileView.toggle()
+                                   } label: {
+                                       Label("To Json", systemImage: "square.and.pencil")
+                                   }
+                               } label: {
+                                   Label("Person", systemImage: "questionmark.app")
+                               }
+                               
+                               Menu {
+                                   Button {
+                                       menuUpdateUserRecordsFromJsonBackupFileView.toggle()
+                                   } label: {
+                                       Label("From Json", systemImage: "square.and.pencil")
+                                   }
+                                   Button {
+                                       menuBackupUserRecordsToJsonBackupFileView.toggle()
+                                   } label: {
+                                       Label("To Json", systemImage: "square.and.pencil")
+                                   }
+                               } label: {
+                                   Label("UserRecord", systemImage: "questionmark.app")
+                               }
+                               
+                               Menu {
+                                   Button {
+                                       menuUpdateCabinsFromBackupFileView.toggle()
+                                   } label: {
+                                       Label("From Json", systemImage: "square.and.pencil")
+                                   }
+                                   Button {
+                                       menuBackupCabinsToJsonBackupFileView.toggle()
+                                   } label: {
+                                       Label("To Json", systemImage: "square.and.pencil")
+                                   }
+                               } label: {
+                                   Label("Cabin reservation", systemImage: "questionmark.app")
+                               }
+                               
+                               Menu {
+                                   Button {
+                                       menuZipCodeUpdate.toggle()
+                                   } label: {
+                                       Label("From Ascii", systemImage: "square.and.pencil")
+                                   }
+                               } label: {
+                                   Label("ZipCode", systemImage: "questionmark.app")
+                               }
+                               
+                           } label: {
+                               Label("Update", systemImage: "questionmark.app")
+                           }
+                           
+                       }
+                       .sheet(isPresented: $menuZipCodeUpdate, content: {
+                           zipCodeUpdate()
+                       })
+                       .sheet(isPresented: $menuToDo, content: {
+                           toDoView()
+                       })
+                       .sheet(isPresented: $menuBirthDay, content: {
+                           
+                       })
+                       .sheet(isPresented: $menuCabin, content: {
+                           cabinOverView()
+                       })
+                       .sheet(isPresented: $menuUpdatePersonsFromJsonBackupFileView, content: {
+                           updatePersonsFromJsonBackupFileView()
+                       })
+                       .sheet(isPresented: $menuBackupPersonsToJsonBackupFileView, content: {
+                           backupPersonsToJsonBackupFileView()
+                       })
+                       .sheet(isPresented: $menuUserRecordView, content: {
+                           //                        userRecordOverView()
+                           userRecordOverViewIndexed()
+                       })
+                       .sheet(isPresented: $menuBackupUserRecordsToJsonBackupFileView, content: {
+                           backupUserRecordsToJsonBackupFileView()
+                       })
+                       .sheet(isPresented: $menuUpdateUserRecordsFromJsonBackupFileView, content: {
+                           updateUserRecordsFromJsonBackupFileView()
+                       })
+                   
+                       .sheet(isPresented: $menuBackupCabinsToJsonBackupFileView, content: {
+                           backupCabinsToJsonBackupFileView()
+                       })
+                   
+                       .sheet(isPresented: $menuUpdateCabinsFromBackupFileView, content: {
+                           updateCabinsFromJsonBackupFileView()
+                       })
+
+                       .sheet(isPresented: $menuShowNewPersonSheet, content: {
+                           PersonNewView(person: person)
+                       })
+
                 }
                 
             })
-            
+
             .listStyle(.insetGrouped)
         }
         

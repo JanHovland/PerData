@@ -59,7 +59,7 @@ struct backupCabinsToJsonBackupFileView: View {
             } // Form
             .navigationViewStyle(StackNavigationViewStyle())
             .navigationBarTitle(Text(backupJsonCabin), displayMode: .inline)
-            .backToCaller("Menu")
+            .backToCaller("PersonOverView")
             .task {
                 var value: (LocalizedStringKey, [Cabin])
                 let predicate = NSPredicate(value: true)
