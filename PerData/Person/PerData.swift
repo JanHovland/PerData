@@ -89,7 +89,7 @@ struct PerData: View {
     let internetQueue = DispatchQueue(label: "InternetMonitor")
     @State private var hasConnectionPath = false
     @State private var device: LocalizedStringKey = ""
-   
+    
     ///
     ///Menyen
     ///
@@ -101,7 +101,7 @@ struct PerData: View {
     @State private var menuUserRecordView = false
     @State private var indicatorShowing = false
     @State private var isAlertActive = false
-
+    
     @State private var menuUpdatePersonsFromJsonBackupFileView = false
     @State private var menuBackupPersonsToJsonBackupFileView = false
     
@@ -110,7 +110,7 @@ struct PerData: View {
     
     @State private var menuUpdateCabinsFromBackupFileView = false
     @State private var menuBackupCabinsToJsonBackupFileView = false
-
+    
     @State private var searchFor = ""
     
     var body: some View {
@@ -121,105 +121,100 @@ struct PerData: View {
                     .font(.headline)
                     .frame(maxWidth: .infinity)
                     .frame(height: 40)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.262745098, green: 0.0862745098, blue: 0.8588235294, alpha: 1)), Color(#colorLiteral(red: 0.5647058824, green: 0.462745098, blue: 0.9058823529, alpha: 1))]), startPoint: .top, endPoint: .bottom))
+                    .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.262745098, green: 0.0862745098, blue: 0.8588235294, alpha: 1)), Color(#colorLiteral(red: 0.5647058824, green: 0.462745098, blue: 0.9058823529, alpha: 1))]), startPoint: .top, endPoint: .bottom))
                     .cornerRadius(16)
                     .foregroundColor(.white)
                     .padding(.horizontal, 80)
                     .contextMenu {
                         Menu {
-                            Menu {
-                                
-                                Button {
-                                    menuUserRecordView.toggle()
-                                } label: {
-                                    Label("UserRecords", systemImage: "square.and.pencil")
-                                }
-                                
-                                Button {
-                                    menuBirthDay.toggle()
-                                } label: {
-                                    Label("Birthdays", systemImage: "gift")
-                                }
-                                
-                                Button {
-                                    menuCabin.toggle()
-                                } label: {
-                                    Label("Cabin reservation", systemImage: "house")
-                                }
-                                
-                                Button {
-                                    menuToDo.toggle()
-                                } label: {
-                                    Label("ToDo", systemImage: "list.dash.header.rectangle")
-                                }
-                                
+                            
+                            Button {
+                                menuUserRecordView.toggle()
                             } label: {
-                                Label("Overview", systemImage: "questionmark.app")
+                                Label("UserRecords", systemImage: "square.and.pencil")
+                            }
+                            
+                            Button {
+                                menuBirthDay.toggle()
+                            } label: {
+                                Label("Birthdays", systemImage: "gift")
+                            }
+                            
+                            Button {
+                                menuCabin.toggle()
+                            } label: {
+                                Label("Cabin reservation", systemImage: "house")
+                            }
+                            
+                            Button {
+                                menuToDo.toggle()
+                            } label: {
+                                Label("ToDo", systemImage: "list.dash.header.rectangle")
+                            }
+                            
+                        } label: {
+                            Label("Overview", systemImage: "questionmark.app")
+                        }
+                        
+                        Menu {
+                            Menu {
+                                Button {
+                                    menuUpdatePersonsFromJsonBackupFileView.toggle()
+                                } label: {
+                                    Label("From Json", systemImage: "square.and.pencil")
+                                }
+                                Button {
+                                    menuBackupPersonsToJsonBackupFileView.toggle()
+                                } label: {
+                                    Label("To Json", systemImage: "square.and.pencil")
+                                }
+                            } label: {
+                                Label("Person", systemImage: "questionmark.app")
                             }
                             
                             Menu {
-                                Menu {
-                                    Button {
-                                        menuUpdatePersonsFromJsonBackupFileView.toggle()
-                                    } label: {
-                                        Label("From Json", systemImage: "square.and.pencil")
-                                    }
-                                    Button {
-                                        menuBackupPersonsToJsonBackupFileView.toggle()
-                                    } label: {
-                                        Label("To Json", systemImage: "square.and.pencil")
-                                    }
+                                Button {
+                                    menuUpdateUserRecordsFromJsonBackupFileView.toggle()
                                 } label: {
-                                    Label("Person", systemImage: "questionmark.app")
+                                    Label("From Json", systemImage: "square.and.pencil")
                                 }
-
-                                Menu {
-                                    Button {
-                                        menuUpdateUserRecordsFromJsonBackupFileView.toggle()
-                                    } label: {
-                                        Label("From Json", systemImage: "square.and.pencil")
-                                    }
-                                    Button {
-                                        menuBackupUserRecordsToJsonBackupFileView.toggle()
-                                    } label: {
-                                        Label("To Json", systemImage: "square.and.pencil")
-                                    }
+                                Button {
+                                    menuBackupUserRecordsToJsonBackupFileView.toggle()
                                 } label: {
-                                    Label("UserRecord", systemImage: "questionmark.app")
+                                    Label("To Json", systemImage: "square.and.pencil")
                                 }
-                               
-                                Menu {
-                                    Button {
-                                        menuUpdateCabinsFromBackupFileView.toggle()
-                                    } label: {
-                                        Label("From Json", systemImage: "square.and.pencil")
-                                    }
-                                    Button {
-                                        menuBackupCabinsToJsonBackupFileView.toggle()
-                                    } label: {
-                                        Label("To Json", systemImage: "square.and.pencil")
-                                    }
-                                } label: {
-                                    Label("Cabin reservation", systemImage: "questionmark.app")
-                                }
-                                
-                                Menu {
-                                    Button {
-                                        menuZipCodeUpdate.toggle()
-                                    } label: {
-                                        Label("From Ascii", systemImage: "square.and.pencil")
-                                    }
-                                } label: {
-                                    Label("ZipCode", systemImage: "questionmark.app")
-                                }
-                                
                             } label: {
-                                Label("Update", systemImage: "questionmark.app")
+                                Label("UserRecord", systemImage: "questionmark.app")
                             }
+                            
+                            Menu {
+                                Button {
+                                    menuUpdateCabinsFromBackupFileView.toggle()
+                                } label: {
+                                    Label("From Json", systemImage: "square.and.pencil")
+                                }
+                                Button {
+                                    menuBackupCabinsToJsonBackupFileView.toggle()
+                                } label: {
+                                    Label("To Json", systemImage: "square.and.pencil")
+                                }
+                            } label: {
+                                Label("Cabin reservation", systemImage: "questionmark.app")
+                            }
+                            
+                            Menu {
+                                Button {
+                                    menuZipCodeUpdate.toggle()
+                                } label: {
+                                    Label("From Ascii", systemImage: "square.and.pencil")
+                                }
+                            } label: {
+                                Label("ZipCode", systemImage: "questionmark.app")
+                            }
+                            
                         } label: {
-                            Label("Choose app", systemImage: "questionmark.app")
+                            Label("Update", systemImage: "questionmark.app")
                         }
-                        
                     }
                     .sheet(isPresented: $menuZipCodeUpdate, content: {
                         zipCodeUpdate()
@@ -228,7 +223,7 @@ struct PerData: View {
                         toDoView()
                     })
                     .sheet(isPresented: $menuBirthDay, content: {
-                         
+                        
                     })
                     .sheet(isPresented: $menuCabin, content: {
                         cabinOverView()
@@ -253,11 +248,11 @@ struct PerData: View {
                     .sheet(isPresented: $menuBackupCabinsToJsonBackupFileView, content: {
                         backupCabinsToJsonBackupFileView()
                     })
-
+                
                     .sheet(isPresented: $menuUpdateCabinsFromBackupFileView, content: {
                         updateCabinsFromJsonBackupFileView()
                     })
-
+                
                 
                 List {
                     ForEach(searchFor == "" ? persons : persons.filter { $0.firstName.starts(with: searchFor)}) { person in
@@ -306,12 +301,12 @@ struct PerData: View {
             ///
             
             .task {
-               startInternetTracking()
-               ///
-               /// Må legge inn en forsinkelse fordi
-               /// usleep() takes millionths of a second
-               usleep(500000) /// 0.5 S
-               if hasInternet() == false {
+                startInternetTracking()
+                ///
+                /// Må legge inn en forsinkelse fordi
+                /// usleep() takes millionths of a second
+                usleep(500000) /// 0.5 S
+                if hasInternet() == false {
                     if UIDevice.current.localizedModel == "iPhone" {
                         device = "iPhone"
                     } else if UIDevice.current.localizedModel == "iPad" {
@@ -352,7 +347,7 @@ struct PerData: View {
                 }
                 
             })
-
+            
             .listStyle(.insetGrouped)
         }
         
@@ -402,6 +397,6 @@ struct PerData: View {
     func hasInternet() -> Bool {
         return hasConnectionPath
     }
-
+    
     
 }
