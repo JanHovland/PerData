@@ -26,6 +26,7 @@ struct PersonUpdateView: View {
     @State private var modifyImage = false
     @State private var showSheetFindZipCode = false
     @State private var showImage = false
+    @State private var recordID: CKRecord.ID?
     
     var genders = [String(localized: "Man"),
                    String(localized: "Woman")]
@@ -69,10 +70,19 @@ struct PersonUpdateView: View {
                 .sheet(isPresented: $showImage, content: {
                     ImagePicker(sourceType: .photoLibrary, selectedImage: $image, image: $person.image)
                 })
-                TextField("FirstName", text: $person.firstName)
-                    .autocapitalization(.words)
-                TextField("LastName", text: $person.lastName)
-                    .autocapitalization(.words)
+                HStack (spacing: 30) {
+                    Text("FirstName")
+                    Text(person.firstName)
+                  Spacer()
+                }
+                .padding(.bottom, 5)
+                
+                HStack (spacing: 20) {
+                    Text("LastName")
+                    Text(person.lastName)
+                    Spacer()
+                }
+                                
                 TextField("Email", text: $person.personEmail)
                     .keyboardType(.emailAddress)
                     .autocapitalization(.none)
@@ -131,24 +141,48 @@ struct PersonUpdateView: View {
         .navigationBarTitle("Modify person", displayMode: .inline)
         .toolbar(content: {
             ToolbarItem(placement: .navigationBarTrailing) {
-                ControlGroup {
-                    Button (action: {
-                        Task.init {
-                            if modifyImage == true {
-                                person.image = image
-                            } else {
-                                self.person.image = person.image
+                Text("_Choose_") /// Italics med _
+                    .foregroundColor(.accentColor)
+                    .font(Font.title.weight(.ultraLight))
+                    .contextMenu {
+                        
+                        Button (action: {
+                            print(person.recordID as Any)
+                            Task.init {
+                                if modifyImage == true {
+                                    person.image = image
+                                } else {
+                                    self.person.image = person.image
+                                }
+                                ///
+                                ///Finn RecordID med eventuell feilmelding
+                                ///
+                                await FindRecordId()
+                                //                                person = Person()
                             }
-                            ///
-                            ///Finn RecordID med eventuell feilmelding
-                            ///
-                            await FindRecordId()
-                        }
-                    }, label: {
-                        Text("Modify")
-                    })
-                }
-                .controlGroupStyle(.navigation)
+                        }, label: {
+                            Text("Modify")
+                        })
+                        
+                        Button (action: {
+                            Task.init {
+                                
+                                recordID = await FindRecordIdDelete(person: person)
+                                
+                                
+                                
+                                // recordID = person.recordID!
+                                print(person.recordID as Any)
+                                await message = deletePerson(recordID!)
+                                person = Person()
+                                title = "Delete a person"
+                                isAlertActive.toggle()
+                            }
+                        }, label: {
+                            Text("Delete")
+                        })
+                       
+                    }
             }
         })
         .alert(title, isPresented: $isAlertActive) {
@@ -180,5 +214,30 @@ struct PersonUpdateView: View {
                 isAlertActive.toggle()
             }
         }
+    }
+    
+    func FindRecordIdDelete(person: Person) async -> CKRecord.ID? {
+        var value: (LocalizedStringKey, CKRecord.ID?   )
+        await value = personRecordID(person)
+        if value.0 != "" {
+            ///
+            ///Feilmelding
+            ///
+            message = value.0
+            title = "Error message from the Server"
+            isAlertActive.toggle()
+        } else {
+            if value.1 == nil {
+                message = "Can not find person ID"
+                title = "Person ID"
+                isAlertActive.toggle()
+            } else {
+//                await message = modify(person, modifyImage)
+//                modifyImage = false
+//                title = "Modify"
+//                isAlertActive.toggle()
+            }
+        }
+        return value.1
     }
 }

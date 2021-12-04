@@ -41,10 +41,9 @@ struct PersonDetailView: View {
             }
             Text(person.dateOfBirth.formatDate())
             Text(person.address)
-            Text(person.cityNumber)
-            Text(person.city)
+            
+            Text(person.cityNumber + " " + person.city)
             .padding(.bottom, 5)
-            .padding(.leading, 10)
         }
     }
 }

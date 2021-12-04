@@ -196,8 +196,6 @@
 		DB4BBA2227457D6D00771D7A /* UserRecord */ = {
 			isa = PBXGroup;
 			children = (
-				DB4BBA272748259500771D7A /* SignInView.swift */,
-				DB4BBA29274979AE00771D7A /* SignUpView.swift */,
 				DB4BBA2B274BB4A200771D7A /* UserRecordDetailView.swift */,
 				DB4BBA2327457D8E00771D7A /* UserRecordOverView.swift */,
 				DB64C0302755324F004709C4 /* UserRecordOverViewIndexed.swift */,
@@ -231,6 +229,15 @@
 				DB0708F027293F97001B3BBA /* PersonUpdateView.swift */,
 			);
 			path = Person;
+			sourceTree = "<group>";
+		};
+		DB587896275B682F004C4F65 /* SignInUp */ = {
+			isa = PBXGroup;
+			children = (
+				DB4BBA272748259500771D7A /* SignInView.swift */,
+				DB4BBA29274979AE00771D7A /* SignUpView.swift */,
+			);
+			path = SignInUp;
 			sourceTree = "<group>";
 		};
 		DB81CA712742746600E69D57 /* Mail */ = {
@@ -371,10 +378,11 @@
 				DB8476DF270F672D007D3E18 /* Model */,
 				DB55163B2727E82600153A9A /* Person */,
 				DBE25B62270C556400AE255B /* Preview Content */,
+				DB587896275B682F004C4F65 /* SignInUp */,
+				DB4FD4DC2733E7010080E084 /* ToDo */,
 				DB4BBA2227457D6D00771D7A /* UserRecord */,
 				DBA02DD02731A9EF0090D36C /* ViewModifiers */,
 				DBA02DCA273070140090D36C /* ZipCode */,
-				DB4FD4DC2733E7010080E084 /* ToDo */,
 				DBA02DCB2730703F0090D36C /* Utilities */,
 			);
 			path = PerData;

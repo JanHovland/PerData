@@ -104,14 +104,21 @@ struct toDoView: View {
             . 🟢 Legge menyen på navigation baren.
             . 🟢 Legg inn + (ny person) i menyen på navigation baren.
             . 🟢 Legg inn "frisk opp" i menyen.
-     32. 🔴 PersonNewView():
+     32. 🟢 PerDataIndexed():
+            . 🟢 Vise postnr og poststed på samme linje
+            . 🟢 Vurdere ny font på "Velg".
+     33. 🔴 PersonNewView():
             . 🟢 Melding: Det må være verdier i for- og etternavn
             . 🔴 Sjekk save og modify CloudKit
-     33. 🔴 Person oppdatering:
-            . 🔴 Ikke oppdatere for- og etternavn
-     34. 🔴 Oversikt fødselsdager.
-     35. 🔴 Se om sending av e-post kan gjøres på SwiftUI vis.
-     36. 🔴 .
+     34. 🔴 PersonUpdateView():
+            . 🔴 Ikke kunne endre for- og etternavn, vise dem som Text.
+            . 🔴 Sjekk save og modify CloudKit
+            . 🔴 Meny:
+                 . 🔴 Legg inn Meny.
+                 . 🔴 Legg inn sletting av person i Menyen.
+     35. 🔴 Oversikt fødselsdager.
+     36. 🔴 Se om sending av e-post kan gjøres på SwiftUI vis.
+     37. 🔴 .
 
     """
     

@@ -146,7 +146,7 @@ struct PerDataIndexed: View {
                                                     }
                                                 }
                                                 .padding(.leading, 10)
-                                                .padding(.bottom, 10)
+                                                .padding(.bottom, 20)
                                             }
                                         } else {
                                             EmptyView()
@@ -225,8 +225,9 @@ struct PerDataIndexed: View {
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Text("Choose")
+                    Text("_Choose_") /// Italics med _
                        .foregroundColor(.accentColor)
+                       .font(Font.title.weight(.ultraLight))
                        .contextMenu {
                            
                            Button {

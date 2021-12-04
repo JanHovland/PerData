@@ -138,19 +138,28 @@ struct PersonNewView: View {
                         Button(action: {
                             if person.firstName.count > 0,
                                person.lastName.count > 0 {
+                                
+                                ///
+                                /// Sjekk om posten finnes i CloudKit
+                                ///
+                                
                                 Task.init {
-                                    
-                                    ///
-                                    /// Sjekk om posten finnes i CloudKit
-                                    ///
-                                    
-                                    if modifyImage == true {
-                                        person.image = image
+                                    var value : (LocalizedStringKey, Bool)
+                                    value = await personExist(person)
+                                    if value.1 == false {
+                                        Task.init {
+                                            if modifyImage == true {
+                                                person.image = image
+                                            } else {
+                                                person.image = nil
+                                            }
+                                            await FindPersonRecordId()
+                                        }
                                     } else {
-                                        person.image = nil
+                                        title = "Existing person."
+                                        message = "This person does exist"
+                                        isAlertActive.toggle()
                                     }
-                                    
-                                    await FindPersonRecordId()
                                 }
                             } else {
                                 title = "Missing values."

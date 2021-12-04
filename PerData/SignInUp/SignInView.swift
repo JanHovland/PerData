@@ -59,6 +59,7 @@ struct SignInView: View {
                             .font(Font.title.weight(.ultraLight))
                     }
                 }
+                .padding(.bottom, 30)
                 VStack {
                     Text("FirstName")
                         .foregroundColor(.accentColor)
