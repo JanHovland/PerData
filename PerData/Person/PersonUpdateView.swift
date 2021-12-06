@@ -63,10 +63,6 @@ struct PersonUpdateView: View {
                         }
                     }
                 }
-                .onTapGesture {
-                    showImage.toggle()
-                    modifyImage = true
-                }
                 .sheet(isPresented: $showImage, content: {
                     ImagePicker(sourceType: .photoLibrary, selectedImage: $image, image: $person.image)
                 })
@@ -149,11 +145,6 @@ struct PersonUpdateView: View {
                         Button (action: {
                             print(person.recordID as Any)
                             Task.init {
-                                if modifyImage == true {
-                                    person.image = image
-                                } else {
-                                    self.person.image = nil
-                                }
                                 ///
                                 ///Finn RecordID og save eller modify
                                 ///
@@ -213,7 +204,6 @@ struct PersonUpdateView: View {
                 isAlertActive.toggle()
             } else {
                 await message = modify(person, modifyImage)
-                modifyImage = false
                 title = "Modify"
                 isAlertActive.toggle()
             }

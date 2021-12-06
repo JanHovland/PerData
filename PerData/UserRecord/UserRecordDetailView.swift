@@ -14,7 +14,7 @@ struct UserRecordDetailView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @State private var showSheetImagePicker = false
+    @State private var showImage = false
     @State private var isAlertActive = false
     @State private var indicatorShowing = false
     @State private var modifyImage = false
@@ -36,7 +36,8 @@ struct UserRecordDetailView: View {
                         .clipShape(Circle())
                         .overlay(Circle().stroke(Color.white, lineWidth: 1))
                         .onTapGesture {
-                            showSheetImagePicker.toggle()
+                            showImage.toggle()
+                            modifyImage = true
                         }
                 } else {
                     ZStack {
@@ -48,18 +49,12 @@ struct UserRecordDetailView: View {
                             .frame(width: 80, height: 80, alignment: .center)
                             .clipShape(Circle())
                             .overlay(Circle().stroke(Color.white, lineWidth: 1))
-                            .onTapGesture {
-                                showSheetImagePicker.toggle()
-                            }
                     }
                 }
             }
             .padding(.top, 70)
             .padding(.bottom, 40)
-            .onTapGesture {
-                showSheetImagePicker.toggle()
-            }
-            .sheet(isPresented: $showSheetImagePicker, content: {
+            .sheet(isPresented: $showImage, content: {
                 ImagePicker(sourceType: .photoLibrary, selectedImage: $image, image: $userRecord.image)
             })
             VStack {
@@ -139,7 +134,6 @@ struct UserRecordDetailView: View {
                                             isAlertActive.toggle()
                                         } else {
                                             userRecord.recordID = value.1
-                                            modifyImage = true // showSheetImagePicker
                                             await message = modifyUserRecord(userRecord, modifyImage)
                                             title = "Modify"
                                             isAlertActive.toggle()
