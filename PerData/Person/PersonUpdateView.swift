@@ -152,7 +152,7 @@ struct PersonUpdateView: View {
                                 if modifyImage == true {
                                     person.image = image
                                 } else {
-                                    self.person.image = person.image
+                                    self.person.image = nil
                                 }
                                 ///
                                 ///Finn RecordID og save eller modify

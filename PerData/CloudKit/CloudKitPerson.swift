@@ -242,7 +242,7 @@ struct CloudKitPerson {
         let query = CKQuery(recordType: RecordType.Person, predicate: predicate)
         do {
             let result = try await database.records(matching: query)
-            for res in result.0 {
+            for res in result.matchResults {
                 let id = res.0.recordName
                 return CKRecord.ID(recordName: id)
             }
