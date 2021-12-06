@@ -24,6 +24,7 @@
 		DB4FD4DB27328EC80080E084 /* ParseCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4FD4DA27328EC80080E084 /* ParseCSV.swift */; };
 		DB4FD4DE2733E72F0080E084 /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4FD4DD2733E72F0080E084 /* ToDoView.swift */; };
 		DB55163D2727E84600153A9A /* PersonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB55163C2727E84600153A9A /* PersonDetailView.swift */; };
+		DB587898275E3634004C4F65 /* PersonBirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB587897275E3634004C4F65 /* PersonBirthdayView.swift */; };
 		DB64C0312755324F004709C4 /* UserRecordOverViewIndexed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64C0302755324F004709C4 /* UserRecordOverViewIndexed.swift */; };
 		DB64C033275536A2004709C4 /* IndexedTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64C032275536A2004709C4 /* IndexedTableViewHelper.swift */; };
 		DB64C03727569172004709C4 /* PerDataIndexed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64C03627569172004709C4 /* PerDataIndexed.swift */; };
@@ -100,6 +101,7 @@
 		DB4FD4DA27328EC80080E084 /* ParseCSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseCSV.swift; sourceTree = "<group>"; };
 		DB4FD4DD2733E72F0080E084 /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
 		DB55163C2727E84600153A9A /* PersonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailView.swift; sourceTree = "<group>"; };
+		DB587897275E3634004C4F65 /* PersonBirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonBirthdayView.swift; sourceTree = "<group>"; };
 		DB64C0302755324F004709C4 /* UserRecordOverViewIndexed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRecordOverViewIndexed.swift; sourceTree = "<group>"; };
 		DB64C032275536A2004709C4 /* IndexedTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedTableViewHelper.swift; sourceTree = "<group>"; };
 		DB64C03627569172004709C4 /* PerDataIndexed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerDataIndexed.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 		DB55163B2727E82600153A9A /* Person */ = {
 			isa = PBXGroup;
 			children = (
+				DB587897275E3634004C4F65 /* PersonBirthdayView.swift */,
 				DBE25B5E270C556200AE255B /* PerData.swift */,
 				DB64C03627569172004709C4 /* PerDataIndexed.swift */,
 				DBE25B5C270C556200AE255B /* PerDataApp.swift */,
@@ -509,6 +512,7 @@
 				DBB366AF274E6CB3001CB47A /* BackupPersonsToJsonBackupFile.swift in Sources */,
 				DB3AA39F27392ED1008B2FDF /* UpdatePersonsFromJsonBackupFile.swift in Sources */,
 				DB81CA752742751900E69D57 /* PersonDetailCabinView.swift in Sources */,
+				DB587898275E3634004C4F65 /* PersonBirthdayView.swift in Sources */,
 				DB81CA782742759E00E69D57 /* CabinReservationView.swift in Sources */,
 				DB4BBA2C274BB4A200771D7A /* UserRecordDetailView.swift in Sources */,
 				DBC9041F273FFF740043DAC3 /* MakeAttributedString.swift in Sources */,

@@ -110,12 +110,12 @@ struct toDoView: View {
      33. 🟢 PersonNewView():
             . 🟢 Melding: Det må være verdier i for- og etternavn
             . 🟢 Legg inn save og modify CloudKit
-     34. 🔴 PersonUpdateView():
+     34. 🟢 PersonUpdateView():
             . 🟢 Ikke kunne endre for- og etternavn, vise dem som Text.
             . 🟢 Meny:
                  . 🟢 Legg inn Meny.
                  . 🟢 Legg inn sletting av person i Menyen.
-                      . 🔴 Bildet må også slettes
+                      . 🟢 Bildet må også slettes
      35. 🔴 Oversikt fødselsdager.
      36. 🔴 Se om sending av e-post kan gjøres på SwiftUI vis.
      37. 🔴 .

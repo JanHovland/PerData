@@ -2,6 +2,9 @@
 "_Choose_" = "_Velg_";
 
 /* No comment provided by engineer. */
+"%@" = "%@";
+
+/* No comment provided by engineer. */
 "Add a new User" = "Ny bruker";
 
 /* No comment provided by engineer. */
@@ -24,6 +27,9 @@
 
 /* No comment provided by engineer. */
 "Backups the userRecords to Json" = "Bruker backup to Json";
+
+/* No comment provided by engineer. */
+"Birthday" = "Fødsesdager";
 
 /* No comment provided by engineer. */
 "Birthdays" = "Fødselsdager";
@@ -60,9 +66,6 @@
 
 /* No comment provided by engineer. */
 "Can't send emails from this device" = "Kan ikke sende e-Post fra denne enheten.";
-
-/* No comment provided by engineer. */
-"Choose" = "Velg";
 
 /* No comment provided by engineer. */
 "City" = "By";

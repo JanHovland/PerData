@@ -143,7 +143,6 @@ struct PersonUpdateView: View {
                     .contextMenu {
                         
                         Button (action: {
-                            print(person.recordID as Any)
                             Task.init {
                                 ///
                                 ///Finn RecordID og save eller modify

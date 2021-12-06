@@ -116,6 +116,11 @@ struct PerDataIndexed: View {
     @State private var sectionHeader = [String]()
     @State private var predicate = NSPredicate(value: true)
     
+    /// Skjuler scroll indicators.
+    init() {
+        UITableView.appearance().showsVerticalScrollIndicator = false
+    }
+   
     var body: some View {
         NavigationView {
             VStack {
@@ -342,7 +347,7 @@ struct PerDataIndexed: View {
                            toDoView()
                        })
                        .sheet(isPresented: $menuBirthDay, content: {
-                           
+                           personBirthdayView()
                        })
                        .sheet(isPresented: $menuCabin, content: {
                            cabinOverView()
