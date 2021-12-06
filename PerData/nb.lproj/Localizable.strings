@@ -50,7 +50,13 @@
 "Cabin update Json" = "Hyttereservasjon  fra Json";
 
 /* No comment provided by engineer. */
+"Can not delete a person without a record ID. " = "Kan ikke slette en person uten ID.";
+
+/* No comment provided by engineer. */
 "Can not find %@" = "Kan ikke finne %@";
+
+/* No comment provided by engineer. */
+"Can not find person ID" = "Kan ikke finne person ID";
 
 /* No comment provided by engineer. */
 "Can't send emails from this device" = "Kan ikke sende e-Post fra denne enheten.";
@@ -245,7 +251,10 @@
 "Person backup to Json" = "Person backup til Json";
 
 /* No comment provided by engineer. */
-"PersonOverView" = "Person oversikt";
+"Person ID" = "Person ID";
+
+/* No comment provided by engineer. */
+"PersonOverView" = "Personer";
 
 /* No comment provided by engineer. */
 "Phonenumber" = "Telefonnummer";
@@ -261,9 +270,6 @@
 
 /* No comment provided by engineer. */
 "Save" = "Lagre";
-
-/* No comment provided by engineer. */
-"Save a person" = "Lagre";
 
 /* No comment provided by engineer. */
 "Search firstName" = "Søk";
@@ -341,6 +347,9 @@
 "The zipCode is saved in CloudKit" = "Postnummeret er lagret i CloudKit.";
 
 /* No comment provided by engineer. */
+"This person exists in CloudKit " = "Personen finnes allerede i CloudKit.";
+
+/* No comment provided by engineer. */
 "This record was saved earlier" = "Denne hyttereservasjonen finnes allerede.";
 
 /* No comment provided by engineer. */
@@ -386,7 +395,7 @@
 "User Details" = "Bruker detaljer";
 
 /* No comment provided by engineer. */
-"User OverView" = "Oversikt brukere";
+"User OverView" = "Brukere";
 
 /* No comment provided by engineer. */
 "UserRecord" = "Bruker";

@@ -67,12 +67,10 @@ func findPersons(_ predicate: NSPredicate) async -> (err: LocalizedStringKey, pe
     return (err , person, sectionHeader)
 }
 
-
 func deletePerson(_ recID: CKRecord.ID) async -> LocalizedStringKey {
     var message: LocalizedStringKey = ""
     do {
-        var value : (LocalizedStringKey, CKRecord.ID)
-        value = try await CloudKitPerson().deleteOnePerson(recID)
+        try await CloudKitPerson().deleteOnePerson(recID)
         message = "The person has been deleted"
         return message
     } catch {

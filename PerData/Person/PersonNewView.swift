@@ -140,27 +140,12 @@ struct PersonNewView: View {
                                person.lastName.count > 0 {
                                 
                                 ///
-                                /// Sjekk om posten finnes i CloudKit
+                                /// Sjekk om posten finnes i CloudKit og save eller modify
                                 ///
                                 
                                 Task.init {
-                                    var value : (LocalizedStringKey, Bool)
-                                    value = await personExist(person)
-                                    if value.1 == false {
-                                        Task.init {
-                                            if modifyImage == true {
-                                                person.image = image
-                                            } else {
-                                                person.image = nil
-                                            }
-                                            await FindPersonRecordId()
-                                        }
-                                    } else {
-                                        title = "Existing person."
-                                        message = "This person does exist"
-                                        isAlertActive.toggle()
-                                    }
-                                }
+                                    await FindPersonRecordIdSave(person: person)
+                               }
                             } else {
                                 title = "Missing values."
                                 message = "First- and LastName must both have values."
@@ -168,7 +153,7 @@ struct PersonNewView: View {
                             }
                             
                         }, label: {
-                            Text("Save a person")
+                            Text("Save")
                         })
                         
                             .alert(title, isPresented: $isAlertActive) {
@@ -194,7 +179,7 @@ struct PersonNewView: View {
         .navigationViewStyle(StackNavigationViewStyle())
     }
     
-    func FindPersonRecordId() async {
+    func FindPersonRecordIdSave(person: Person) async {
         var value: (LocalizedStringKey, CKRecord.ID?)
         await value = personRecordID(person)
         if value.0 != "" {
@@ -210,8 +195,7 @@ struct PersonNewView: View {
                 title = "Save"
                 isAlertActive.toggle()
             } else {
-                await message = modify(person, modifyImage)
-                modifyImage = false
+                message = "This person exists in CloudKit "
                 title = "Modify"
                 isAlertActive.toggle()
             }

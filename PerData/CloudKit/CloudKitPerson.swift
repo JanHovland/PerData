@@ -170,25 +170,12 @@ struct CloudKitPerson {
         }
     }
     
-    func deleteOnePerson(_ recID: CKRecord.ID) async throws -> (LocalizedStringKey, CKRecord.ID) {
-        var err: LocalizedStringKey
-//        var id : CKRecord.ID
-        var value : (CKRecord.ID)
-        
+    func deleteOnePerson(_ recID: CKRecord.ID) async throws {
         do {
-            
-            value = try await database.deleteRecord(withID: recID)
-            if value != recID {
-               err = "Different id's"
-            } else {
-                err = "Id's are the same"
-            }
-            print("err = \(err)")
+            try await database.deleteRecord(withID: recID)
         } catch {
-            err = "Error"
             throw error
         }
-        return (err, value)
     }
         
     func modifyPerson(_ person: Person, _ newImage: Bool) async throws {

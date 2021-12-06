@@ -155,10 +155,9 @@ struct PersonUpdateView: View {
                                     self.person.image = person.image
                                 }
                                 ///
-                                ///Finn RecordID med eventuell feilmelding
+                                ///Finn RecordID og save eller modify
                                 ///
-                                await FindRecordId()
-                                //                                person = Person()
+                                await FindRecordIdSaveOrModify(person: person)
                             }
                         }, label: {
                             Text("Modify")
@@ -166,17 +165,22 @@ struct PersonUpdateView: View {
                         
                         Button (action: {
                             Task.init {
-                                
+                                ///
+                                ///Må finne recordID på nytt
+                                ///
                                 recordID = await FindRecordIdDelete(person: person)
-                                
-                                
-                                
-                                // recordID = person.recordID!
-                                print(person.recordID as Any)
-                                await message = deletePerson(recordID!)
-                                person = Person()
-                                title = "Delete a person"
-                                isAlertActive.toggle()
+                                if recordID != nil  {
+                                    await message = deletePerson(recordID!)
+                                    person = Person()
+                                    person.image = nil
+                                    title = "Delete a person"
+                                    isAlertActive.toggle()
+                                } else {
+                                    title = "Delete a person"
+                                    message = "Can not delete a person without a record ID. "
+                                    isAlertActive.toggle()
+
+                                }
                             }
                         }, label: {
                             Text("Delete")
@@ -192,7 +196,7 @@ struct PersonUpdateView: View {
         }
     }
     
-    func FindRecordId() async {
+    func FindRecordIdSaveOrModify(person: Person) async {
         var value: (LocalizedStringKey, CKRecord.ID?   )
         await value = personRecordID(person)
         if value.0 != "" {
@@ -231,11 +235,6 @@ struct PersonUpdateView: View {
                 message = "Can not find person ID"
                 title = "Person ID"
                 isAlertActive.toggle()
-            } else {
-//                await message = modify(person, modifyImage)
-//                modifyImage = false
-//                title = "Modify"
-//                isAlertActive.toggle()
             }
         }
         return value.1

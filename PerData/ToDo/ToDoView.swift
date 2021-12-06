@@ -107,15 +107,15 @@ struct toDoView: View {
      32. 🟢 PerDataIndexed():
             . 🟢 Vise postnr og poststed på samme linje
             . 🟢 Vurdere ny font på "Velg".
-     33. 🔴 PersonNewView():
+     33. 🟢 PersonNewView():
             . 🟢 Melding: Det må være verdier i for- og etternavn
-            . 🔴 Sjekk save og modify CloudKit
+            . 🟢 Legg inn save og modify CloudKit
      34. 🔴 PersonUpdateView():
-            . 🔴 Ikke kunne endre for- og etternavn, vise dem som Text.
-            . 🔴 Sjekk save og modify CloudKit
-            . 🔴 Meny:
-                 . 🔴 Legg inn Meny.
-                 . 🔴 Legg inn sletting av person i Menyen.
+            . 🟢 Ikke kunne endre for- og etternavn, vise dem som Text.
+            . 🟢 Meny:
+                 . 🟢 Legg inn Meny.
+                 . 🟢 Legg inn sletting av person i Menyen.
+                      . 🔴 Bildet må også slettes
      35. 🔴 Oversikt fødselsdager.
      36. 🔴 Se om sending av e-post kan gjøres på SwiftUI vis.
      37. 🔴 .
