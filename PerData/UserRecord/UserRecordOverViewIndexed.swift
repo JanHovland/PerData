@@ -121,7 +121,7 @@ struct userRecordOverViewIndexed: View {
             }
         } // NavigationView
         .searchable(text: $searchText, placement: .navigationBarDrawer, prompt: "Search firstName")
-        .onChange(of: searchText) { searchText in
+        .onChange(of: searchText.capitalized) { searchText in
             predicate = searchText.isEmpty ? NSPredicate(value: true) : NSPredicate(format: "firstName BEGINSWITH %@", searchText)
             Task.init {
                 indicatorShowing = true

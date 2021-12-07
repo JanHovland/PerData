@@ -34,16 +34,6 @@ struct FindZipCode: View {
             Text(city)
             Spacer()
             List {
-//                HStack {
-//                    Text(city)
-//                    Spacer()
-//                    if zipCodes.count > 0 {
-//                        Button(zipCodes[selection].postalNumber) {
-//                            pickerVisible.toggle()
-//                        }
-//                        .foregroundColor(pickerVisible ? .red : .blue)
-//                    }
-//                }
                 if zipCodes.count > 0 {
                     Picker(selection: $selection, label: EmptyView()) {
                         ForEach((0..<zipCodes.count), id: \.self) { ix in
@@ -119,19 +109,6 @@ struct FindZipCode: View {
         )
     }
     
-    /// Rutine for å finne zipCode
-    func zoomZipCode(value: String) {
-        /// Sletter alt tidligere innhold
-        zipCodes.removeAll()
-        /// S = Servicepostnummer (disse postnumrene er ikke i bruk til postadresser)
-        let predicate = NSPredicate(format: "postalName BEGINSWITH %@ AND category != %@", value.uppercased(), "S")
-        Task.init {
-            indicatorShowing = true
-            zipCodes = await findZipCode(predicate)
-            indicatorShowing = false
-            print("zipCodes \(zipCodes.count) for \(value)")
-        }
-    }
 }
 
 /// Funksjon for å sette første bokstav til uppercase

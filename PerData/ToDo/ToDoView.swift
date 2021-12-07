@@ -116,9 +116,10 @@ struct toDoView: View {
                  . 🟢 Legg inn Meny.
                  . 🟢 Legg inn sletting av person i Menyen.
                       . 🟢 Bildet må også slettes
-     35. 🔴 Oversikt fødselsdager.
-     36. 🔴 Se om sending av e-post kan gjøres på SwiftUI vis.
-     37. 🔴 .
+     35. 🟢 Oversikt fødselsdager.
+     36. 🟢 Rettet feil med søking på personer og brukere.
+     37. 🔴 Se om sending av e-post kan gjøres på SwiftUI vis.
+     38. 🔴 .
 
     """
     
