@@ -73,6 +73,11 @@ import Network
 
 struct PerDataIndexed: View {
     
+    /// Skjuler scroll indicators.
+    init() {
+        UITableView.appearance().showsVerticalScrollIndicator = false
+    }
+    
     @Environment(\.presentationMode) var presentationMode
     
     @State private var message: LocalizedStringKey = ""
@@ -116,11 +121,6 @@ struct PerDataIndexed: View {
     @State private var sectionHeader = [String]()
     @State private var predicate = NSPredicate(value: true)
     
-    /// Skjuler scroll indicators.
-    init() {
-        UITableView.appearance().showsVerticalScrollIndicator = false
-    }
-   
     var body: some View {
         NavigationView {
             VStack {
