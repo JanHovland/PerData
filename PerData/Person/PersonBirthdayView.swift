@@ -33,7 +33,7 @@ struct personBirthdayView: View {
                     ForEach(persons) {
                         person in
                         if searchText == "" || person.firstName.contains(searchText) {
-                            NavigationLink(destination: PersonDetailView(person: person)) {
+                            NavigationLink(destination: PersonUpdateView(person: person)) {
                                 showPersonBirthday(person: person)
                             }
                         }
