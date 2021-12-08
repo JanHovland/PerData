@@ -99,7 +99,8 @@ struct CabinReservationView: View {
         if from <= to {
             if cabin.firstName.count > 0 {
                 var value : (LocalizedStringKey, Bool)
-                value = await cabinExist(cabin)
+                let predicate = NSPredicate(format: "firstName == %@ AND lastName == %@ AND fromDate == %i AND toDate == %i", cabin.firstName, cabin.lastName, cabin.fromDate as CVarArg, cabin.toDate as CVarArg)
+                value = await cabinExist(predicate, cabin)
                 if value.0 != "" {
                     message = value.0
                     title = "Error Cabin reservation"

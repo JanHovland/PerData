@@ -38,11 +38,11 @@ func modifyCabin(_ cabin: Cabin) async -> LocalizedStringKey {
     }
 }
 
-func cabinExist(_ cabin: Cabin) async -> (err: LocalizedStringKey, exist: Bool) {
+func cabinExist(_ predicate: NSPredicate, _ cabin: Cabin) async -> (err: LocalizedStringKey, exist: Bool) {
     var err : LocalizedStringKey = ""
     var exist : Bool = false
     do {
-        exist = try await CloudKitCabin().existCabin(cabin)
+        exist = try await CloudKitCabin().existCabin(predicate, cabin)
         err = ""
     } catch {
         print(error.localizedDescription)

@@ -55,7 +55,8 @@ func updateCabinsFromJsonBackupFile() async -> LocalizedStringKey {
         /// Sjekk om hyttereservasjonen finnes
         ///
         var value : (LocalizedStringKey, Bool)
-        value = await cabinExist(cabin)
+        let predicate = NSPredicate(format: "firstName == %@ AND lastName == %@ AND fromDate == %i AND toDate == %i", cabin.firstName, cabin.lastName, cabin.fromDate as CVarArg, cabin.toDate as CVarArg)
+        value = await cabinExist(predicate, cabin)
         if value.0 != "" {
             ///
             ///Feilmelding

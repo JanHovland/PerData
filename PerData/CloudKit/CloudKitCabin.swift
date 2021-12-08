@@ -29,8 +29,7 @@ struct CloudKitCabin {
         }
     }
     
-    func existCabin(_ cabin: Cabin) async throws -> Bool {
-        let predicate = NSPredicate(format: "firstName == %@ AND lastName == %@ AND fromDate == %i AND toDate == %i", cabin.firstName, cabin.lastName, cabin.fromDate as CVarArg, cabin.toDate as CVarArg)
+    func existCabin(_ predicate: NSPredicate, _ cabin: Cabin) async throws -> Bool {
         let query = CKQuery(recordType: RecordType.Cabin, predicate: predicate)
         do {
             let result = try await database.records(matching: query)
