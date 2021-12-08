@@ -67,7 +67,7 @@ func updateCabinsFromJsonBackupFile() async -> LocalizedStringKey {
             if value.1 == true { // userRecord finnes fra før
                 /// Finn recordID for cabin som **finnes** fra før
                 var valueID: (LocalizedStringKey, CKRecord.ID?)
-                await valueID = cabinRecordID(cabin)
+                await valueID = cabinRecordID(predicate, cabin)
                 if valueID.0 != "" {
                     message = value.0
                     return message

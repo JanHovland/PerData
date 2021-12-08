@@ -111,8 +111,7 @@ struct CloudKitCabin {
         }
     }
    
-    func getCabinRecordID(_ cabin: Cabin) async throws -> CKRecord.ID? {
-        let predicate = NSPredicate(format: "firstName = %@ AND lastName = %@", cabin.firstName, cabin.lastName)
+    func getCabinRecordID(_ predicate: NSPredicate,_ cabin: Cabin) async throws -> CKRecord.ID? {
         let query = CKQuery(recordType: RecordType.Cabin, predicate: predicate)
         do {
             let result = try await database.records(matching: query)
