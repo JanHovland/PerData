@@ -230,9 +230,9 @@ struct PerDataIndexed: View {
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Text("_Choose_") /// Italics med _
+                    Image(systemName: "ellipsis.circle" ) // Text("_Cho<#T##String#>ose_")
                        .foregroundColor(.accentColor)
-                       .font(Font.title.weight(.ultraLight))
+                       .font(Font.body.weight(.regular))
                        .contextMenu {
                            
                            Button {

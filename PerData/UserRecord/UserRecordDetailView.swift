@@ -110,9 +110,9 @@ struct UserRecordDetailView: View {
         .navigationBarTitle("User Details", displayMode: .inline)
         .toolbar(content: {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Text("_Choose_")
+                Image(systemName: "ellipsis.circle" ) // Text("_Cho<#T##String#>ose_")
                     .foregroundColor(.accentColor)
-                    .font(Font.title.weight(.ultraLight))
+                    .font(Font.body.weight(.regular))
                     .contextMenu {
                         Button {
                             Task.init {
