@@ -52,11 +52,11 @@ struct SignUpView : View {
                                 .resizable()
                                 .frame(width: 80, height: 80, alignment: .center)
                                 .clipShape(Circle())
-                                .overlay(Circle().stroke(Color.white, lineWidth: 1))
+                                .overlay(Circle().stroke(Color.gray, lineWidth: 1))
                         }
                     }
                 }
-                .padding(.top, 70)
+                .padding(.top, 40)
                 .padding(.bottom, 40)
                 .onTapGesture {
                     showSheetImagePicker.toggle()
@@ -65,53 +65,40 @@ struct SignUpView : View {
                     ImagePicker(sourceType: .photoLibrary, selectedImage: $image, image: $userRecord.image)
                 })
                 VStack {
+                    
                     HStack {
-                        Spacer()
-                        Text("FirstName")
-                            .foregroundColor(.accentColor)
-                            .padding(.trailing, 21)
-                        TextField("Enter firstName", text: $userRecord.firstName)
-                            .autocapitalization(.words)
-                        Spacer()
+                        Image(systemName: "person.circle")
+                            .foregroundColor(.gray).font(.headline)
+                        TextField("username", text: $userRecord.firstName)
                     }
-                    .padding(.top, 10)
-                    .padding(.bottom, 10)
+                    .padding(7)
+                    .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
+                    
                     HStack {
-                        Spacer()
-                        Text("LastName")
-                            .foregroundColor(.accentColor)
-                            .padding(.trailing, 12)
-                        TextField("Enter lastName", text: $userRecord.lastName)
-                            .autocapitalization(.words)
-                        Spacer()
+                        Image(systemName: "person.circle")
+                            .foregroundColor(.gray).font(.headline)
+                        TextField("username", text: $userRecord.lastName)
                     }
-                    .padding(.top, 10)
-                    .padding(.bottom, 10)
+                    .padding(7)
+                    .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
+                    
                     HStack {
-                        Spacer()
-                        Text("email")
-                            .foregroundColor(.accentColor)
-                            .padding(.trailing, 33)
-                        TextField("Enter email", text: $userRecord.email)
-                            .keyboardType(.emailAddress)
-                            .autocapitalization(.none)
-                        Spacer()
+                        Image(systemName: "envelope")
+                            .foregroundColor(.gray).font(.headline)
+                        TextField("email", text: $userRecord.email)
                     }
-                    .padding(.top, 10)
-                    .padding(.bottom, 10)
+                    .padding(7)
+                    .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
+                    
                     HStack {
-                        Spacer()
-                        Text("Password")
-                            .foregroundColor(.accentColor)
-                            .padding(.trailing, 21)
+                        Image(systemName: "lock.circle")
+                            .foregroundColor(.gray).font(.headline)
                         SecureField("Enter passWord", text: $userRecord.passWord)
-                        Spacer()
                     }
-                    .padding(.top, 10)
-                    .padding(.bottom, 10)
+                    .padding(7)
+                    .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
                 }
-                .padding(.leading, 50)
-                Spacer()
+                Spacer(minLength: 5'0)
             }
             .navigationBarTitle("Add a new User", displayMode: .inline)
             .navigationBarItems(leading:

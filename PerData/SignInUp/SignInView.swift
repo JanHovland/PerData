@@ -61,36 +61,45 @@ struct SignInView: View {
                 }
                 .padding(.bottom, 30)
                 VStack {
-                    Text("FirstName")
-                        .foregroundColor(.accentColor)
-                        .padding(.bottom, -5)
-                    TextField("Enter firstName", text: $userRecord.firstName)
-                        .autocapitalization(.words)
-                        .padding(.bottom, 10)
+                    HStack {
+                        Image(systemName: "person.circle")
+                            .foregroundColor(.gray).font(.headline)
+                        TextField("username", text: $userRecord.firstName)
+                    }
+                    .padding(7)
+                    .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
+                    .padding(.horizontal)
                     
-                    Text("LastName")
-                        .foregroundColor(.accentColor)
-                        .padding(.bottom, -5)
-                    TextField("Enter lastName", text: $userRecord.lastName)
-                        .autocapitalization(.words)
-                        .padding(.bottom, 10)
-
-                    Text("email")
-                        .foregroundColor(.accentColor)
-                        .padding(.bottom, -5)
-                    TextField("Enter email", text: $userRecord.email)
-                        .keyboardType(.emailAddress)
-                        .autocapitalization(.none)
-                        .padding(.bottom, 10)
-
-                    Text("Password")
-                        .foregroundColor(.accentColor)
-                        .padding(.bottom, -5)
-                    SecureField("Enter passWord", text: $userRecord.passWord)
-                        .padding(.bottom, 10)
-
+                    HStack {
+                        Image(systemName: "person.circle")
+                            .foregroundColor(.gray).font(.headline)
+                        TextField("username", text: $userRecord.lastName)
+                    }
+                    .padding(7)
+                    .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
+                    .padding(.horizontal)
+                    
+                    HStack {
+                        Image(systemName: "envelope")
+                            .foregroundColor(.gray).font(.headline)
+                        TextField("email", text: $userRecord.email)
+                    }
+                    .padding(7)
+                    .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
+                    .padding(.horizontal)
+                    
+                    HStack {
+                        Image(systemName: "lock.circle")
+                            .foregroundColor(.gray).font(.headline)
+                        SecureField("Enter passWord", text: $userRecord.passWord)
+                    }
+                    .padding(7)
+                    .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
+                    .padding(.horizontal)
                 }
-                .multilineTextAlignment(.center)
+                .multilineTextAlignment(.leading)
+                .padding(.leading, 10)
+                .padding(.trailing, 10)
                 .padding(.bottom, 30)
                 
                 Button (action: {
