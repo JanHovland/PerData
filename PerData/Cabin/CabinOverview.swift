@@ -48,7 +48,7 @@ struct cabinOverView: View {
                             .padding(.horizontal, 5)
                         }
                     }
-                    /// onDelete finne bare i iOS
+                    /// onDelete finnes bare i iOS
                     .onDelete { (indexSet) in
                         indexSetDelete = indexSet
                         recordID = cabins[indexSet.first!].recordID
