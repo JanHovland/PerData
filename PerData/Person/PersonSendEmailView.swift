@@ -39,7 +39,7 @@ struct PersonSendEmailView: View {
                         .imageScale(.large)
                     Text("Show mail view")
                 })
-                .foregroundColor(Color.white)
+                .foregroundColor(Color.gray)
                 .padding()
                 .background(Color.blue)
                 .cornerRadius(10)

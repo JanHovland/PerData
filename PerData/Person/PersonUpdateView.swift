@@ -45,7 +45,7 @@ struct PersonUpdateView: View {
                             .resizable()
                             .frame(width: 80, height: 80, alignment: .center)
                             .clipShape(Circle())
-                            .overlay(Circle().stroke(Color.white, lineWidth: 1))
+                            .overlay(Circle().stroke(Color.gray, lineWidth: 1))
                             .onTapGesture {
                                 showImage.toggle()
                                 modifyImage = true
@@ -59,7 +59,7 @@ struct PersonUpdateView: View {
                                 .resizable()
                                 .frame(width: 80, height: 80, alignment: .center)
                                 .clipShape(Circle())
-                                .overlay(Circle().stroke(Color.white, lineWidth: 1))
+                                .overlay(Circle().stroke(Color.gray, lineWidth: 1))
                         }
                     }
                 }

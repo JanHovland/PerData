@@ -51,7 +51,7 @@ struct SignInView: View {
                             .resizable()
                             .frame(width: 80, height: 80, alignment: .center)
                             .clipShape(Circle())
-                            .overlay(Circle().stroke(Color.white, lineWidth: 1))
+                            .overlay(Circle().stroke(Color.gray, lineWidth: 1))
                     } else {
                         Image(systemName: "person.circle")
                             .resizable()
@@ -160,7 +160,7 @@ struct SignInView: View {
                 }, label: {
                     Text("Sign Up")
                         .font(.system(.body, design: .rounded))
-                        .foregroundColor(.white)
+                        .foregroundColor(.gray)
                         .bold()
                         .padding()
                         .frame(minWidth: 300, maxWidth: 300)

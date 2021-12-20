@@ -53,14 +53,14 @@ struct PersonNewView: View {
                                 .frame(width: 80, height: 80, alignment: .center)
                                 .font(Font.title.weight(.ultraLight))
                                 .clipShape(Circle())
-                                .overlay(Circle().stroke(Color.white, lineWidth: 1))
+                                .overlay(Circle().stroke(Color.gray, lineWidth: 1))
                                 .foregroundColor(Color.indigo)
                                 .opacity(1.00)
                             Image(uiImage: image)
                                 .resizable()
                                 .frame(width: 80, height: 80, alignment: .center)
                                 .clipShape(Circle())
-                                .overlay(Circle().stroke(Color.white, lineWidth: 1))
+                                .overlay(Circle().stroke(Color.gray, lineWidth: 1))
                                 .onTapGesture {
                                     showImage.toggle()
                                     modifyImage = true

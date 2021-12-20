@@ -39,7 +39,7 @@ struct SignUpView : View {
                             .resizable()
                             .frame(width: 80, height: 80, alignment: .center)
                             .clipShape(Circle())
-                            .overlay(Circle().stroke(Color.white, lineWidth: 1))
+                            .overlay(Circle().stroke(Color.gray, lineWidth: 1))
                             .onTapGesture {
                                 showSheetImagePicker.toggle()
                             }
@@ -98,8 +98,10 @@ struct SignUpView : View {
                     .padding(7)
                     .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
                 }
-                Spacer(minLength: 5'0)
+                Spacer(minLength: 50)
             }
+            .padding(.leading, 10)
+            .padding(.trailing, 10)
             .navigationBarTitle("Add a new User", displayMode: .inline)
             .navigationBarItems(leading:
                                     Button(action: {

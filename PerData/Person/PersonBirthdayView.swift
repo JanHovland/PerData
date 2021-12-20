@@ -180,7 +180,7 @@ struct showPersonBirthday: View {
                     .resizable()
                     .frame(width: 30, height: 30, alignment: .center)
                     .clipShape(Circle())
-                    .overlay(Circle().stroke(Color.white, lineWidth: 1))
+                    .overlay(Circle().stroke(Color.gray, lineWidth: 1))
             } else {
                 Image(systemName: "person.circle")
                     .resizable()
