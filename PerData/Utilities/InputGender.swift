@@ -17,7 +17,7 @@ struct InputGender: View {
             HStack (alignment: .center, spacing: 90) {
                 Text(heading)
                 Picker(selection: $value, label: Text("")) {
-                    ForEach(0..<genders.count) { index in
+                    ForEach(0..<genders.count, id: \.self) { index in
                         Text(genders[index]).tag(index)
                     }
                 }
