@@ -13,6 +13,7 @@ struct Hud<Content: View>: View {
         content
             .padding(.horizontal, 10)
             .padding(10)
+        
             .frame(width: 200, height: 100, alignment: .center)
     }
 }
